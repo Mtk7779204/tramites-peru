@@ -4537,3 +4537,505 @@ console.log(
 
 </script>
 
+<!-- ===================================== -->
+<!-- MÓDULO 22.2 - BOTÓN VOLVER ARRIBA -->
+<!-- ===================================== -->
+
+<style id="modulo22_2-css">
+
+#btnSubir{
+
+position:fixed;
+
+right:20px;
+
+bottom:20px;
+
+width:55px;
+
+height:55px;
+
+border:none;
+
+border-radius:50%;
+
+background:var(--colorPrincipal);
+
+color:white;
+
+font-size:24px;
+
+cursor:pointer;
+
+display:none;
+
+box-shadow:var(--sombraPrincipal);
+
+z-index:9999;
+
+}
+
+#btnSubir:hover{
+
+transform:scale(1.08);
+
+}
+
+</style>
+
+<section id="modulo22_2">
+
+<button id="btnSubir">
+
+↑
+
+</button>
+
+</section>
+
+<script id="modulo22_2-js">
+
+const btnSubir=
+
+document.getElementById(
+"btnSubir"
+);
+
+window.addEventListener(
+"scroll",
+()=>{
+
+if(
+window.scrollY>300
+){
+
+btnSubir.style.display=
+"block";
+
+}else{
+
+btnSubir.style.display=
+"none";
+
+}
+
+}
+);
+
+btnSubir.addEventListener(
+"click",
+()=>{
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+}
+);
+
+console.log(
+
+"Modulo 22.2 cargado"
+
+);
+
+</script>
+<!-- ===================================== -->
+<!-- MÓDULO 23 - BARRA DE BÚSQUEDAS POPULARES -->
+<!-- ===================================== -->
+
+<style id="modulo23-css">
+
+#modulo23{
+
+padding:50px 20px;
+
+background:var(--colorBlanco);
+
+}
+
+.busquedasPopulares{
+
+max-width:1200px;
+
+margin:auto;
+
+text-align:center;
+
+}
+
+.busquedasTitulo{
+
+font-size:32px;
+
+font-weight:700;
+
+color:var(--colorSecundario);
+
+margin-bottom:25px;
+
+}
+
+.busquedasTags{
+
+display:flex;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:12px;
+
+}
+
+.busquedaTag{
+
+padding:12px 18px;
+
+background:var(--colorFondo);
+
+border-radius:30px;
+
+font-size:14px;
+
+font-weight:600;
+
+color:var(--colorTexto);
+
+box-shadow:var(--sombraPrincipal);
+
+cursor:pointer;
+
+}
+
+.busquedaTag:hover{
+
+background:var(--colorPrincipal);
+
+color:white;
+
+}
+
+</style>
+
+<section id="modulo23">
+
+<div class="busquedasPopulares">
+
+<h2 class="busquedasTitulo">
+
+Búsquedas Populares
+
+</h2>
+
+<div class="busquedasTags">
+
+<div class="busquedaTag">
+
+Renovar DNI
+
+</div>
+
+<div class="busquedaTag">
+
+Duplicado DNI
+
+</div>
+
+<div class="busquedaTag">
+
+Antecedentes Policiales
+
+</div>
+
+<div class="busquedaTag">
+
+Partida de Nacimiento
+
+</div>
+
+<div class="busquedaTag">
+
+Consulta AFP
+
+</div>
+
+<div class="busquedaTag">
+
+Bonos Perú
+
+</div>
+
+<div class="busquedaTag">
+
+Cambio de Domicilio
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script id="modulo23-js">
+
+console.log(
+
+"Modulo 23 cargado"
+
+);
+
+</script>
+<!-- ===================================== -->
+<!-- MÓDULO 24 - REDES SOCIALES -->
+<!-- ===================================== -->
+
+<style id="modulo24-css">
+
+#modulo24{
+
+padding:60px 20px;
+
+background:var(--colorFondo);
+
+}
+
+.redesContenedor{
+
+max-width:1000px;
+
+margin:auto;
+
+text-align:center;
+
+}
+
+.redesTitulo{
+
+font-size:36px;
+
+font-weight:700;
+
+color:var(--colorSecundario);
+
+margin-bottom:20px;
+
+}
+
+.redesTexto{
+
+font-size:16px;
+
+color:var(--colorTexto);
+
+margin-bottom:30px;
+
+line-height:1.8;
+
+}
+
+.redesGrid{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:20px;
+
+}
+
+.redSocial{
+
+width:70px;
+
+height:70px;
+
+border-radius:50%;
+
+background:var(--colorPrincipal);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:30px;
+
+color:white;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.redSocial:hover{
+
+transform:translateY(-5px);
+
+}
+
+</style>
+
+<section id="modulo24">
+
+<div class="redesContenedor">
+
+<h2 class="redesTitulo">
+
+Síguenos
+
+</h2>
+
+<p class="redesTexto">
+
+Mantente informado sobre nuevas guías, actualizaciones y recursos para trámites.
+
+</p>
+
+<div class="redesGrid">
+
+<div class="redSocial">
+
+📘
+
+</div>
+
+<div class="redSocial">
+
+📸
+
+</div>
+
+<div class="redSocial">
+
+▶️
+
+</div>
+
+<div class="redSocial">
+
+𝕏
+
+</div>
+
+<div class="redSocial">
+
+💬
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script id="modulo24-js">
+
+console.log(
+
+"Modulo 24 cargado"
+
+);
+
+</script>
+
+<!-- ===================================== -->
+<!-- MÓDULO 24.1 - COMPARTIR SITIO -->
+<!-- ===================================== -->
+
+<style id="modulo24_1-css">
+
+#modulo24_1{
+
+padding:40px 20px;
+
+background:var(--colorBlanco);
+
+text-align:center;
+
+}
+
+.btnCompartir{
+
+padding:15px 25px;
+
+background:var(--colorPrincipal);
+
+color:white;
+
+border:none;
+
+border-radius:var(--radioPrincipal);
+
+font-size:16px;
+
+font-weight:600;
+
+}
+
+</style>
+
+<section id="modulo24_1">
+
+<button
+id="btnCompartir"
+class="btnCompartir">
+
+Compartir Sitio
+
+</button>
+
+</section>
+
+<script id="modulo24_1-js">
+
+document
+.getElementById(
+"btnCompartir"
+)
+.addEventListener(
+"click",
+()=>{
+
+if(
+navigator.share
+){
+
+navigator.share({
+
+title:"Trámites Perú",
+
+text:"Consulta trámites y guías.",
+
+url:window.location.href
+
+});
+
+}else{
+
+alert(
+"Tu navegador no soporta compartir."
+);
+
+}
+
+}
+);
+
+console.log(
+
+"Modulo 24.1 cargado"
+
+);
+
+</script>
