@@ -151,3 +151,256 @@ console.log(
 
 </script>
   
+<!-- ===================================== -->
+<!-- MÓDULO 2 - CONFIGURACIÓN DEL SITIO -->
+<!-- ===================================== -->
+
+<style id="modulo2-css">
+
+#modulo2{
+
+display:none;
+
+}
+
+</style>
+
+<section id="modulo2">
+
+</section>
+
+<script id="modulo2-js">
+
+const SITIO={
+
+nombre:"Trámites Perú",
+
+slogan:
+"Guías fáciles para trámites y consultas",
+
+url:"",
+
+version:"1.0.0",
+
+modo:"desarrollo"
+
+};
+
+const CATEGORIAS=[
+
+"DNI",
+
+"Certificados",
+
+"Trabajo",
+
+"Bonos",
+
+"Consultas"
+
+];
+
+const PAGINAS=[
+
+"inicio",
+
+"dni",
+
+"certificados",
+
+"trabajo",
+
+"contacto"
+
+];
+
+console.log(
+
+"Modulo 2 cargado"
+
+);
+
+</script>
+
+<!-- ===================================== -->
+<!-- MÓDULO 3 - HEADER PRINCIPAL -->
+<!-- ===================================== -->
+
+<style id="modulo3-css">
+
+#headerPrincipal{
+
+width:100%;
+
+background:var(--colorBlanco);
+
+box-shadow:var(--sombraPrincipal);
+
+position:sticky;
+
+top:0;
+
+z-index:1000;
+
+}
+
+.headerContenedor{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:15px 20px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+}
+
+.logoSitio{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+}
+
+.logoIcono{
+
+width:50px;
+
+height:50px;
+
+border-radius:50%;
+
+background:var(--colorPrincipal);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+color:white;
+
+font-size:24px;
+
+font-weight:700;
+
+}
+
+.logoNombre{
+
+font-size:22px;
+
+font-weight:700;
+
+color:var(--colorPrincipal);
+
+}
+
+.logoSlogan{
+
+font-size:12px;
+
+color:var(--colorTexto);
+
+}
+
+.botonMenu{
+
+background:none;
+
+border:none;
+
+font-size:28px;
+
+color:var(--colorSecundario);
+
+display:none;
+
+}
+
+@media(max-width:768px){
+
+.botonMenu{
+
+display:block;
+
+}
+
+}
+
+</style>
+
+<section id="modulo3">
+
+<header id="headerPrincipal">
+
+<div class="headerContenedor">
+
+<div class="logoSitio">
+
+<div class="logoIcono">
+
+TP
+
+</div>
+
+<div>
+
+<div class="logoNombre">
+
+Trámites Perú
+
+</div>
+
+<div class="logoSlogan">
+
+Guías y consultas para todos
+
+</div>
+
+</div>
+
+</div>
+
+<button
+class="botonMenu">
+
+☰
+
+</button>
+
+</div>
+
+</header>
+
+</section>
+
+<script id="modulo3-js">
+
+const HEADER={
+
+activo:true,
+
+movil:false
+
+};
+
+console.log(
+
+"Modulo 3 cargado"
+
+);
+
+</script>
+  
+  </body>
+
+</html>
