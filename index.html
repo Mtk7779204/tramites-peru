@@ -483,6 +483,874 @@ console.log(
 );
 
 </script>
-  </body>
+<!-- ===================================== -->
+<!-- MÓDULO 5 - HERO PRINCIPAL -->
+<!-- ===================================== -->
 
-</html>
+<style id="modulo5-css">
+
+#modulo5{
+
+padding:60px 20px;
+
+background:linear-gradient(
+135deg,
+var(--colorPrincipal),
+var(--colorSecundario)
+);
+
+color:white;
+
+}
+
+.heroPrincipal{
+
+max-width:1200px;
+
+margin:auto;
+
+text-align:center;
+
+}
+
+.heroTitulo{
+
+font-size:48px;
+
+font-weight:700;
+
+margin-bottom:15px;
+
+}
+
+.heroDescripcion{
+
+font-size:20px;
+
+max-width:800px;
+
+margin:auto;
+
+line-height:1.6;
+
+margin-bottom:30px;
+
+}
+
+.heroBotones{
+
+display:flex;
+
+justify-content:center;
+
+gap:15px;
+
+flex-wrap:wrap;
+
+}
+
+.heroBoton{
+
+background:white;
+
+color:var(--colorPrincipal);
+
+padding:14px 24px;
+
+border-radius:var(--radioPrincipal);
+
+font-weight:600;
+
+}
+
+.heroBotonSecundario{
+
+background:transparent;
+
+border:2px solid white;
+
+color:white;
+
+padding:14px 24px;
+
+border-radius:var(--radioPrincipal);
+
+font-weight:600;
+
+}
+
+@media(max-width:768px){
+
+.heroTitulo{
+
+font-size:32px;
+
+}
+
+.heroDescripcion{
+
+font-size:16px;
+
+}
+
+}
+
+</style>
+
+<section id="modulo5">
+
+<div class="heroPrincipal">
+
+<h1 class="heroTitulo">
+
+Todos los trámites del Perú en un solo lugar
+
+</h1>
+
+<p class="heroDescripcion">
+
+Aprende paso a paso cómo sacar DNI, renovar documentos, obtener certificados, consultar bonos y realizar trámites importantes de forma rápida y sencilla.
+
+</p>
+
+<div class="heroBotones">
+
+<a href="#"
+class="heroBoton">
+
+Ver Trámites
+
+</a>
+
+<a href="#"
+class="heroBotonSecundario">
+
+Consultar Guías
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<script id="modulo5-js">
+
+console.log(
+
+"Modulo 5 cargado"
+
+);
+
+</script>
+
+<!-- ===================================== -->
+<!-- MÓDULO 6 - BUSCADOR DE TRÁMITES -->
+<!-- ===================================== -->
+
+<style id="modulo6-css">
+
+#modulo6{
+
+padding:40px 20px;
+
+background:var(--colorBlanco);
+
+}
+
+.buscadorContenedor{
+
+max-width:1000px;
+
+margin:auto;
+
+text-align:center;
+
+}
+
+.buscadorTitulo{
+
+font-size:32px;
+
+font-weight:700;
+
+color:var(--colorSecundario);
+
+margin-bottom:15px;
+
+}
+
+.buscadorTexto{
+
+font-size:16px;
+
+color:var(--colorTexto);
+
+margin-bottom:25px;
+
+}
+
+.buscadorCaja{
+
+display:flex;
+
+gap:10px;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+}
+
+#buscadorInput{
+
+width:600px;
+
+max-width:100%;
+
+padding:16px;
+
+border:2px solid #dbe2ea;
+
+border-radius:var(--radioPrincipal);
+
+font-size:16px;
+
+outline:none;
+
+}
+
+#buscadorBoton{
+
+background:var(--colorPrincipal);
+
+color:white;
+
+padding:16px 24px;
+
+border:none;
+
+border-radius:var(--radioPrincipal);
+
+font-size:16px;
+
+font-weight:600;
+
+}
+
+#resultadoBusqueda{
+
+margin-top:20px;
+
+font-size:15px;
+
+color:var(--colorTexto);
+
+}
+
+</style>
+
+<section id="modulo6">
+
+<div class="buscadorContenedor">
+
+<h2 class="buscadorTitulo">
+
+Buscar Trámite
+
+</h2>
+
+<p class="buscadorTexto">
+
+Escribe el nombre del trámite que deseas encontrar.
+
+</p>
+
+<div class="buscadorCaja">
+
+<input
+type="text"
+id="buscadorInput"
+placeholder="Ejemplo: Renovar DNI">
+
+<button
+id="buscadorBoton">
+
+Buscar
+
+</button>
+
+</div>
+
+<div id="resultadoBusqueda">
+
+</div>
+
+</div>
+
+</section>
+
+<script id="modulo6-js">
+
+const listaTramites=[
+
+"Renovar DNI",
+"Duplicado DNI",
+"Cambio de domicilio",
+"Antecedentes policiales",
+"Antecedentes penales",
+"Partida de nacimiento",
+"Consulta AFP",
+"Consulta CTS",
+"Consulta Bonos"
+
+];
+
+const buscadorInput=
+document.getElementById(
+"buscadorInput"
+);
+
+const buscadorBoton=
+document.getElementById(
+"buscadorBoton"
+);
+
+const resultadoBusqueda=
+document.getElementById(
+"resultadoBusqueda"
+);
+
+buscadorBoton.onclick=()=>{
+
+const texto=
+buscadorInput.value
+.toLowerCase();
+
+const resultados=
+listaTramites.filter(
+item=>
+item.toLowerCase()
+.includes(texto)
+);
+
+resultadoBusqueda.innerHTML=
+
+resultados.length
+
+?
+
+"Resultados: " +
+resultados.join(" • ")
+
+:
+
+"No se encontraron coincidencias";
+
+};
+
+console.log(
+
+"Modulo 6 cargado"
+
+);
+
+</script>
+<!-- ===================================== -->
+<!-- MÓDULO 7 - CATEGORÍAS PRINCIPALES -->
+<!-- ===================================== -->
+
+<style id="modulo7-css">
+
+#modulo7{
+
+padding:60px 20px;
+
+background:var(--colorFondo);
+
+}
+
+.categoriasContenedor{
+
+max-width:1200px;
+
+margin:auto;
+
+}
+
+.categoriasTitulo{
+
+text-align:center;
+
+font-size:36px;
+
+font-weight:700;
+
+color:var(--colorSecundario);
+
+margin-bottom:40px;
+
+}
+
+.categoriasGrid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+}
+
+.categoriaCard{
+
+background:var(--colorBlanco);
+
+padding:30px;
+
+border-radius:var(--radioPrincipal);
+
+box-shadow:var(--sombraPrincipal);
+
+text-align:center;
+
+transition:.3s;
+
+cursor:pointer;
+
+}
+
+.categoriaCard:hover{
+
+transform:translateY(-5px);
+
+}
+
+.categoriaIcono{
+
+font-size:48px;
+
+margin-bottom:15px;
+
+}
+
+.categoriaNombre{
+
+font-size:22px;
+
+font-weight:700;
+
+color:var(--colorPrincipal);
+
+margin-bottom:10px;
+
+}
+
+.categoriaDescripcion{
+
+font-size:14px;
+
+color:var(--colorTexto);
+
+line-height:1.6;
+
+}
+
+</style>
+
+<section id="modulo7">
+
+<div class="categoriasContenedor">
+
+<h2 class="categoriasTitulo">
+
+Categorías Principales
+
+</h2>
+
+<div class="categoriasGrid">
+
+<div class="categoriaCard">
+
+<div class="categoriaIcono">
+
+🪪
+
+</div>
+
+<div class="categoriaNombre">
+
+DNI
+
+</div>
+
+<div class="categoriaDescripcion">
+
+Renovación, duplicado, actualización y cambio de domicilio.
+
+</div>
+
+</div>
+
+<div class="categoriaCard">
+
+<div class="categoriaIcono">
+
+📄
+
+</div>
+
+<div class="categoriaNombre">
+
+Certificados
+
+</div>
+
+<div class="categoriaDescripcion">
+
+Antecedentes, partidas y documentos oficiales.
+
+</div>
+
+</div>
+
+<div class="categoriaCard">
+
+<div class="categoriaIcono">
+
+💼
+
+</div>
+
+<div class="categoriaNombre">
+
+Trabajo
+
+</div>
+
+<div class="categoriaDescripcion">
+
+CTS, AFP, ONP y beneficios laborales.
+
+</div>
+
+</div>
+
+<div class="categoriaCard">
+
+<div class="categoriaIcono">
+
+💰
+
+</div>
+
+<div class="categoriaNombre">
+
+Bonos
+
+</div>
+
+<div class="categoriaDescripcion">
+
+Consultas y programas de apoyo económico.
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script id="modulo7-js">
+
+console.log(
+
+"Modulo 7 cargado"
+
+);
+
+</script>
+<!-- ===================================== -->
+<!-- MÓDULO 8 - TRÁMITES DESTACADOS -->
+<!-- ===================================== -->
+
+<style id="modulo8-css">
+
+#modulo8{
+
+padding:60px 20px;
+
+background:var(--colorBlanco);
+
+}
+
+.destacadosContenedor{
+
+max-width:1200px;
+
+margin:auto;
+
+}
+
+.destacadosTitulo{
+
+text-align:center;
+
+font-size:36px;
+
+font-weight:700;
+
+color:var(--colorSecundario);
+
+margin-bottom:40px;
+
+}
+
+.destacadosGrid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+
+gap:25px;
+
+}
+
+.tramiteCard{
+
+background:var(--colorFondo);
+
+padding:25px;
+
+border-radius:var(--radioPrincipal);
+
+box-shadow:var(--sombraPrincipal);
+
+transition:.3s;
+
+}
+
+.tramiteCard:hover{
+
+transform:translateY(-5px);
+
+}
+
+.tramiteTitulo{
+
+font-size:22px;
+
+font-weight:700;
+
+color:var(--colorPrincipal);
+
+margin-bottom:12px;
+
+}
+
+.tramiteDescripcion{
+
+font-size:15px;
+
+line-height:1.7;
+
+color:var(--colorTexto);
+
+margin-bottom:20px;
+
+}
+
+.tramiteBoton{
+
+display:inline-block;
+
+background:var(--colorPrincipal);
+
+color:white;
+
+padding:12px 18px;
+
+border-radius:var(--radioPrincipal);
+
+font-size:14px;
+
+font-weight:600;
+
+}
+
+</style>
+
+<section id="modulo8">
+
+<div class="destacadosContenedor">
+
+<h2 class="destacadosTitulo">
+
+Trámites Más Buscados
+
+</h2>
+
+<div class="destacadosGrid">
+
+<div class="tramiteCard">
+
+<div class="tramiteTitulo">
+
+Renovar DNI
+
+</div>
+
+<div class="tramiteDescripcion">
+
+Conoce los requisitos, costos y pasos para renovar tu DNI rápidamente.
+
+</div>
+
+<a href="#"
+class="tramiteBoton">
+
+Ver guía
+
+</a>
+
+</div>
+
+<div class="tramiteCard">
+
+<div class="tramiteTitulo">
+
+Duplicado de DNI
+
+</div>
+
+<div class="tramiteDescripcion">
+
+Solicita un duplicado de tu documento en caso de pérdida o robo.
+
+</div>
+
+<a href="#"
+class="tramiteBoton">
+
+Ver guía
+
+</a>
+
+</div>
+
+<div class="tramiteCard">
+
+<div class="tramiteTitulo">
+
+Antecedentes Policiales
+
+</div>
+
+<div class="tramiteDescripcion">
+
+Aprende cómo obtener tu certificado de antecedentes policiales.
+
+</div>
+
+<a href="#"
+class="tramiteBoton">
+
+Ver guía
+
+</a>
+
+</div>
+
+<div class="tramiteCard">
+
+<div class="tramiteTitulo">
+
+Partida de Nacimiento
+
+</div>
+
+<div class="tramiteDescripcion">
+
+Consulta los pasos para solicitar una copia certificada.
+
+</div>
+
+<a href="#"
+class="tramiteBoton">
+
+Ver guía
+
+</a>
+
+</div>
+
+<div class="tramiteCard">
+
+<div class="tramiteTitulo">
+
+Consulta AFP
+
+</div>
+
+<div class="tramiteDescripcion">
+
+Verifica tu fondo de pensiones y estado de aportes.
+
+</div>
+
+<a href="#"
+class="tramiteBoton">
+
+Ver guía
+
+</a>
+
+</div>
+
+<div class="tramiteCard">
+
+<div class="tramiteTitulo">
+
+Consulta Bonos
+
+</div>
+
+<div class="tramiteDescripcion">
+
+Revisa si eres beneficiario de programas de ayuda económica.
+
+</div>
+
+<a href="#"
+class="tramiteBoton">
+
+Ver guía
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script id="modulo8-js">
+
+console.log(
+
+"Modulo 8 cargado"
+
+);
+
+</script>
+
+
+
