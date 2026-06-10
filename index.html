@@ -2333,4 +2333,805 @@ console.log(
 
 </script>
 
+<!-- ===================================== -->
+<!-- MÓDULO 13 - CONTACTO RÁPIDO -->
+<!-- ===================================== -->
+
+<style id="modulo13-css">
+
+#modulo13{
+
+padding:60px 20px;
+
+background:var(--colorBlanco);
+
+}
+
+.contactoContenedor{
+
+max-width:1000px;
+
+margin:auto;
+
+}
+
+.contactoTitulo{
+
+text-align:center;
+
+font-size:36px;
+
+font-weight:700;
+
+color:var(--colorSecundario);
+
+margin-bottom:20px;
+
+}
+
+.contactoTexto{
+
+text-align:center;
+
+font-size:16px;
+
+color:var(--colorTexto);
+
+margin-bottom:40px;
+
+}
+
+.contactoFormulario{
+
+display:grid;
+
+gap:20px;
+
+}
+
+.contactoFormulario input,
+
+.contactoFormulario textarea{
+
+width:100%;
+
+padding:15px;
+
+border:2px solid #E5E7EB;
+
+border-radius:var(--radioPrincipal);
+
+font-family:inherit;
+
+font-size:15px;
+
+outline:none;
+
+}
+
+.contactoFormulario textarea{
+
+min-height:140px;
+
+resize:vertical;
+
+}
+
+.contactoBoton{
+
+background:var(--colorPrincipal);
+
+color:white;
+
+padding:15px;
+
+border:none;
+
+border-radius:var(--radioPrincipal);
+
+font-size:16px;
+
+font-weight:600;
+
+}
+
+#mensajeContacto{
+
+text-align:center;
+
+margin-top:20px;
+
+font-weight:600;
+
+color:var(--colorPrincipal);
+
+}
+
+</style>
+
+<section id="modulo13">
+
+<div class="contactoContenedor">
+
+<h2 class="contactoTitulo">
+
+Contáctanos
+
+</h2>
+
+<p class="contactoTexto">
+
+¿Tienes dudas sobre algún trámite? Envíanos tu consulta.
+
+</p>
+
+<form
+class="contactoFormulario"
+id="formularioContacto">
+
+<input
+type="text"
+id="nombreContacto"
+placeholder="Tu nombre"
+required>
+
+<input
+type="email"
+id="emailContacto"
+placeholder="Tu correo electrónico"
+required>
+
+<textarea
+id="mensajeUsuario"
+placeholder="Escribe tu consulta..."
+required></textarea>
+
+<button
+type="submit"
+class="contactoBoton">
+
+Enviar Consulta
+
+</button>
+
+</form>
+
+<div id="mensajeContacto">
+
+</div>
+
+</div>
+
+</section>
+
+<script id="modulo13-js">
+
+const formularioContacto=
+
+document.getElementById(
+"formularioContacto"
+);
+
+const mensajeContacto=
+
+document.getElementById(
+"mensajeContacto"
+);
+
+formularioContacto
+.addEventListener(
+"submit",
+function(e){
+
+e.preventDefault();
+
+mensajeContacto.textContent=
+
+"Consulta enviada correctamente.";
+
+formularioContacto.reset();
+
+}
+);
+
+console.log(
+"Modulo 13 cargado"
+);
+
+</script>
+
+<!-- ===================================== -->
+<!-- MÓDULO 14 - PIE DE PÁGINA (FOOTER) -->
+<!-- ===================================== -->
+
+<style id="modulo14-css">
+
+#modulo14{
+
+background:var(--colorSecundario);
+
+color:white;
+
+padding:50px 20px 20px;
+
+}
+
+.footerContenedor{
+
+max-width:1200px;
+
+margin:auto;
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:30px;
+
+}
+
+.footerBloque h3{
+
+margin-bottom:15px;
+
+font-size:20px;
+
+}
+
+.footerBloque p{
+
+line-height:1.8;
+
+font-size:14px;
+
+}
+
+.footerBloque a{
+
+display:block;
+
+color:white;
+
+margin-bottom:10px;
+
+font-size:14px;
+
+}
+
+.footerLinea{
+
+margin-top:40px;
+
+padding-top:20px;
+
+border-top:
+1px solid rgba(255,255,255,.2);
+
+text-align:center;
+
+font-size:13px;
+
+}
+
+</style>
+
+<section id="modulo14">
+
+<div class="footerContenedor">
+
+<div class="footerBloque">
+
+<h3>
+
+Trámites Perú
+
+</h3>
+
+<p>
+
+Portal informativo con guías y recursos para ayudar a los ciudadanos a realizar diversos trámites.
+
+</p>
+
+</div>
+
+<div class="footerBloque">
+
+<h3>
+
+Enlaces
+
+</h3>
+
+<a href="#">
+
+Inicio
+
+</a>
+
+<a href="#">
+
+DNI
+
+</a>
+
+<a href="#">
+
+Certificados
+
+</a>
+
+<a href="#">
+
+Trabajo
+
+</a>
+
+<a href="#">
+
+Bonos
+
+</a>
+
+</div>
+
+<div class="footerBloque">
+
+<h3>
+
+Información
+
+</h3>
+
+<a href="#">
+
+Política de Privacidad
+
+</a>
+
+<a href="#">
+
+Términos y Condiciones
+
+</a>
+
+<a href="#">
+
+Contacto
+
+</a>
+
+<a href="#">
+
+Preguntas Frecuentes
+
+</a>
+
+</div>
+
+</div>
+
+<div class="footerLinea">
+
+© 2026 Trámites Perú - Todos los derechos reservados
+
+</div>
+
+</section>
+
+<script id="modulo14-js">
+
+console.log(
+
+"Modulo 14 cargado"
+
+);
+
+</script>
+
+  <!-- ===================================== -->
+<!-- MÓDULO 15 - BARRA DE ACCESOS RÁPIDOS -->
+<!-- ===================================== -->
+
+<style id="modulo15-css">
+
+#modulo15{
+
+padding:50px 20px;
+
+background:var(--colorBlanco);
+
+}
+
+.accesosContenedor{
+
+max-width:1200px;
+
+margin:auto;
+
+}
+
+.accesosTitulo{
+
+text-align:center;
+
+font-size:36px;
+
+font-weight:700;
+
+color:var(--colorSecundario);
+
+margin-bottom:40px;
+
+}
+
+.accesosGrid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(180px,1fr));
+
+gap:20px;
+
+}
+
+.accesoCard{
+
+background:var(--colorFondo);
+
+border-radius:var(--radioPrincipal);
+
+padding:25px;
+
+text-align:center;
+
+box-shadow:var(--sombraPrincipal);
+
+transition:.3s;
+
+cursor:pointer;
+
+}
+
+.accesoCard:hover{
+
+transform:translateY(-5px);
+
+}
+
+.accesoIcono{
+
+font-size:42px;
+
+margin-bottom:15px;
+
+}
+
+.accesoNombre{
+
+font-size:16px;
+
+font-weight:600;
+
+color:var(--colorTexto);
+
+}
+
+</style>
+
+<section id="modulo15">
+
+<div class="accesosContenedor">
+
+<h2 class="accesosTitulo">
+
+Accesos Rápidos
+
+</h2>
+
+<div class="accesosGrid">
+
+<div class="accesoCard">
+
+<div class="accesoIcono">
+
+🪪
+
+</div>
+
+<div class="accesoNombre">
+
+Renovar DNI
+
+</div>
+
+</div>
+
+<div class="accesoCard">
+
+<div class="accesoIcono">
+
+🏠
+
+</div>
+
+<div class="accesoNombre">
+
+Cambio de Domicilio
+
+</div>
+
+</div>
+
+<div class="accesoCard">
+
+<div class="accesoIcono">
+
+📄
+
+</div>
+
+<div class="accesoNombre">
+
+Partida de Nacimiento
+
+</div>
+
+</div>
+
+<div class="accesoCard">
+
+<div class="accesoIcono">
+
+🚓
+
+</div>
+
+<div class="accesoNombre">
+
+Antecedentes
+
+</div>
+
+</div>
+
+<div class="accesoCard">
+
+<div class="accesoIcono">
+
+💰
+
+</div>
+
+<div class="accesoNombre">
+
+Bonos
+
+</div>
+
+</div>
+
+<div class="accesoCard">
+
+<div class="accesoIcono">
+
+💼
+
+</div>
+
+<div class="accesoNombre">
+
+AFP
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script id="modulo15-js">
+
+console.log(
+
+"Modulo 15 cargado"
+
+);
+
+</script>
+
+<!-- ===================================== -->
+<!-- MÓDULO 16 - AVISOS IMPORTANTES -->
+<!-- ===================================== -->
+
+<style id="modulo16-css">
+
+#modulo16{
+
+padding:60px 20px;
+
+background:var(--colorFondo);
+
+}
+
+.avisosContenedor{
+
+max-width:1200px;
+
+margin:auto;
+
+}
+
+.avisosTitulo{
+
+text-align:center;
+
+font-size:36px;
+
+font-weight:700;
+
+color:var(--colorSecundario);
+
+margin-bottom:40px;
+
+}
+
+.avisosGrid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(320px,1fr));
+
+gap:25px;
+
+}
+
+.avisoCard{
+
+background:var(--colorBlanco);
+
+border-left:6px solid
+var(--colorPrincipal);
+
+padding:25px;
+
+border-radius:var(--radioPrincipal);
+
+box-shadow:var(--sombraPrincipal);
+
+}
+
+.avisoTitulo{
+
+font-size:20px;
+
+font-weight:700;
+
+color:var(--colorPrincipal);
+
+margin-bottom:12px;
+
+}
+
+.avisoTexto{
+
+font-size:15px;
+
+line-height:1.8;
+
+color:var(--colorTexto);
+
+}
+
+.avisoFecha{
+
+margin-top:15px;
+
+font-size:13px;
+
+color:#64748B;
+
+}
+
+</style>
+
+<section id="modulo16">
+
+<div class="avisosContenedor">
+
+<h2 class="avisosTitulo">
+
+Avisos Importantes
+
+</h2>
+
+<div class="avisosGrid">
+
+<div class="avisoCard">
+
+<div class="avisoTitulo">
+
+Actualización de DNI
+
+</div>
+
+<div class="avisoTexto">
+
+Mantén actualizados tus datos personales para evitar inconvenientes en futuros trámites.
+
+</div>
+
+<div class="avisoFecha">
+
+Actualizado: Junio 2026
+
+</div>
+
+</div>
+
+<div class="avisoCard">
+
+<div class="avisoTitulo">
+
+Verifica información oficial
+
+</div>
+
+<div class="avisoTexto">
+
+Antes de realizar cualquier trámite, verifica siempre los requisitos y costos vigentes.
+
+</div>
+
+<div class="avisoFecha">
+
+Actualizado: Junio 2026
+
+</div>
+
+</div>
+
+<div class="avisoCard">
+
+<div class="avisoTitulo">
+
+Documentos necesarios
+
+</div>
+
+<div class="avisoTexto">
+
+Ten a la mano tus documentos y comprobantes para agilizar cualquier procedimiento.
+
+</div>
+
+<div class="avisoFecha">
+
+Actualizado: Junio 2026
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script id="modulo16-js">
+
+console.log(
+
+"Modulo 16 cargado"
+
+);
+
+</script>
 
