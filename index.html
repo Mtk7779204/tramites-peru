@@ -2106,28 +2106,28 @@ console.log(
 
 </script>
 <!-- ===================================== -->
-<!-- MÓDULO 11 - TESTIMONIOS Y EXPERIENCIAS -->
+<!-- MÓDULO 12 - PREGUNTAS FRECUENTES -->
 <!-- ===================================== -->
 
-<style id="modulo11-css">
+<style id="modulo12-css">
 
-#modulo11{
+#modulo12{
 
 padding:60px 20px;
 
-background:var(--colorBlanco);
+background:var(--colorFondo);
 
 }
 
-.testimoniosContenedor{
+.faqContenedor{
 
-max-width:1200px;
+max-width:1000px;
 
 margin:auto;
 
 }
 
-.testimoniosTitulo{
+.faqTitulo{
 
 text-align:center;
 
@@ -2141,70 +2141,53 @@ margin-bottom:40px;
 
 }
 
-.testimoniosGrid{
+.faqItem{
 
-display:grid;
+background:var(--colorBlanco);
 
-grid-template-columns:
-repeat(auto-fit,minmax(300px,1fr));
-
-gap:25px;
-
-}
-
-.testimonioCard{
-
-background:var(--colorFondo);
-
-padding:25px;
+margin-bottom:15px;
 
 border-radius:var(--radioPrincipal);
 
 box-shadow:var(--sombraPrincipal);
 
+overflow:hidden;
+
 }
 
-.testimonioAvatar{
+.faqPregunta{
 
-width:60px;
+padding:20px;
 
-height:60px;
+font-size:18px;
 
-border-radius:50%;
+font-weight:600;
 
-background:var(--colorPrincipal);
-
-color:white;
+cursor:pointer;
 
 display:flex;
 
+justify-content:space-between;
+
 align-items:center;
-
-justify-content:center;
-
-font-size:24px;
-
-font-weight:700;
-
-margin-bottom:15px;
 
 }
 
-.testimonioTexto{
+.faqRespuesta{
 
-font-size:15px;
+display:none;
+
+padding:0 20px 20px;
 
 line-height:1.8;
 
 color:var(--colorTexto);
 
-margin-bottom:20px;
-
 }
 
-.testimonioNombre{
+.faqIcono{
 
-font-size:16px;
+font-size:20px;
 
 font-weight:700;
 
@@ -2212,111 +2195,85 @@ color:var(--colorPrincipal);
 
 }
 
-.testimonioCiudad{
-
-font-size:13px;
-
-color:#64748B;
-
-margin-top:5px;
-
-}
-
 </style>
 
-<section id="modulo11">
+<section id="modulo12">
 
-<div class="testimoniosContenedor">
+<div class="faqContenedor">
 
-<h2 class="testimoniosTitulo">
+<h2 class="faqTitulo">
 
-Experiencias de Usuarios
+Preguntas Frecuentes
 
 </h2>
 
-<div class="testimoniosGrid">
+<div class="faqItem">
 
-<div class="testimonioCard">
+<div class="faqPregunta">
 
-<div class="testimonioAvatar">
+<span>¿Cómo renovar mi DNI?</span>
 
-M
-
-</div>
-
-<div class="testimonioTexto">
-
-Gracias a la guía pude renovar mi DNI sin perder tiempo buscando información en diferentes páginas.
+<span class="faqIcono">+</span>
 
 </div>
 
-<div class="testimonioNombre">
+<div class="faqRespuesta">
 
-María López
-
-</div>
-
-<div class="testimonioCiudad">
-
-Lima, Perú
+Puedes renovar tu DNI siguiendo los pasos indicados en la guía correspondiente y realizando el pago de la tasa vigente.
 
 </div>
 
 </div>
 
-<div class="testimonioCard">
+<div class="faqItem">
 
-<div class="testimonioAvatar">
+<div class="faqPregunta">
 
-J
+<span>¿Cómo sacar antecedentes policiales?</span>
 
-</div>
-
-<div class="testimonioTexto">
-
-Encontré rápidamente cómo obtener mis antecedentes policiales y completar el trámite correctamente.
+<span class="faqIcono">+</span>
 
 </div>
 
-<div class="testimonioNombre">
+<div class="faqRespuesta">
 
-Juan Pérez
-
-</div>
-
-<div class="testimonioCiudad">
-
-Arequipa, Perú
+Debes cumplir los requisitos establecidos y realizar la solicitud en los canales autorizados.
 
 </div>
 
 </div>
 
-<div class="testimonioCard">
+<div class="faqItem">
 
-<div class="testimonioAvatar">
+<div class="faqPregunta">
 
-C
+<span>¿Cómo obtener una partida de nacimiento?</span>
 
-</div>
-
-<div class="testimonioTexto">
-
-Las explicaciones son claras y fáciles de entender incluso para quienes no están familiarizados con los trámites.
+<span class="faqIcono">+</span>
 
 </div>
 
-<div class="testimonioNombre">
+<div class="faqRespuesta">
 
-Carlos Rojas
+La partida puede solicitarse mediante los procedimientos habilitados para registros civiles.
+
+</div>
 
 </div>
 
-<div class="testimonioCiudad">
+<div class="faqItem">
 
-Trujillo, Perú
+<div class="faqPregunta">
+
+<span>¿Cómo consultar bonos disponibles?</span>
+
+<span class="faqIcono">+</span>
 
 </div>
+
+<div class="faqRespuesta">
+
+Puedes utilizar las plataformas oficiales de consulta cuando existan programas vigentes.
 
 </div>
 
@@ -2326,13 +2283,54 @@ Trujillo, Perú
 
 </section>
 
-<script id="modulo11-js">
+<script id="modulo12-js">
+
+const preguntas=
+
+document.querySelectorAll(
+".faqPregunta"
+);
+
+preguntas.forEach(
+pregunta=>{
+
+pregunta.onclick=()=>{
+
+const respuesta=
+
+pregunta.nextElementSibling;
+
+const icono=
+
+pregunta.querySelector(
+".faqIcono"
+);
+
+if(
+respuesta.style.display==="block"
+){
+
+respuesta.style.display="none";
+
+icono.textContent="+";
+
+}else{
+
+respuesta.style.display="block";
+
+icono.textContent="-";
+
+}
+
+};
+
+}
+);
 
 console.log(
-
-"Modulo 11 cargado"
-
+"Modulo 12 cargado"
 );
 
 </script>
+
 
