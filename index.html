@@ -19,8 +19,9 @@ Trámites Perú
 <!-- ADSENSE -->
 <!-- ===================================== -->
 
-<!-- PEGAR AQUÍ EL CÓDIGO ADSENSE -->
-
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7482899024208713"
+     crossorigin="anonymous"></script>
+  
 <!-- ===================================== -->
 <!-- FUENTES -->
 <!-- ===================================== -->
@@ -3978,3 +3979,561 @@ console.log(
 );
 
 </script>
+
+<!-- ===================================== -->
+<!-- MÓDULO 20.1 - BLOQUE ADSENSE PRINCIPAL -->
+<!-- ===================================== -->
+
+<style id="modulo20_1-css">
+
+#modulo20_1{
+
+padding:40px 20px;
+
+background:var(--colorBlanco);
+
+}
+
+.adsenseContenedor{
+
+max-width:1200px;
+
+margin:auto;
+
+}
+
+.adsenseTitulo{
+
+text-align:center;
+
+font-size:14px;
+
+color:#64748B;
+
+margin-bottom:15px;
+
+text-transform:uppercase;
+
+letter-spacing:1px;
+
+}
+
+.adsenseCaja{
+
+min-height:120px;
+
+background:#F8FAFC;
+
+border:2px dashed #CBD5E1;
+
+border-radius:var(--radioPrincipal);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+padding:20px;
+
+}
+
+.adsenseTexto{
+
+font-size:15px;
+
+color:#64748B;
+
+}
+
+</style>
+
+<section id="modulo20_1">
+
+<div class="adsenseContenedor">
+
+<div class="adsenseTitulo">
+
+Publicidad
+
+</div>
+
+<div class="adsenseCaja">
+
+<!-- PEGAR AQUÍ EL BLOQUE ADSENSE -->
+
+<div class="adsenseTexto">
+
+Espacio reservado para Google AdSense
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script id="modulo20_1-js">
+
+console.log(
+
+"Modulo 20.1 cargado"
+
+);
+
+</script>
+<!-- ===================================== -->
+<!-- MÓDULO 21 - NEWSLETTER -->
+<!-- ===================================== -->
+
+<style id="modulo21-css">
+
+#modulo21{
+
+padding:60px 20px;
+
+background:var(--colorFondo);
+
+}
+
+.newsletterContenedor{
+
+max-width:800px;
+
+margin:auto;
+
+text-align:center;
+
+}
+
+.newsletterTitulo{
+
+font-size:36px;
+
+font-weight:700;
+
+color:var(--colorSecundario);
+
+margin-bottom:20px;
+
+}
+
+.newsletterTexto{
+
+font-size:16px;
+
+color:var(--colorTexto);
+
+margin-bottom:30px;
+
+line-height:1.8;
+
+}
+
+.newsletterFormulario{
+
+display:flex;
+
+gap:10px;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.newsletterInput{
+
+width:400px;
+
+max-width:100%;
+
+padding:15px;
+
+border:2px solid #E5E7EB;
+
+border-radius:var(--radioPrincipal);
+
+font-size:15px;
+
+}
+
+.newsletterBoton{
+
+padding:15px 25px;
+
+background:var(--colorPrincipal);
+
+color:white;
+
+border:none;
+
+border-radius:var(--radioPrincipal);
+
+font-weight:600;
+
+}
+
+#mensajeNewsletter{
+
+margin-top:20px;
+
+font-weight:600;
+
+color:var(--colorPrincipal);
+
+}
+
+</style>
+
+<section id="modulo21">
+
+<div class="newsletterContenedor">
+
+<h2 class="newsletterTitulo">
+
+Recibe Nuevas Guías
+
+</h2>
+
+<p class="newsletterTexto">
+
+Suscríbete para enterarte cuando publiquemos nuevos trámites y tutoriales.
+
+</p>
+
+<form
+class="newsletterFormulario"
+id="newsletterFormulario">
+
+<input
+type="email"
+class="newsletterInput"
+id="newsletterEmail"
+placeholder="Tu correo electrónico"
+required>
+
+<button
+type="submit"
+class="newsletterBoton">
+
+Suscribirme
+
+</button>
+
+</form>
+
+<div id="mensajeNewsletter">
+
+</div>
+
+</div>
+
+</section>
+
+<script id="modulo21-js">
+
+document
+.getElementById(
+"newsletterFormulario"
+)
+.addEventListener(
+"submit",
+function(e){
+
+e.preventDefault();
+
+document
+.getElementById(
+"mensajeNewsletter"
+)
+.textContent=
+
+"Suscripción realizada correctamente.";
+
+this.reset();
+
+}
+);
+
+console.log(
+
+"Modulo 21 cargado"
+
+);
+
+</script>
+<!-- ===================================== -->
+<!-- MÓDULO 22 - ENLACES ÚTILES -->
+<!-- ===================================== -->
+
+<style id="modulo22-css">
+
+#modulo22{
+
+padding:60px 20px;
+
+background:var(--colorBlanco);
+
+}
+
+.enlacesContenedor{
+
+max-width:1200px;
+
+margin:auto;
+
+}
+
+.enlacesTitulo{
+
+text-align:center;
+
+font-size:36px;
+
+font-weight:700;
+
+color:var(--colorSecundario);
+
+margin-bottom:40px;
+
+}
+
+.enlacesGrid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+
+gap:25px;
+
+}
+
+.enlaceCard{
+
+background:var(--colorFondo);
+
+padding:25px;
+
+border-radius:var(--radioPrincipal);
+
+box-shadow:var(--sombraPrincipal);
+
+transition:.3s;
+
+}
+
+.enlaceCard:hover{
+
+transform:translateY(-5px);
+
+}
+
+.enlaceIcono{
+
+font-size:42px;
+
+margin-bottom:15px;
+
+}
+
+.enlaceTitulo{
+
+font-size:20px;
+
+font-weight:700;
+
+color:var(--colorPrincipal);
+
+margin-bottom:10px;
+
+}
+
+.enlaceTexto{
+
+font-size:15px;
+
+line-height:1.8;
+
+color:var(--colorTexto);
+
+}
+
+</style>
+
+<section id="modulo22">
+
+<div class="enlacesContenedor">
+
+<h2 class="enlacesTitulo">
+
+Enlaces Útiles
+
+</h2>
+
+<div class="enlacesGrid">
+
+<div class="enlaceCard">
+
+<div class="enlaceIcono">
+
+🏛️
+
+</div>
+
+<div class="enlaceTitulo">
+
+RENIEC
+
+</div>
+
+<div class="enlaceTexto">
+
+Información relacionada con identidad, DNI y registros civiles.
+
+</div>
+
+</div>
+
+<div class="enlaceCard">
+
+<div class="enlaceIcono">
+
+⚖️
+
+</div>
+
+<div class="enlaceTitulo">
+
+Certificados
+
+</div>
+
+<div class="enlaceTexto">
+
+Acceso a información sobre documentos y certificados.
+
+</div>
+
+</div>
+
+<div class="enlaceCard">
+
+<div class="enlaceIcono">
+
+💼
+
+</div>
+
+<div class="enlaceTitulo">
+
+Trabajo y Pensiones
+
+</div>
+
+<div class="enlaceTexto">
+
+Recursos relacionados con AFP, ONP y beneficios laborales.
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script id="modulo22-js">
+
+console.log(
+
+"Modulo 22 cargado"
+
+);
+
+</script>
+<!-- ===================================== -->
+<!-- MÓDULO 22.1 - CONTADOR DE VISITAS -->
+<!-- ===================================== -->
+
+<style id="modulo22_1-css">
+
+#modulo22_1{
+
+padding:40px 20px;
+
+background:var(--colorFondo);
+
+text-align:center;
+
+}
+
+.contadorVisitas{
+
+font-size:18px;
+
+font-weight:600;
+
+color:var(--colorSecundario);
+
+}
+
+</style>
+
+<section id="modulo22_1">
+
+<div class="contadorVisitas">
+
+Visitas registradas:
+<span id="visitasTotal">
+
+0
+
+</span>
+
+</div>
+
+</section>
+
+<script id="modulo22_1-js">
+
+let visitas=
+
+localStorage.getItem(
+"visitasPortal"
+);
+
+if(!visitas){
+
+visitas=0;
+
+}
+
+visitas++;
+
+localStorage.setItem(
+"visitasPortal",
+visitas
+);
+
+document
+.getElementById(
+"visitasTotal"
+)
+.textContent=
+visitas;
+
+console.log(
+
+"Modulo 22.1 cargado"
+
+);
+
+</script>
+
