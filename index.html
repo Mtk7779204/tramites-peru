@@ -5819,3 +5819,184 @@ console.log(
 
 </script>
 
+
+<!-- ===================================== -->
+<!-- MÓDULO 26 - SEO AUTOMÁTICO -->
+<!-- ===================================== -->
+
+<style id="modulo26-css">
+
+#modulo26{
+
+display:none;
+
+}
+
+</style>
+
+<section id="modulo26">
+
+</section>
+
+<script id="modulo26-js">
+
+document.title=
+
+SEO.titulo;
+
+const metaDescripcion=
+
+document.createElement(
+"meta"
+);
+
+metaDescripcion.name=
+"description";
+
+metaDescripcion.content=
+SEO.descripcion;
+
+document.head.appendChild(
+metaDescripcion
+);
+
+console.log(
+
+"Modulo 26 cargado"
+
+);
+
+</script>
+<!-- ===================================== -->
+<!-- MÓDULO 26.1 - GENERADOR DE FECHA -->
+<!-- ===================================== -->
+
+<style id="modulo26_1-css">
+
+#modulo26_1{
+
+display:none;
+
+}
+
+</style>
+
+<section id="modulo26_1">
+
+</section>
+
+<script id="modulo26_1-js">
+
+const fechaActual=
+
+new Date();
+
+window.FECHA_PORTAL=
+
+fechaActual;
+
+console.log(
+
+"Fecha actual:",
+
+fechaActual.toLocaleDateString()
+
+);
+
+</script>
+<!-- ===================================== -->
+<!-- MÓDULO 26.2 - DETECTOR DE DISPOSITIVO -->
+<!-- ===================================== -->
+
+<style id="modulo26_2-css">
+
+#modulo26_2{
+
+display:none;
+
+}
+
+</style>
+
+<section id="modulo26_2">
+
+</section>
+
+<script id="modulo26_2-js">
+
+const esMovil=
+
+window.innerWidth<=768;
+
+console.log(
+
+"Dispositivo:",
+
+esMovil
+?
+"Movil"
+:
+"PC"
+);
+
+</script>
+<!-- ===================================== -->
+<!-- MÓDULO 26.3 - INFORMACIÓN DEL NAVEGADOR -->
+<!-- ===================================== -->
+
+<style id="modulo26_3-css">
+
+#modulo26_3{
+
+display:none;
+
+}
+
+</style>
+
+<section id="modulo26_3">
+
+</section>
+
+<script id="modulo26_3-js">
+
+console.log(
+
+"Navegador:",
+
+navigator.userAgent
+
+);
+
+</script>
+<!-- ===================================== -->
+<!-- MÓDULO 26.4 - CIERRE DEL PROYECTO -->
+<!-- ===================================== -->
+
+<style id="modulo26_4-css">
+
+#modulo26_4{
+
+display:none;
+
+}
+
+</style>
+
+<section id="modulo26_4">
+
+</section>
+
+<script id="modulo26_4-js">
+
+console.log(
+
+"Todos los módulos cargados correctamente"
+
+);
+
+</script>
+
+</body>
+
+</html>
