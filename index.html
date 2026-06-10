@@ -1352,5 +1352,987 @@ console.log(
 
 </script>
 
+<!-- ===================================== -->
+<!-- MÓDULO 9 - ARTÍCULOS RECIENTES -->
+<!-- ===================================== -->
 
+<style id="modulo9-css">
+
+#modulo9{
+
+padding:60px 20px;
+
+background:var(--colorFondo);
+
+}
+
+.articulosContenedor{
+
+max-width:1200px;
+
+margin:auto;
+
+}
+
+.articulosTitulo{
+
+text-align:center;
+
+font-size:36px;
+
+font-weight:700;
+
+color:var(--colorSecundario);
+
+margin-bottom:40px;
+
+}
+
+.articulosGrid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(320px,1fr));
+
+gap:25px;
+
+}
+
+.articuloCard{
+
+background:var(--colorBlanco);
+
+border-radius:var(--radioPrincipal);
+
+box-shadow:var(--sombraPrincipal);
+
+overflow:hidden;
+
+transition:.3s;
+
+}
+
+.articuloCard:hover{
+
+transform:translateY(-5px);
+
+}
+
+.articuloImagen{
+
+height:180px;
+
+background:linear-gradient(
+135deg,
+var(--colorPrincipal),
+var(--colorSecundario)
+);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:60px;
+
+color:white;
+
+}
+
+.articuloContenido{
+
+padding:20px;
+
+}
+
+.articuloFecha{
+
+font-size:13px;
+
+color:#64748B;
+
+margin-bottom:10px;
+
+}
+
+.articuloTitulo{
+
+font-size:22px;
+
+font-weight:700;
+
+color:var(--colorPrincipal);
+
+margin-bottom:12px;
+
+}
+
+.articuloDescripcion{
+
+font-size:15px;
+
+line-height:1.7;
+
+color:var(--colorTexto);
+
+margin-bottom:20px;
+
+}
+
+.articuloBoton{
+
+display:inline-block;
+
+background:var(--colorSecundario);
+
+color:white;
+
+padding:10px 16px;
+
+border-radius:var(--radioPrincipal);
+
+font-size:14px;
+
+font-weight:600;
+
+}
+
+</style>
+
+<section id="modulo9">
+
+<div class="articulosContenedor">
+
+<h2 class="articulosTitulo">
+
+Últimos Artículos
+
+</h2>
+
+<div class="articulosGrid">
+
+<div class="articuloCard">
+
+<div class="articuloImagen">
+
+🪪
+
+</div>
+
+<div class="articuloContenido">
+
+<div class="articuloFecha">
+
+Junio 2026
+
+</div>
+
+<div class="articuloTitulo">
+
+Cómo renovar tu DNI paso a paso
+
+</div>
+
+<div class="articuloDescripcion">
+
+Guía completa para renovar tu documento de identidad sin complicaciones.
+
+</div>
+
+<a href="#"
+class="articuloBoton">
+
+Leer más
+
+</a>
+
+</div>
+
+</div>
+
+<div class="articuloCard">
+
+<div class="articuloImagen">
+
+📄
+
+</div>
+
+<div class="articuloContenido">
+
+<div class="articuloFecha">
+
+Junio 2026
+
+</div>
+
+<div class="articuloTitulo">
+
+Cómo obtener antecedentes policiales
+
+</div>
+
+<div class="articuloDescripcion">
+
+Requisitos, costos y procedimiento actualizado para solicitar el certificado.
+
+</div>
+
+<a href="#"
+class="articuloBoton">
+
+Leer más
+
+</a>
+
+</div>
+
+</div>
+
+<div class="articuloCard">
+
+<div class="articuloImagen">
+
+💼
+
+</div>
+
+<div class="articuloContenido">
+
+<div class="articuloFecha">
+
+Junio 2026
+
+</div>
+
+<div class="articuloTitulo">
+
+Consulta de AFP y estado de aportes
+
+</div>
+
+<div class="articuloDescripcion">
+
+Aprende a revisar tus aportes y verificar tu fondo previsional.
+
+</div>
+
+<a href="#"
+class="articuloBoton">
+
+Leer más
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script id="modulo9-js">
+
+console.log(
+
+"Modulo 9 cargado"
+
+);
+
+</script>
+<!-- ===================================== -->
+<!-- MÓDULO 10 - ESTADÍSTICAS DEL PORTAL -->
+<!-- ===================================== -->
+
+<style id="modulo10-css">
+
+#modulo10{
+
+padding:60px 20px;
+
+background:var(--colorSecundario);
+
+color:white;
+
+}
+
+.estadisticasContenedor{
+
+max-width:1200px;
+
+margin:auto;
+
+}
+
+.estadisticasTitulo{
+
+text-align:center;
+
+font-size:36px;
+
+font-weight:700;
+
+margin-bottom:40px;
+
+}
+
+.estadisticasGrid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+
+gap:25px;
+
+}
+
+.estadisticaCard{
+
+background:
+rgba(255,255,255,.1);
+
+padding:30px;
+
+border-radius:var(--radioPrincipal);
+
+text-align:center;
+
+backdrop-filter:blur(5px);
+
+}
+
+.estadisticaNumero{
+
+font-size:42px;
+
+font-weight:700;
+
+margin-bottom:10px;
+
+}
+
+.estadisticaTexto{
+
+font-size:16px;
+
+}
+
+</style>
+
+<section id="modulo10">
+
+<div class="estadisticasContenedor">
+
+<h2 class="estadisticasTitulo">
+
+Trámites Perú en números
+
+</h2>
+
+<div class="estadisticasGrid">
+
+<div class="estadisticaCard">
+
+<div class="estadisticaNumero"
+id="contadorTramites">
+
+0
+
+</div>
+
+<div class="estadisticaTexto">
+
+Trámites publicados
+
+</div>
+
+</div>
+
+<div class="estadisticaCard">
+
+<div class="estadisticaNumero"
+id="contadorGuias">
+
+0
+
+</div>
+
+<div class="estadisticaTexto">
+
+Guías disponibles
+
+</div>
+
+</div>
+
+<div class="estadisticaCard">
+
+<div class="estadisticaNumero"
+id="contadorConsultas">
+
+0
+
+</div>
+
+<div class="estadisticaTexto">
+
+Consultas resueltas
+
+</div>
+
+</div>
+
+<div class="estadisticaCard">
+
+<div class="estadisticaNumero"
+id="contadorVisitas">
+
+0
+
+</div>
+
+<div class="estadisticaTexto">
+
+Visitas estimadas
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script id="modulo10-js">
+
+function animarContador(
+
+id,
+objetivo
+
+){
+
+let actual=0;
+
+const elemento=
+document.getElementById(id);
+
+const velocidad=
+Math.ceil(objetivo/100);
+
+const intervalo=
+setInterval(()=>{
+
+actual+=velocidad;
+
+if(actual>=objetivo){
+
+actual=objetivo;
+
+clearInterval(intervalo);
+
+}
+
+elemento.textContent=
+actual.toLocaleString();
+
+},20);
+
+}
+
+animarContador(
+"contadorTramites",
+250
+);
+
+animarContador(
+"contadorGuias",
+120
+);
+
+animarContador(
+"contadorConsultas",
+3500
+);
+
+animarContador(
+"contadorVisitas",
+15000
+);
+
+console.log(
+
+"Modulo 10 cargado"
+
+);
+
+</script>
+<!-- ===================================== -->
+<!-- MÓDULO 11 - TESTIMONIOS Y EXPERIENCIAS -->
+<!-- ===================================== -->
+
+<style id="modulo11-css">
+
+#modulo11{
+
+padding:60px 20px;
+
+background:var(--colorBlanco);
+
+}
+
+.testimoniosContenedor{
+
+max-width:1200px;
+
+margin:auto;
+
+}
+
+.testimoniosTitulo{
+
+text-align:center;
+
+font-size:36px;
+
+font-weight:700;
+
+color:var(--colorSecundario);
+
+margin-bottom:40px;
+
+}
+
+.testimoniosGrid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(300px,1fr));
+
+gap:25px;
+
+}
+
+.testimonioCard{
+
+background:var(--colorFondo);
+
+padding:25px;
+
+border-radius:var(--radioPrincipal);
+
+box-shadow:var(--sombraPrincipal);
+
+}
+
+.testimonioAvatar{
+
+width:60px;
+
+height:60px;
+
+border-radius:50%;
+
+background:var(--colorPrincipal);
+
+color:white;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:24px;
+
+font-weight:700;
+
+margin-bottom:15px;
+
+}
+
+.testimonioTexto{
+
+font-size:15px;
+
+line-height:1.8;
+
+color:var(--colorTexto);
+
+margin-bottom:20px;
+
+}
+
+.testimonioNombre{
+
+font-size:16px;
+
+font-weight:700;
+
+color:var(--colorPrincipal);
+
+}
+
+.testimonioCiudad{
+
+font-size:13px;
+
+color:#64748B;
+
+margin-top:5px;
+
+}
+
+</style>
+
+<section id="modulo11">
+
+<div class="testimoniosContenedor">
+
+<h2 class="testimoniosTitulo">
+
+Experiencias de Usuarios
+
+</h2>
+
+<div class="testimoniosGrid">
+
+<div class="testimonioCard">
+
+<div class="testimonioAvatar">
+
+M
+
+</div>
+
+<div class="testimonioTexto">
+
+Gracias a la guía pude renovar mi DNI sin perder tiempo buscando información en diferentes páginas.
+
+</div>
+
+<div class="testimonioNombre">
+
+María López
+
+</div>
+
+<div class="testimonioCiudad">
+
+Lima, Perú
+
+</div>
+
+</div>
+
+<div class="testimonioCard">
+
+<div class="testimonioAvatar">
+
+J
+
+</div>
+
+<div class="testimonioTexto">
+
+Encontré rápidamente cómo obtener mis antecedentes policiales y completar el trámite correctamente.
+
+</div>
+
+<div class="testimonioNombre">
+
+Juan Pérez
+
+</div>
+
+<div class="testimonioCiudad">
+
+Arequipa, Perú
+
+</div>
+
+</div>
+
+<div class="testimonioCard">
+
+<div class="testimonioAvatar">
+
+C
+
+</div>
+
+<div class="testimonioTexto">
+
+Las explicaciones son claras y fáciles de entender incluso para quienes no están familiarizados con los trámites.
+
+</div>
+
+<div class="testimonioNombre">
+
+Carlos Rojas
+
+</div>
+
+<div class="testimonioCiudad">
+
+Trujillo, Perú
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script id="modulo11-js">
+
+console.log(
+
+"Modulo 11 cargado"
+
+);
+
+</script>
+<!-- ===================================== -->
+<!-- MÓDULO 11 - TESTIMONIOS Y EXPERIENCIAS -->
+<!-- ===================================== -->
+
+<style id="modulo11-css">
+
+#modulo11{
+
+padding:60px 20px;
+
+background:var(--colorBlanco);
+
+}
+
+.testimoniosContenedor{
+
+max-width:1200px;
+
+margin:auto;
+
+}
+
+.testimoniosTitulo{
+
+text-align:center;
+
+font-size:36px;
+
+font-weight:700;
+
+color:var(--colorSecundario);
+
+margin-bottom:40px;
+
+}
+
+.testimoniosGrid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(300px,1fr));
+
+gap:25px;
+
+}
+
+.testimonioCard{
+
+background:var(--colorFondo);
+
+padding:25px;
+
+border-radius:var(--radioPrincipal);
+
+box-shadow:var(--sombraPrincipal);
+
+}
+
+.testimonioAvatar{
+
+width:60px;
+
+height:60px;
+
+border-radius:50%;
+
+background:var(--colorPrincipal);
+
+color:white;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:24px;
+
+font-weight:700;
+
+margin-bottom:15px;
+
+}
+
+.testimonioTexto{
+
+font-size:15px;
+
+line-height:1.8;
+
+color:var(--colorTexto);
+
+margin-bottom:20px;
+
+}
+
+.testimonioNombre{
+
+font-size:16px;
+
+font-weight:700;
+
+color:var(--colorPrincipal);
+
+}
+
+.testimonioCiudad{
+
+font-size:13px;
+
+color:#64748B;
+
+margin-top:5px;
+
+}
+
+</style>
+
+<section id="modulo11">
+
+<div class="testimoniosContenedor">
+
+<h2 class="testimoniosTitulo">
+
+Experiencias de Usuarios
+
+</h2>
+
+<div class="testimoniosGrid">
+
+<div class="testimonioCard">
+
+<div class="testimonioAvatar">
+
+M
+
+</div>
+
+<div class="testimonioTexto">
+
+Gracias a la guía pude renovar mi DNI sin perder tiempo buscando información en diferentes páginas.
+
+</div>
+
+<div class="testimonioNombre">
+
+María López
+
+</div>
+
+<div class="testimonioCiudad">
+
+Lima, Perú
+
+</div>
+
+</div>
+
+<div class="testimonioCard">
+
+<div class="testimonioAvatar">
+
+J
+
+</div>
+
+<div class="testimonioTexto">
+
+Encontré rápidamente cómo obtener mis antecedentes policiales y completar el trámite correctamente.
+
+</div>
+
+<div class="testimonioNombre">
+
+Juan Pérez
+
+</div>
+
+<div class="testimonioCiudad">
+
+Arequipa, Perú
+
+</div>
+
+</div>
+
+<div class="testimonioCard">
+
+<div class="testimonioAvatar">
+
+C
+
+</div>
+
+<div class="testimonioTexto">
+
+Las explicaciones son claras y fáciles de entender incluso para quienes no están familiarizados con los trámites.
+
+</div>
+
+<div class="testimonioNombre">
+
+Carlos Rojas
+
+</div>
+
+<div class="testimonioCiudad">
+
+Trujillo, Perú
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script id="modulo11-js">
+
+console.log(
+
+"Modulo 11 cargado"
+
+);
+
+</script>
 
