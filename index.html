@@ -1008,4 +1008,202 @@ console.log('Guía seleccionada');
 
 console.log("✅ Módulo 8 cargado correctamente");
 </script>
+<!-- ===================================== -->
+<!-- MÓDULO 9 - PREGUNTAS FRECUENTES (FAQ) -->
+<!-- ===================================== -->
+<style id="modulo9-css">
+#modulo9{
+padding:var(--espacioSeccion) 20px;
+background:var(--colorFondo);
+}
+.faqContenedor{
+max-width:800px;
+margin:0 auto;
+}
+.faqTitulo{
+font-size:36px;
+font-weight:700;
+text-align:center;
+color:var(--colorSecundario);
+margin-bottom:15px;
+}
+.faqDescripcion{
+text-align:center;
+font-size:16px;
+line-height:1.8;
+color:var(--colorTexto);
+margin-bottom:40px;
+}
+.faqLista{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+.faqItem{
+background:var(--colorBlanco);
+border-radius:var(--radioPrincipal);
+box-shadow:var(--sombraLigera);
+overflow:hidden;
+}
+.faqPregunta{
+width:100%;
+padding:20px 25px;
+background:var(--colorBlanco);
+border:none;
+text-align:left;
+font-size:17px;
+font-weight:600;
+color:var(--colorSecundario);
+display:flex;
+align-items:center;
+justify-content:space-between;
+cursor:pointer;
+transition:all 0.3s ease;
+}
+.faqPregunta:hover{
+background:#f9fafb;
+}
+.faqIcono{
+font-size:20px;
+transition:transform 0.3s ease;
+}
+.faqRespuesta{
+max-height:0;
+overflow:hidden;
+transition:max-height 0.3s ease;
+}
+.faqRespuestaContenido{
+padding:0 25px 20px 25px;
+font-size:15px;
+line-height:1.7;
+color:var(--colorTexto);
+}
+.faqItem.activo .faqIcono{
+transform:rotate(180deg);
+}
+.faqItem.activo .faqRespuesta{
+max-height:300px;
+}
+/* Espacio de anuncio */
+.anuncioEspacio{
+margin-top:50px;
+padding:15px;
+background:var(--colorBlanco);
+border-radius:var(--radioPrincipal);
+text-align:center;
+box-shadow:var(--sombraLigera);
+}
+.anuncioTexto{
+font-size:13px;
+color:var(--colorGris);
+margin-bottom:10px;
+text-transform:uppercase;
+letter-spacing:1px;
+}
+@media(max-width:768px){
+.faqTitulo{font-size:28px;}
+.faqPregunta{font-size:16px;}
+}
+</style>
+
+<section id="modulo9">
+<div class="faqContenedor">
+<h2 class="faqTitulo">Preguntas Frecuentes</h2>
+<p class="faqDescripcion">Respuestas claras y directas a las dudas más comunes sobre trámites, requisitos y servicios en el Perú.</p>
+
+<div class="faqLista">
+<!-- Pregunta 1 -->
+<div class="faqItem">
+<button class="faqPregunta">
+¿Cuánto tiempo tarda en llegar el DNI después de renovarlo?
+<span class="faqIcono">▼</span>
+</button>
+<div class="faqRespuesta">
+<div class="faqRespuestaContenido">
+Por lo general, el trámite demora entre 7 y 10 días hábiles. Puedes consultar el estado en la web de RENIEC con tu comprobante de pago.
+</div>
+</div>
+</div>
+
+<!-- Pregunta 2 -->
+<div class="faqItem">
+<button class="faqPregunta">
+¿Puedo cobrar un bono si no tengo DNI vigente?
+<span class="faqIcono">▼</span>
+</button>
+<div class="faqRespuesta">
+<div class="faqRespuestaContenido">
+No, es obligatorio presentar el documento nacional de identidad vigente y en buen estado para acceder a cualquier beneficio o subsidio del Estado.
+</div>
+</div>
+</div>
+
+<!-- Pregunta 3 -->
+<div class="faqItem">
+<button class="faqPregunta">
+¿Cuál es el costo actual del pasaporte peruano?
+<span class="faqIcono">▼</span>
+</button>
+<div class="faqRespuesta">
+<div class="faqRespuestaContenido">
+El precio oficial es de S/ 98.60 para el trámite regular, y S/ 197.20 para el servicio exprés (entrega en 24 horas). Se paga en el Banco de la Nación o agentes autorizados.
+</div>
+</div>
+</div>
+
+<!-- Pregunta 4 -->
+<div class="faqItem">
+<button class="faqPregunta">
+¿El SIS cubre todo tipo de enfermedades?
+<span class="faqIcono">▼</span>
+</button>
+<div class="faqRespuesta">
+<div class="faqRespuestaContenido">
+Cubre la mayoría de atenciones médicas, emergencias, hospitalización, medicamentos y cirugías incluidas en el Plan de Salud Universal, excepto tratamientos estéticos o de lujo.
+</div>
+</div>
+</div>
+
+<!-- Pregunta 5 -->
+<div class="faqItem">
+<button class="faqPregunta">
+¿Cómo saber si tengo dinero acumulado en mi AFP?
+<span class="faqIcono">▼</span>
+</button>
+<div class="faqRespuesta">
+<div class="faqRespuestaContenido">
+Puedes ingresar a la página web de tu AFP o usar su aplicación móvil con tu DNI y clave de acceso, o consultar en la oficina más cercana presentando tu documento de identidad.
+</div>
+</div>
+</div>
+</div>
+
+<!-- ESPACIO DE ANUNCIO 5 - TU CÓDIGO -->
+<div class="anuncioEspacio">
+<p class="anuncioTexto">Espacio publicitario</p>
+<ins class="adsbygoogle"
+     style="display:block;width:100%;max-width:728px;height:90px;margin:0 auto;"
+     data-ad-client="ca-pub-7482899024208713"
+     data-ad-slot="1111111111"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+</div>
+</section>
+
+<script id="modulo9-js">
+const itemsFAQ = document.querySelectorAll('.faqItem');
+itemsFAQ.forEach(item => {
+const boton = item.querySelector('.faqPregunta');
+boton.addEventListener('click', () => {
+item.classList.toggle('activo');
+});
+});
+
+console.log("✅ Módulo 9 cargado correctamente");
+</script>
+     
      
