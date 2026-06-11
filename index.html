@@ -108,3 +108,153 @@ const SEO = {
 
 console.log("✅ Módulo 1 cargado correctamente");
 </script>
+<!-- ===================================== -->
+<!-- MÓDULO 2 - CONFIGURACIÓN DEL SITIO Y DATOS GENERALES -->
+<!-- ===================================== -->
+<style id="modulo2-css">
+#modulo2{
+display:none;
+}
+</style>
+
+<section id="modulo2">
+</section>
+
+<script id="modulo2-js">
+const SITIO = {
+    nombre: "Trámites Perú",
+    eslogan: "Guías claras y actualizadas para todos tus procedimientos",
+    descripcion: "Portal informativo con todos los trámites, requisitos, pasos y entidades oficiales del Perú, diseñado para ayudarte a realizar tus gestiones de forma rápida y sencilla.",
+    añoCreacion: "2026",
+    idioma: "español",
+    pais: "Perú",
+    moneda: "Sol Peruano (PEN)",
+    zonaHoraria: "GMT-5",
+    contacto: "contacto@tramitesperu.pe",
+    derechos: "Todos los derechos reservados"
+};
+
+const CATEGORIAS = [
+    { id: "dni", nombre: "DNI", icono: "🪪", descripcion: "Renovación, duplicado, actualización y trámites relacionados con tu documento de identidad" },
+    { id: "pasaporte", nombre: "Pasaporte", icono: "🛂", descripcion: "Solicitud, renovación, requisitos y lugares de atención para documento de viaje" },
+    { id: "bonos", nombre: "Bonos y Subsidios", icono: "💰", descripcion: "Consulta, requisitos y formas de cobro de ayudas económicas del Estado" },
+    { id: "salud", nombre: "Salud y SIS", icono: "🏥", descripcion: "Afiliación, cobertura, atenciones y trámites en el sistema de salud peruano" },
+    { id: "trabajo", nombre: "Trabajo y AFP", icono: "💼", descripcion: "Certificados, aportes, beneficios, seguro y trámites laborales" },
+    { id: "educacion", nombre: "Educación", icono: "🎓", descripcion: "Matrículas, certificados, becas, grados y trámites ante el Ministerio de Educación" },
+    { id: "vehicular", nombre: "Vehículos", icono: "🚗", descripcion: "Licencias, tarjetas de propiedad, multas y trámites ante la SUNARP" },
+    { id: "certificados", nombre: "Certificados y Constancias", icono: "📄", descripcion: "Partidas, nacimiento, matrimonio, defunción y documentos oficiales" }
+];
+
+const MENU_PRINCIPAL = [
+    { id: "inicio", nombre: "Inicio", enlace: "#modulo3" },
+    { id: "categorias", nombre: "Categorías", enlace: "#modulo5" },
+    { id: "guias", nombre: "Guías Paso a Paso", enlace: "#modulo6" },
+    { id: "consultas", nombre: "Consultas", enlace: "#modulo7" },
+    { id: "faq", nombre: "Preguntas Frecuentes", enlace: "#modulo8" }
+];
+
+const DATOS_ENTIDADES = [
+    { nombre: "RENIEC", sitio: "reniec.gob.pe", telefono: "0800 11 666" },
+    { nombre: "MIGRACIONES", sitio: "migraciones.gob.pe", telefono: "0800 12 040" },
+    { nombre: "MINSA", sitio: "minsa.gob.pe", telefono: "0800 10 828" },
+    { nombre: "SUNARP", sitio: "sunarp.gob.pe", telefono: "0800 22 221" }
+];
+
+console.log("✅ Módulo 2 cargado correctamente");
+</script>
+<!-- ===================================== -->
+<!-- MÓDULO 3 - HEADER Y CABECERA PRINCIPAL -->
+<!-- ===================================== -->
+<style id="modulo3-css">
+#headerPrincipal{
+width:100%;
+background:var(--colorBlanco);
+box-shadow:var(--sombraPrincipal);
+position:sticky;
+top:0;
+left:0;
+z-index:9999;
+}
+.headerContenedor{
+max-width:var(--anchoMaximo);
+margin:0 auto;
+padding:15px 20px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+.logoSitio{
+display:flex;
+align-items:center;
+gap:12px;
+}
+.logoIcono{
+width:50px;
+height:50px;
+border-radius:50%;
+background:linear-gradient(135deg, var(--colorPrincipal), var(--colorSecundario));
+display:flex;
+align-items:center;
+justify-content:center;
+color:var(--colorBlanco);
+font-size:20px;
+font-weight:700;
+}
+.logoTexto{
+display:flex;
+flex-direction:column;
+}
+.logoNombre{
+font-size:22px;
+font-weight:700;
+color:var(--colorPrincipal);
+line-height:1.2;
+}
+.logoDescripcion{
+font-size:12px;
+color:var(--colorGris);
+}
+.botonMenu{
+background:none;
+border:none;
+font-size:28px;
+color:var(--colorSecundario);
+display:none;
+}
+@media(max-width:768px){
+.botonMenu{
+display:block;
+}
+}
+</style>
+
+<section id="modulo3">
+<header id="headerPrincipal">
+<div class="headerContenedor">
+<div class="logoSitio">
+<div class="logoIcono">
+🇵🇪
+</div>
+<div class="logoTexto">
+<div class="logoNombre">
+Trámites Perú
+</div>
+<div class="logoDescripcion">
+Guías y Servicios Oficiales
+</div>
+</div>
+</div>
+<button class="botonMenu" id="botonMenuMovil">
+☰
+</button>
+</div>
+</header>
+</section>
+
+<script id="modulo3-js">
+const HEADER = {
+menuAbierto: false,
+altura: document.getElementById('headerPrincipal').offsetHeight
+};
+console.log("✅ Módulo 3 cargado correctamente");
+</script>
