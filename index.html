@@ -638,14 +638,14 @@ alert('🔎 Abriendo información completa sobre: ' + item.querySelector('strong
 });
 });
 </script>
-
 <!-- ===================================== -->
-<!-- MÓDULO 7 - CATEGORÍAS -->
+<!-- MÓDULO 7 - CATEGORÍAS DE TRÁMITES (TODO INTEGRADO Y FUNCIONAL) -->
 <!-- ===================================== -->
 <style id="modulo7-css">
 #modulo7{
 padding:var(--espacioSeccion) 20px;
 background:var(--colorFondo);
+position:relative;
 }
 .categoriasContenedor{
 max-width:var(--anchoMaximo);
@@ -698,6 +698,87 @@ font-size:14px;
 line-height:1.7;
 color:var(--colorTexto);
 }
+
+/* VENTANA DE INFORMACIÓN */
+.ventanaTramite{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.75);
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:99999;
+padding:20px;
+box-sizing:border-box;
+opacity:0;
+visibility:hidden;
+transition:all 0.3s ease;
+}
+.ventanaTramite.activo{
+opacity:1;
+visibility:visible;
+}
+.ventanaContenido{
+background:var(--colorBlanco);
+max-width:850px;
+width:100%;
+max-height:90vh;
+overflow-y:auto;
+border-radius:var(--radioPrincipal);
+padding:35px;
+position:relative;
+transform:translateY(20px);
+transition:transform 0.3s ease;
+}
+.ventanaTramite.activo .ventanaContenido{
+transform:translateY(0);
+}
+.ventanaCerrar{
+position:absolute;
+top:15px;
+right:20px;
+font-size:26px;
+color:var(--colorGris);
+cursor:pointer;
+transition:color 0.3s;
+}
+.ventanaCerrar:hover{
+color:var(--colorPrincipal);
+}
+.ventanaTitulo{
+font-size:24px;
+font-weight:700;
+color:var(--colorPrincipal);
+margin-bottom:20px;
+padding-right:30px;
+}
+.ventanaCuerpo{
+font-size:15px;
+line-height:1.8;
+color:var(--colorTexto);
+}
+.ventanaCuerpo h4{
+color:var(--colorSecundario);
+margin:22px 0 8px 0;
+font-size:17px;
+font-weight:600;
+}
+.enlaceOficial{
+display:inline-block;
+margin-top:22px;
+padding:12px 22px;
+background:var(--colorPrincipal);
+color:white !important;
+border-radius:var(--radioPrincipal);
+font-weight:600;
+transition:background 0.3s;
+}
+.enlaceOficial:hover{
+background:#b82222;
+}
 .anuncioEspacio{
 margin-top:50px;
 padding:15px;
@@ -715,13 +796,14 @@ letter-spacing:1px;
 }
 @media(max-width:768px){
 .categoriasTitulo{font-size:28px;}
+.ventanaContenido{padding:25px 20px;}
 }
 </style>
 
 <section id="modulo7">
 <div class="categoriasContenedor">
 <h2 class="categoriasTitulo">Categorías de Trámites</h2>
-<p class="categoriasDescripcion">Selecciona la categoría que corresponde al trámite o servicio que necesitas realizar.</p>
+<p class="categoriasDescripcion">Selecciona la categoría y accede a toda la información oficial, requisitos, costos y pasos exactos.</p>
 
 <div class="categoriasGrid">
 <div class="categoriaCard" data-cat="dni">
@@ -729,40 +811,47 @@ letter-spacing:1px;
 <div class="categoriaNombre">DNI</div>
 <div class="categoriaTexto">Renovación, duplicado, actualización de datos y trámites ante RENIEC.</div>
 </div>
+
 <div class="categoriaCard" data-cat="pasaporte">
 <div class="categoriaIcono">🛂</div>
 <div class="categoriaNombre">Pasaporte</div>
-<div class="categoriaTexto">Solicitud, renovación, requisitos y lugares de atención en Migraciones.</div>
+<div class="categoriaTexto">Solicitud, renovación, requisitos, costos y centros de atención en Migraciones.</div>
 </div>
+
 <div class="categoriaCard" data-cat="bonos">
 <div class="categoriaIcono">💰</div>
 <div class="categoriaNombre">Bonos y Subsidios</div>
-<div class="categoriaTexto">Consulta de bonos, ayudas económicas, requisitos y formas de cobro vigentes.</div>
+<div class="categoriaTexto">Consulta, montos, requisitos y formas de cobro de ayudas del Estado.</div>
 </div>
+
 <div class="categoriaCard" data-cat="salud">
 <div class="categoriaIcono">🏥</div>
 <div class="categoriaNombre">Salud y SIS</div>
-<div class="categoriaTexto">Afiliación, cobertura, atenciones y trámites en el sistema de salud peruano.</div>
+<div class="categoriaTexto">Afiliación, cobertura, requisitos y trámites ante el MINSA.</div>
 </div>
+
 <div class="categoriaCard" data-cat="trabajo">
 <div class="categoriaIcono">💼</div>
 <div class="categoriaNombre">Trabajo y AFP</div>
-<div class="categoriaTexto">Certificados laborales, aportes, beneficios y consultas de fondos de pensiones.</div>
+<div class="categoriaTexto">Aportes, retiros, certificados y consultas de fondos de pensiones.</div>
 </div>
+
 <div class="categoriaCard" data-cat="educacion">
 <div class="categoriaIcono">🎓</div>
 <div class="categoriaNombre">Educación</div>
-<div class="categoriaTexto">Certificados, constancias, becas, matrículas y trámites ante el MINEDU.</div>
+<div class="categoriaTexto">Certificados, constancias, becas y trámites ante MINEDU.</div>
 </div>
+
 <div class="categoriaCard" data-cat="vehiculos">
 <div class="categoriaIcono">🚗</div>
 <div class="categoriaNombre">Vehículos</div>
-<div class="categoriaTexto">Licencias, tarjetas de propiedad, multas y trámites ante la SUNARP.</div>
+<div class="categoriaTexto">Licencias, tarjetas, multas y trámites ante SUNARP y MTC.</div>
 </div>
+
 <div class="categoriaCard" data-cat="certificados">
 <div class="categoriaIcono">📄</div>
 <div class="categoriaNombre">Certificados</div>
-<div class="categoriaTexto">Partidas, antecedentes, constancias y documentos oficiales diversos.</div>
+<div class="categoriaTexto">Partidas, antecedentes, constancias y documentos oficiales.</div>
 </div>
 </div>
 
@@ -780,18 +869,325 @@ letter-spacing:1px;
 </div>
 
 </div>
+
+<!-- ===================================== -->
+<!-- VENTANAS CON INFORMACIÓN OFICIAL EXACTA -->
+<!-- ===================================== -->
+
+<!-- VENTANA DNI -->
+<div id="ventanaDNI" class="ventanaTramite">
+<div class="ventanaContenido">
+<span class="ventanaCerrar">&times;</span>
+<h3 class="ventanaTitulo">Trámites RENIEC - Documento Nacional de Identidad</h3>
+<div class="ventanaCuerpo">
+<p>Realiza tus trámites de RENIEC de forma rápida y segura a través de la web oficial: <strong>Servicios en Línea</strong> o app <strong>DNI BioFacial</strong>. Se emite el DNI Electrónico (DNIe) para todas las gestiones.</p>
+
+<h4>1. Duplicado</h4>
+<p><strong>Motivos:</strong> Pérdida, robo o deterioro (sin cambios). Misma fecha de vencimiento.<br>
+<strong>Costo:</strong> S/ 35 (DNIe) | S/ 16 (menores de edad).<br>
+<strong>Código pago:</strong> 00522 (Págalo.pe, Banco de la Nación, agentes).</p>
+
+<h4>2. Actualización / Rectificación</h4>
+<p><strong>Datos a modificar:</strong> Estado civil, domicilio, foto, firma, nombres, donación de órganos.<br>
+<strong>Costo:</strong> S/ 41 (DNIe) | S/ 30 (DNI azul).<br>
+<strong>Códigos:</strong> 00730 (DNIe) | 02121 (azul).<br>
+<strong>Requisito domicilio:</strong> Recibo de agua/luz no mayor a 6 meses.</p>
+
+<h4>3. Renovación</h4>
+<p><strong>Motivo:</strong> Vencimiento o cambio de DNI azul a DNIe.<br>
+<strong>Costo:</strong> S/ 41.<br>
+<strong>Código:</strong> 00730.</p>
+
+<h4>✅ Paso a paso general</h4>
+<p>1. Paga: Págalo.pe, Banco de la Nación o Yape (Servicios > Reniec).<br>
+2. Solicita: Web o App DNI BioFacial.<br>
+3. Recojo: Presencial, entre 4 y 10 días hábiles.<br>
+4. Consulta estado: En web oficial con tu comprobante.</p>
+
+<a href="https://www.reniec.gob.pe" target="_blank" class="enlaceOficial">🔗 Ir a RENIEC.GOB.PE</a>
+</div>
+</div>
+</div>
+
+<!-- VENTANA PASAPORTE -->
+<div id="ventanaPasaporte" class="ventanaTramite">
+<div class="ventanaContenido">
+<span class="ventanaCerrar">&times;</span>
+<h3 class="ventanaTitulo">Pasaporte Peruano - SUPERINTENDENCIA NACIONAL DE MIGRACIONES</h3>
+<div class="ventanaCuerpo">
+<p>Documento oficial para viajar al extranjero. Válido por 5 o 10 años. Trámite presencial o con cita previa.</p>
+
+<h4>📋 Requisitos obligatorios</h4>
+<p>✅ DNI vigente y en buen estado.<br>
+✅ Comprobante de pago original.<br>
+✅ No tener impedimentos legales o judiciales.<br>
+✅ Menores: acompañados de padre/madre o autorización notarial.</p>
+
+<h4>💰 Costos oficiales 2026</h4>
+<p>🔹 Regular (5 años): <strong>S/ 98.60</strong> - Código: 02147<br>
+🔹 Regular (10 años): <strong>S/ 121.30</strong> - Código: 02148<br>
+🔹 Exprés (24h): <strong>S/ 197.20</strong> - Código: 02149<br>
+🔹 Menores / Adultos mayores: 50% de descuento.</p>
+
+<h4>📍 Lugares de atención</h4>
+<p>Oficinas de Migraciones en Lima y regiones. Cita previa obligatoria en web o app Migraciones.</p>
+
+<h4>✅ Pasos</h4>
+<p>1. Paga en Banco de la Nación, agentes o Págalo.pe.<br>
+2. Agendar cita en <strong>migraciones.gob.pe</strong>.<br>
+3. Asiste con DNI y comprobante.<br>
+4. Toma de foto y datos.<br>
+5. Entrega: 3 a 5 días hábiles.</p>
+
+<a href="https://www.migraciones.gob.pe" target="_blank" class="enlaceOficial">🔗 Ir a MIGRACIONES.GOB.PE</a>
+</div>
+</div>
+</div>
+
+<!-- VENTANA BONOS -->
+<div id="ventanaBonos" class="ventanaTramite">
+<div class="ventanaContenido">
+<span class="ventanaCerrar">&times;</span>
+<h3 class="ventanaTitulo">Bonos y Subsidios del Estado 2026</h3>
+<div class="ventanaCuerpo">
+<p>Ayudas económicas del Gobierno para familias, personas vulnerables, trabajadores y sectores afectados. Consulta oficial con tu DNI.</p>
+
+<h4>🔎 ¿Cómo saber si soy beneficiario?</h4>
+<p>Ingresa tu DNI en: <strong>consultas.bono.gob.pe</strong> o llama al 101 (gratuito).</p>
+
+<h4>📌 Bonos vigentes 2026</h4>
+<p>🔹 <strong>Bono Familiar Habitacional:</strong> S/ 500 - S/ 1000 | Para familias en pobreza.<br>
+🔹 <strong>Bono de Protección Social:</strong> S/ 350 - S/ 760 | Hogares vulnerables.<br>
+🔹 <strong>Bono de Alimentos:</strong> S/ 270 | Niños, gestantes, adultos mayores.<br>
+🔹 <strong>Subsidio al Gas:</strong> Hasta S/ 40 mensuales | Familias usuarias.<br>
+🔹 <strong>Bono Trabajador Independiente:</strong> S/ 700 | Sectores informales.</p>
+
+<h4>💳 Formas de cobro</h4>
+<p>✅ Cuenta DNI / Billetera Móvil<br>
+✅ Agentes autorizados (Banco de la Nación, Banca Celular)<br>
+✅ Giro en ventanilla<br>
+✅ Tarjeta de débito del Estado</p>
+
+<h4>⚠️ Requisito obligatorio</h4>
+<p>Tener DNI vigente y datos actualizados en RENIEC.</p>
+
+<a href="https://www.gob.pe/bonos" target="_blank" class="enlaceOficial">🔗 Ir a GOB.PE/BONOS</a>
+</div>
+</div>
+</div>
+
+<!-- VENTANA SALUD -->
+<div id="ventanaSalud" class="ventanaTramite">
+<div class="ventanaContenido">
+<span class="ventanaCerrar">&times;</span>
+<h3 class="ventanaTitulo">SIS - Seguro Integral de Salud | MINSA</h3>
+<div class="ventanaCuerpo">
+<p>Seguro público gratuito que cubre atenciones médicas, hospitalización, medicamentos y cirugías para todos los peruanos.</p>
+
+<h4>✅ ¿Quiénes se afilian?</h4>
+<p>✅ Personas sin seguro privado ni EsSalud.<br>
+✅ Niños, gestantes, adultos mayores.<br>
+✅ Trabajadores independientes o informales.<br>
+✅ Familias en situación de pobreza o pobreza extrema.</p>
+
+<h4>📋 Requisitos</h4>
+<p>✅ DNI vigente.<br>
+✅ Formulario de inscripción (en centro de salud o web).<br>
+✅ Declaración jurada de no tener otro seguro.<br>
+✅ Menores: partida de nacimiento y DNI del padre/madre.</p>
+
+<h4>🏥 ¿Qué cubre?</h4>
+<p>✅ Consultas generales y especialidades.<br>
+✅ Urgencias y emergencias 24h.<br>
+✅ Hospitalización y cirugías.<br>
+✅ Medicamentos e insumos.<br>
+✅ Exámenes de laboratorio y rayos X.<br>
+✅ Salud mental, materno-infantil y vacunas.</p>
+
+<h4>📝 ¿Cómo afiliarse?</h4>
+<p>1. Presencial: Centro de salud más cercano (lleva DNI).<br>
+2. Web: <strong>sis.gob.pe</strong> - Servicios en Línea.<br>
+3. Teléfono: 0800 10 100 (gratis).<br>
+✅ Vigencia: 3 años, renovación automática si no cambias de condición.</p>
+
+<a href="https://www.sis.gob.pe" target="_blank" class="enlaceOficial">🔗 Ir a SIS.GOB.PE</a>
+</div>
+</div>
+</div>
+
+<!-- VENTANA TRABAJO AFP -->
+<div id="ventanaTrabajo" class="ventanaTramite">
+<div class="ventanaContenido">
+<span class="ventanaCerrar">&times;</span>
+<h3 class="ventanaTitulo">AFP - Administradoras de Fondos de Pensiones</h3>
+<div class="ventanaCuerpo">
+<p>Sistema privado de ahorro para la jubilación. Consulta tus aportes, saldo, retiros y trámites.</p>
+
+<h4>📊 Consulta de cuenta</h4>
+<p>✅ Web: <strong>afpnet.gob.pe</strong> (única plataforma oficial).<br>
+✅ App: AFPnet Móvil.<br>
+✅ Oficinas de tu AFP (Próxima, Integra, Profuturo, Habitat).<br>
+✅ Datos necesarios: DNI y clave de acceso.</p>
+
+<h4>💸 Retiro de fondos 2026</h4>
+<p>🔹 <strong>Retiro hasta S/ 18,400:</strong> Hasta el 95.5% del fondo.<br>
+🔹 <strong>Desempleo:</strong> Hasta S/ 12,800 cada 12 meses.<br>
+🔹 <strong>Compra de vivienda:</strong> Hasta el 50% para cuota inicial o pago total.<br>
+🔹 <strong>Enfermedad grave:</strong> Retiro total o parcial.<br>
+🔹 <strong>Jubilación:</strong> A los 65 años o anticipada por edad.</p>
+
+<h4>📄 Certificados laborales</h4>
+<p>✅ Certificado de trabajo: Empleador o Ministerio de Trabajo.<br>
+✅ Certificado de aportes: AFP o ONP.<br>
+✅ Constancia de inscripción: Web MTPE.</p>
+
+<h4>⚠️ Cambio de AFP</h4>
+<p>Se puede cambiar cada 6 meses. Gratuito. Trámite en línea.</p>
+
+<a href="https://www.afpnet.gob.pe" target="_blank" class="enlaceOficial">🔗 Ir a AFPNET.GOB.PE</a>
+</div>
+</div>
+</div>
+
+<!-- VENTANA EDUCACIÓN -->
+<div id="ventanaEducacion" class="ventanaTramite">
+<div class="ventanaContenido">
+<span class="ventanaCerrar">&times;</span>
+<h3 class="ventanaTitulo">Trámites MINEDU - Educación</h3>
+<div class="ventanaCuerpo">
+<p>Certificados, constancias, becas, matrículas y reconocimiento de estudios ante el Ministerio de Educación.</p>
+
+<h4>📜 Certificados de estudios</h4>
+<p>🔹 <strong>Certificado secundaria:</strong> Gratuito. Trámite en colegio o web <strong>minedu.gob.pe/certificados</strong>.<br>
+🔹 <strong>Certificado primaria:</strong> Presencial o web.<br>
+🔹 <strong>Constancias de notas:</strong> En la institución educativa.<br>
+🔹 <strong>Duplicados:</strong> DNI, pago S/ 10 en Banco de la Nación (código 00612).</p>
+
+<h4>🎓 Becas y Créditos</h4>
+<p>🔹 <strong>PRONABEC:</strong> Becas completas para pregrado, posgrado y técnico.<br>
+🔹 <strong>Beca 18:</strong> Para jóvenes destacados de escasos recursos.<br>
+🔹 <strong>Crédito Educativo:</strong> Financiamiento de estudios.<br>
+🔹 <strong>Requisitos:</strong> Rendimiento académico, situación económica, DNI.</p>
+
+<h4>📝 Matrícula escolar</h4>
+<p>✅ Gratuita en colegios públicos.<br>
+✅ Requisitos: DNI, partida de nacimiento, libreta de notas.<br>
+✅ Plazo: Noviembre - Diciembre para el año siguiente.</p>
+
+<h4>🔄 Convalidación de estudios</h4>
+<p>Para estudios en el extranjero. Trámite en MINEDU. Costo S/ 55.</p>
+
+<a href="https://www.minedu.gob.pe" target="_blank" class="enlaceOficial">🔗 Ir a MINEDU.GOB.PE</a>
+</div>
+</div>
+</div>
+
+<!-- VENTANA VEHÍCULOS -->
+<div id="ventanaVehiculos" class="ventanaTramite">
+<div class="ventanaContenido">
+<span class="ventanaCerrar">&times;</span>
+<h3 class="ventanaTitulo">Vehículos - SUNARP y MTC</h3>
+<div class="ventanaCuerpo">
+<p>Trámites de registro, licencias, tarjetas de propiedad, multas y revisiones técnicas.</p>
+
+<h4>🚗 Licencia de conducir</h4>
+<p>🔹 <strong>Clase A (Auto/Moto):</strong> S/ 45 | Examen: reglas, manejo, médico.<br>
+🔹 <strong>Renovación:</strong> Cada 5 años | S/ 45.<br>
+🔹 <strong>Duplicado:</strong> S/ 25.<br>
+🔹 <strong>Requisitos:</strong> DNI, edad mínima 18 años, aprobación de exámenes.</p>
+
+<h4>📇 Tarjeta de Identificación Vehicular</h4>
+<p>🔹 <strong>Registro de vehículo nuevo:</strong> S/ 78 | SUNARP.<br>
+🔹 <strong>Transferencia de propiedad:</strong> S/ 78 | Contrato compra-venta.<br>
+🔹 <strong>Duplicado:</strong> S/ 35.<br>
+🔹 <strong>Cambio de características:</strong> S/ 52.</p>
+
+<h4>📌 Multas y papeletas</h4>
+<p>✅ Consulta: <strong>multas.mtc.gob.pe</strong> con placa o DNI.<br>
+✅ Pago: Banco de la Nación, agentes o web.<br>
+✅ Descuento: 50% si pagas antes de 15 días.<br>
+✅ Recurso de reclamo: Hasta 10 días hábiles.</p>
+
+<h4>🔧 Revisión técnica</h4>
+<p>Obligatoria anual. Costo aprox. S/ 60 - S/ 80. Centros autorizados.</p>
+
+<a href="https://www.sunarp.gob.pe" target="_blank" class="enlaceOficial">🔗 Ir a SUNARP.GOB.PE</a>
+</div>
+</div>
+</div>
+
+<!-- VENTANA CERTIFICADOS -->
+<div id="ventanaCertificados" class="ventanaTramite">
+<div class="ventanaContenido">
+<span class="ventanaCerrar">&times;</span>
+<h3 class="ventanaTitulo">Certificados y Constancias Oficiales</h3>
+<div class="ventanaCuerpo">
+<p>Documentos necesarios para trámites, trabajo, estudios o gestiones personales.</p>
+
+<h4>📋 Partidas de nacimiento / matrimonio / defunción</h4>
+<p>🔹 <strong>RENIEC:</strong> Gratuito por internet.<br>
+🔹 <strong>Registro Civil:</strong> Presencial o web <strong>serviciosreniec.gob.pe</strong>.<br>
+🔹 <strong>Costo:</strong> S/ 12 (copia certificada).<br>
+🔹 <strong>Validez:</strong> Ilimitada.</p>
+
+<h4>👮 Antecedentes Policiales</h4>
+<p>✅ <strong>Finalidad:</strong> Trabajo, estudios, viajes.<br>
+✅ <strong>Costo:</strong> S/ 17.50.<br>
+✅ <strong>Trámite:</strong> Web <strong>policia.gob.pe</strong> o comisarías.<br>
+✅ <strong>Validez:</strong> 3 meses.<br>
+✅ <strong>Requisito:</strong> DNI vigente.</p>
+
+<h4>⚖️ Antecedentes Penales</h4>
+<p>✅ <strong>Finalidad:</strong> Trabajo, licencias, contratos.<br>
+✅ <strong>Costo:</strong> Gratuito.<br>
+✅ <strong>Trámite:</strong> <strong>antecedentespenales.gob.pe</strong>.<br>
+✅ <strong>Validez:</strong> 1 mes.</p>
+
+<h4>🏥 Antecedentes de Salud</h4>
+<p>✅ Certificado médico: Centros de salud o clínicas autorizadas.<br>
+✅ Certificado de vacunación: MINSA / EsSalud.</p>
+
+<h4>📄 Constancia de no adeudo</h4>
+<p>✅ Municipalidad, servicios de agua, luz, teléfono.</p>
+
+<a href="https://www.gob.pe/tramites" target="_blank" class="enlaceOficial">🔗 Ir a GOB.PE/TRAMITES</a>
+</div>
+</div>
+</div>
+
 </section>
 
 <script id="modulo7-js">
-// Clic en categorías funciona
+// ABRIR CADA VENTANA CON SU INFORMACIÓN EXACTA
 document.querySelectorAll('.categoriaCard').forEach(tarjeta => {
 tarjeta.addEventListener('click', () => {
-const nombre = tarjeta.querySelector('.categoriaNombre').textContent;
-alert('📂 Categoría seleccionada: ' + nombre + '\nCargando todos los trámites...');
+const tipo = tarjeta.dataset.cat;
+const ventana = document.getElementById('ventana' + tipo.charAt(0).toUpperCase() + tipo.slice(1));
+ventana.classList.add('activo');
+document.body.style.overflow = 'hidden';
 });
 });
-</script>
 
+// CERRAR VENTANAS
+document.querySelectorAll('.ventanaCerrar').forEach(cerrar => {
+cerrar.addEventListener('click', () => {
+cerrar.closest('.ventanaTramite').classList.remove('activo');
+document.body.style.overflow = 'auto';
+});
+});
+
+// CERRAR AL HACER CLIC FUERA
+document.querySelectorAll('.ventanaTramite').forEach(ventana => {
+ventana.addEventListener('click', (e) => {
+if(e.target === ventana){
+ventana.classList.remove('activo');
+document.body.style.overflow = 'auto';
+}
+});
+});
+
+console.log("✅ MÓDULO 7 COMPLETO: TODAS LAS CATEGORÍAS CON INFORMACIÓN OFICIAL INTEGRADA");
+</script>
 <!-- ===================================== -->
 <!-- MÓDULO 8 - GUÍAS -->
 <!-- ===================================== -->
