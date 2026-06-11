@@ -2068,166 +2068,461 @@ document.body.style.overflow = 'auto';
 });
 });
 </script>
+
 <!-- ===================================== -->
-<!-- MÓDULO 9 - FAQ (ACORDEÓN FUNCIONAL) -->
+<!-- MÓDULO 9 - PREGUNTAS FRECUENTES (COMPLETO Y ACTUALIZADO) -->
 <!-- ===================================== -->
 <style id="modulo9-css">
 #modulo9{
 padding:var(--espacioSeccion) 20px;
-background:var(--colorFondo);
+background:var(--colorBlanco);
 }
-.faqContenedor{
-max-width:800px;
+.preguntasContenedor{
+max-width:var(--anchoMaximo);
 margin:0 auto;
 }
-.faqTitulo{
+.preguntasTitulo{
 font-size:36px;
 font-weight:700;
 text-align:center;
 color:var(--colorSecundario);
 margin-bottom:15px;
 }
-.faqDescripcion{
+.preguntasDescripcion{
 text-align:center;
 font-size:16px;
 line-height:1.8;
 color:var(--colorTexto);
 margin-bottom:40px;
+max-width:700px;
+margin-left:auto;
+margin-right:auto;
 }
-.faqLista{
-display:flex;
-flex-direction:column;
-gap:15px;
+.acordeonContenedor{
+max-width:800px;
+margin:0 auto;
 }
-.faqItem{
-background:var(--colorBlanco);
+.acordeonItem{
+background:var(--colorFondo);
 border-radius:var(--radioPrincipal);
-box-shadow:var(--sombraLigera);
+margin-bottom:15px;
 overflow:hidden;
+box-shadow:var(--sombraLigera);
 }
-.faqPregunta{
+.acordeonPregunta{
 width:100%;
-padding:20px 25px;
-background:var(--colorBlanco);
+background:transparent;
 border:none;
-text-align:left;
+padding:20px 25px;
 font-size:17px;
 font-weight:600;
 color:var(--colorSecundario);
-display:flex;
-align-items:center;
-justify-content:space-between;
+text-align:left;
 cursor:pointer;
+display:flex;
+justify-content:space-between;
+align-items:center;
 transition:all 0.3s ease;
 }
-.faqPregunta:hover{
-background:#f9fafb;
+.acordeonPregunta:hover{
+background:rgba(189, 32, 32, 0.05);
 }
-.faqIcono{
-font-size:20px;
+.acordeonIcono{
+font-size:22px;
+font-weight:bold;
 transition:transform 0.3s ease;
+color:var(--colorPrincipal);
 }
-.faqRespuesta{
+.acordeonRespuesta{
 max-height:0;
 overflow:hidden;
-transition:max-height 0.3s ease;
+transition:max-height 0.4s ease;
+background:var(--colorBlanco);
+border-top:1px solid rgba(0,0,0,0.05);
 }
-.faqRespuestaContenido{
-padding:0 25px 20px 25px;
+.acordeonRespuesta.contenidoActivo{
+max-height:1000px;
+}
+.respuestaTexto{
+padding:20px 25px;
 font-size:15px;
 line-height:1.7;
 color:var(--colorTexto);
 }
-.faqItem.activo .faqIcono{
-transform:rotate(180deg);
+.respuestaTexto ul{
+margin:10px 0 0 20px;
+padding:0;
 }
-.faqItem.activo .faqRespuesta{
-max-height:300px;
+.respuestaTexto li{
+margin-bottom:5px;
 }
-.anuncioEspacio{
-margin-top:50px;
-padding:15px;
-background:var(--colorBlanco);
+.categoriaPreguntas{
+background:var(--colorPrincipal);
+color:white;
+padding:10px 20px;
 border-radius:var(--radioPrincipal);
-text-align:center;
-box-shadow:var(--sombraLigera);
-}
-.anuncioTexto{
-font-size:13px;
-color:var(--colorGris);
-margin-bottom:10px;
-text-transform:uppercase;
-letter-spacing:1px;
+font-weight:700;
+font-size:16px;
+margin:30px 0 15px 0;
 }
 @media(max-width:768px){
-.faqTitulo{font-size:28px;}
-.faqPregunta{font-size:16px;}
+.preguntasTitulo{font-size:28px;}
+.acordeonPregunta{font-size:16px; padding:18px 20px;}
+.respuestaTexto{padding:18px 20px;}
 }
 </style>
 
 <section id="modulo9">
-<div class="faqContenedor">
-<h2 class="faqTitulo">Preguntas Frecuentes</h2>
-<p class="faqDescripcion">Respuestas claras y directas a las dudas más comunes sobre trámites, requisitos y servicios en el Perú.</p>
+<div class="preguntasContenedor">
+<h2 class="preguntasTitulo">Preguntas Frecuentes</h2>
+<p class="preguntasDescripcion">Respuestas claras y directas a las dudas más comunes sobre trámites, servicios y beneficios en el Perú. Encuentra aquí la solución rápida a tu consulta.</p>
 
-<div class="faqLista">
-<div class="faqItem">
-<button class="faqPregunta">
-¿Cuánto tiempo tarda en llegar el DNI después de renovarlo?
-<span class="faqIcono">▼</span>
+<div class="acordeonContenedor">
+
+<!-- ===================================== -->
+<!-- CATEGORÍA: DOCUMENTOS (DNI, PASAPORTE) -->
+<!-- ===================================== -->
+<div class="categoriaPreguntas">Documentos de Identidad</div>
+
+<div class="acordeonItem">
+<button class="acordeonPregunta">
+¿Cuánto tiempo tarda en llegar el DNI después del trámite?
+<span class="acordeonIcono">+</span>
 </button>
-<div class="faqRespuesta">
-<div class="faqRespuestaContenido">
-Por lo general, el trámite demora entre 7 y 10 días hábiles. Puedes consultar el estado en la web de RENIEC con tu comprobante de pago.
-</div>
-</div>
-</div>
-<div class="faqItem">
-<button class="faqPregunta">
-¿Puedo cobrar un bono si no tengo DNI vigente?
-<span class="faqIcono">▼</span>
-</button>
-<div class="faqRespuesta">
-<div class="faqRespuestaContenido">
-No, es obligatorio presentar el documento nacional de identidad vigente y en buen estado para acceder a cualquier beneficio o subsidio del Estado.
-</div>
-</div>
-</div>
-<div class="faqItem">
-<button class="faqPregunta">
-¿Cuál es el costo actual del pasaporte peruano?
-<span class="faqIcono">▼</span>
-</button>
-<div class="faqRespuesta">
-<div class="faqRespuestaContenido">
-El precio oficial es de S/ 98.60 para el trámite regular, y S/ 197.20 para el servicio exprés (entrega en 24 horas). Se paga en el Banco de la Nación o agentes autorizados.
-</div>
+<div class="acordeonRespuesta">
+<div class="respuestaTexto">
+El tiempo oficial es de <strong>7 a 10 días hábiles</strong> desde que tomas tus datos en RENIEC. Si solicitas entrega a domicilio, puede demorar hasta 15 días. Si es urgente, te entregan un comprobante provisional que sirve como documento válido mientras llega el definitivo.
 </div>
 </div>
 </div>
 
-<!-- ESPACIO DE ANUNCIO 5 -->
-<div class="anuncioEspacio">
-<p class="anuncioTexto">Espacio publicitario</p>
-<ins class="adsbygoogle"
-     style="display:block;width:100%;max-width:728px;height:90px;margin:0 auto;"
-     data-ad-client="ca-pub-7482899024208713"
-     data-ad-slot="1111111111"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+<div class="acordeonItem">
+<button class="acordeonPregunta">
+¿Puedo viajar con el DNI vencido o con el comprobante de trámite?
+<span class="acordeonIcono">+</span>
+</button>
+<div class="acordeonRespuesta">
+<div class="respuestaTexto">
+✅ <strong>Dentro del Perú:</strong> Sí, puedes viajar en transporte terrestre o aéreo nacional con DNI vencido (hasta 2 años) o con el comprobante de trámite impreso.
+❌ <strong>Al extranjero:</strong> No es válido. Necesitas obligatoriamente el DNI vigente y tu pasaporte actualizado.
+</div>
+</div>
 </div>
 
+<div class="acordeonItem">
+<button class="acordeonPregunta">
+¿Qué hago si perdí mi DNI o me lo robaron?
+<span class="acordeonIcono">+</span>
+</button>
+<div class="acordeonRespuesta">
+<div class="respuestaTexto">
+1. Haz la denuncia policial (opcional pero recomendado).
+2. Paga el derecho de duplicado: <strong>S/ 35.00</strong> en Banco de la Nación o Págalo.pe.
+3. Ve a cualquier agencia RENIEC con tu partida de nacimiento o documento que te identifique.
+4. Toma de datos y te entregan el comprobante provisional al momento.
+</div>
+</div>
+</div>
+
+<div class="acordeonItem">
+<button class="acordeonPregunta">
+¿El pasaporte electrónico es obligatorio ahora? ¿Sirve el antiguo?
+<span class="acordeonIcono">+</span>
+</button>
+<div class="acordeonRespuesta">
+<div class="respuestaTexto">
+Sí, ya no se emiten pasaportes de lectura mecánica (el antiguo de hojas). El <strong>pasaporte electrónico es el único vigente</strong>. Sin embargo, si tienes uno antiguo que aún no ha vencido, sigue siendo válido hasta su fecha de caducidad.
+</div>
+</div>
+</div>
+
+<!-- ===================================== -->
+<!-- CATEGORÍA: SALUD (SIS, ESSALUD) -->
+<!-- ===================================== -->
+<div class="categoriaPreguntas">Salud y Seguros</div>
+
+<div class="acordeonItem">
+<button class="acordeonPregunta">
+¿Quiénes tienen derecho al SIS? ¿Es realmente gratuito?
+<span class="acordeonIcono">+</span>
+</button>
+<div class="acordeonRespuesta">
+<div class="respuestaTexto">
+✅ Tienen derecho todos los peruanos y extranjeros residentes que <strong>NO cuenten con otro seguro</strong> (ni EsSalud, ni seguro privado). Incluye independientes, desempleados, niños, gestantes y adultos mayores.
+✅ <strong>Es 100% gratuito</strong> y se financia con el Estado. No te cobran nada por consultas, medicamentos ni intervenciones en centros de salud públicos.
+</div>
+</div>
+</div>
+
+<div class="acordeonItem">
+<button class="acordeonPregunta">
+¿Qué cubre exactamente el SIS y qué cosas no cubre?
+<span class="acordeonIcono">+</span>
+</button>
+<div class="acordeonRespuesta">
+<div class="respuestaTexto">
+✅ <strong>Cubre:</strong> Consultas generales y especialidades, urgencias 24h, hospitalización, cirugías, medicamentos, análisis, rayos X, vacunas, salud mental, rehabilitación y atención materno-infantil.
+❌ <strong>No cubre:</strong> Cirugías estéticas, tratamientos de embellecimiento, medicamentos de marca no esenciales, atención en clínicas privadas ni servicios de lujo.
+</div>
+</div>
+</div>
+
+<div class="acordeonItem">
+<button class="acordeonPregunta">
+¿Cómo sé si ya estoy afiliado al SIS o cuál es mi número?
+<span class="acordeonIcono">+</span>
+</button>
+<div class="acordeonRespuesta">
+<div class="respuestaTexto">
+Puedes consultarlo de 3 formas:
+1. En la web: <strong>sis.gob.pe</strong> → Consulta de asegurado.
+2. Por teléfono: Llama gratis al <strong>113</strong>.
+3. Presencial: En cualquier centro de salud presentando tu DNI. Ahí te dicen tu número y vigencia.
+</div>
+</div>
+</div>
+
+<div class="acordeonItem">
+<button class="acordeonPregunta">
+¿EsSalud y el SIS son lo mismo? ¿Puedo tener los dos?
+<span class="acordeonIcono">+</span>
+</button>
+<div class="acordeonRespuesta">
+<div class="respuestaTexto">
+❌ <strong>No son lo mismo:</strong> El SIS es para personas sin trabajo formal o recursos; EsSalud es para trabajadores formales y sus familias, se paga con descuentos de planilla.
+❌ <strong>No puedes tener los dos:</strong> Si entras a trabajar y te dan EsSalud, automáticamente tu afiliación al SIS se suspende hasta que dejes de trabajar. Son sistemas excluyentes.
+</div>
+</div>
+</div>
+
+<!-- ===================================== -->
+<!-- CATEGORÍA: TRABAJO Y AFP -->
+<!-- ===================================== -->
+<div class="categoriaPreguntas">Trabajo, Pensiones y AFP</div>
+
+<div class="acordeonItem">
+<button class="acordeonPregunta">
+¿Cuánto dinero puedo sacar de mi AFP y cuándo me lo dan?
+<span class="acordeonIcono">+</span>
+</button>
+<div class="acordeonRespuesta">
+<div class="respuestaTexto">
+Actualmente la normativa permite el retiro de hasta el <strong>95.5% del fondo acumulado</strong>, con un tope máximo de S/ 18,400 en ciertos procesos. También puedes retirar por desempleo (hasta S/ 12,800), para vivienda o por enfermedad grave.
+✅ El depósito se hace en tu cuenta bancaria entre <strong>3 y 7 días hábiles</strong> después de aprobar tu solicitud en AFPnet.
+</div>
+</div>
+</div>
+
+<div class="acordeonItem">
+<button class="acordeonPregunta">
+¿Es mejor estar en AFP o en la ONP? ¿Cuál me conviene más?
+<span class="acordeonIcono">+</span>
+</button>
+<div class="respuestaTexto">
+<div class="respuestaTexto">
+Depende de tu situación:
+- <strong>AFP:</strong> Es cuenta individual, es tu dinero, lo puedes heredar, retirar parcialmente y depende de cuánto ahorres. Es más flexible.
+- <strong>ONP:</strong> Es sistema solidario, la pensión es fija (máximo S/ 1,050), no heredas el dinero, requiere aportar 20 años completos. Es más seguro para una renta fija vitalicia baja.
+No puedes estar en los dos sistemas a la vez.
+</div>
+</div>
+</div>
+
+<div class="acordeonItem">
+<button class="acordeonPregunta">
+¿Si soy trabajador independiente tengo que pagar AFP obligatoriamente?
+<span class="acordeonIcono">+</span>
+</button>
+<div class="acordeonRespuesta">
+<div class="respuestaTexto">
+❌ <strong>No es obligatorio</strong>, es voluntario. Pero si deseas acumular para tu jubilación o acceder a beneficios como retiros o compra de vivienda, puedes aportar la cantidad que quieras cuando quieras.
+✅ Si eres independiente y estás en planilla de algún servicio, sí te descuentan automáticamente.
+</div>
+</div>
+</div>
+
+<div class="acordeonItem">
+<button class="acordeonPregunta">
+¿Cuáles son mis derechos básicos como trabajador en Perú?
+<span class="acordeonIcono">+</span>
+</button>
+<div class="acordeonRespuesta">
+<div class="respuestaTexto">
+Todos los trabajadores tienen derecho a:
+✅ Sueldo mínimo vital (S/ 1,130 en 2026).
+✅ Horario máximo 8 horas diarias o 48 semanales.
+✅ Descanso semanal obligatorio.
+✅ Gratificaciones (julio y diciembre), vacaciones pagadas y CTS.
+✅ Seguro EsSalud y aportes a pensiones.
+✅ Recibo por honorarios o boleta de pago.
+</div>
+</div>
+</div>
+
+<!-- ===================================== -->
+<!-- CATEGORÍA: VEHÍCULOS Y TRANSPORTE -->
+<!-- ===================================== -->
+<div class="categoriaPreguntas">Vehículos y Transporte</div>
+
+<div class="acordeonItem">
+<button class="acordeonPregunta">
+¿Cuánto cuesta renovar la licencia de conducir y qué necesito?
+<span class="acordeonIcono">+</span>
+</button>
+<div class="acordeonRespuesta">
+<div class="respuestaTexto">
+✅ Costo total aprox: <strong>S/ 75.00</strong> (incluye trámite y examen médico).
+✅ Requisitos: DNI vigente, licencia vencida o por vencer, certificado médico aprobado, pago de derechos.
+✅ Si no tienes multas graves o muy graves, <strong>NO rindes examen teórico ni práctico</strong>, solo trámite administrativo.
+</div>
+</div>
+</div>
+
+<div class="acordeonItem">
+<button class="acordeonPregunta">
+¿Es obligatorio tener SOAT y Revisión Técnica todo el año?
+<span class="acordeonIcono">+</span>
+</button>
+<div class="acordeonRespuesta">
+<div class="respuestaTexto">
+✅ <strong>SOAT:</strong> Sí, es obligatorio las 24 horas del año. Sin él no puedes circular, la multa es grave y te inmovilizan el vehículo. Cubre daños personales en accidentes.
+✅ <strong>Revisión Técnica:</strong> Obligatoria para vehículos mayores de 1 año. Validez de 1 año. Verifica que tu auto esté seguro y no contamine. También es obligatoria para circular.
+</div>
+</div>
+</div>
+
+<div class="acordeonItem">
+<button class="acordeonPregunta">
+¿Qué pasa si vendo mi auto y no hago la transferencia en SUNARP?
+<span class="acordeonIcono">+</span>
+</button>
+<div class="acordeonRespuesta">
+<div class="respuestaTexto">
+⚠️ <strong>Es muy peligroso:</strong> Aunque lo hayas vendido, ante la ley tú sigues siendo el dueño. Si el nuevo dueño comete delitos, accidentes, deja multas o deudas, te llegarán a TI.
+✅ La transferencia es gratuita si se hace dentro de los 30 días de la venta. Cuesta S/ 19.00 después de ese plazo. Hazla siempre en SUNARP.
+</div>
+</div>
+</div>
+
+<div class="acordeonItem">
+<button class="acordeonPregunta">
+¿Cuánto de descuento tengo si pago mis multas rápido?
+<span class="acordeonIcono">+</span>
+</button>
+<div class="acordeonRespuesta">
+<div class="respuestaTexto">
+✅ <strong>50% de descuento</strong> si pagas dentro de los primeros <strong>15 días hábiles</strong> después de que te notifican la infracción.
+✅ Si pagas entre el día 16 y 30, pagas el 100% pero evitas intereses.
+✅ Pasado el mes, se suman intereses y costas judiciales, y te afecta para renovar licencia o hacer trámites vehiculares.
+</div>
+</div>
+</div>
+
+<!-- ===================================== -->
+<!-- CATEGORÍA: EDUCACIÓN Y CERTIFICADOS -->
+<!-- ===================================== -->
+<div class="categoriaPreguntas">Educación y Documentos</div>
+
+<div class="acordeonItem">
+<button class="acordeonPregunta">
+¿Los certificados de estudios digitales valen lo mismo que los físicos?
+<span class="acordeonIcono">+</span>
+</button>
+<div class="acordeonRespuesta">
+<div class="respuestaTexto">
+✅ <strong>SÍ, tienen la misma validez oficial.</strong> El certificado digital que descargas de <strong>certificados.minedu.gob.pe</strong> tiene código QR y firma electrónica, es válido para matrículas, trabajos, postulaciones y no necesitas sellos ni firmas manuales. Se aceptan en todo el Perú.
+</div>
+</div>
+</div>
+
+<div class="acordeonItem">
+<button class="acordeonPregunta">
+¿Cómo obtengo mi partida de nacimiento si nací hace muchos años?
+<span class="acordeonIcono">+</span>
+</button>
+<div class="acordeonRespuesta">
+<div class="respuestaTexto">
+Ahora es muy fácil y rápido:
+1. Ingresa a <strong>reniec.gob.pe</strong> → Servicios en línea.
+2. Paga S/ 11.00.
+3. Descárgala al momento o pide envío a tu casa.
+También puedes ir a cualquier agencia RENIEC o Centro MAC, te la entregan al instante sin importar cuándo naciste.
+</div>
+</div>
+</div>
+
+<div class="acordeonItem">
+<button class="acordeonPregunta">
+¿Cómo saber si me toca alguna Beca del Estado o Beca 18?
+<span class="acordeonIcono">+</span>
+</button>
+<div class="acordeonRespuesta">
+<div class="respuestaTexto">
+Las convocatorias salen todos los años en la web <strong>pronabec.gob.pe</strong>.
+✅ Requisitos principales: Buenas notas (tercio superior), pertenecer a hogares en pobreza o pobreza extrema, estudiar carreras prioritarias.
+✅ La Beca 18 cubre matrícula, pensión, alimentación, alojamiento, materiales y pasajes totalmente gratis.
+</div>
+</div>
+</div>
+
+<!-- ===================================== -->
+<!-- CATEGORÍA: BONOS Y AYUDAS SOCIALES -->
+<!-- ===================================== -->
+<div class="categoriaPreguntas">Bonos y Subsidios</div>
+
+<div class="acordeonItem">
+<button class="acordeonPregunta">
+¿Por qué me sale "No eres beneficiario" si creo que debería tener el bono?
+<span class="acordeonIcono">+</span>
+</button>
+<div class="acordeonRespuesta">
+<div class="respuestaTexto">
+Las razones más comunes son:
+❌ Tus datos en RENIEC no están actualizados o hay errores en el nombre o fecha.
+❌ Ya recibiste el pago en otra cuenta o familiar.
+❌ Tu hogar está clasificado en nivel socioeconómico que no califica.
+❌ Ya cobraste otro bono similar y no se permite duplicidad.
+Consulta en la plataforma oficial y verifica que tu DNI esté correcto.
+</div>
+</div>
+</div>
+
+<div class="acordeonItem">
+<button class="acordeonPregunta">
+¿Si no cobro el bono en la fecha indicada, pierdo el dinero?
+<span class="acordeonIcono">+</span>
+</button>
+<div class="acordeonRespuesta">
+✅ <strong>No lo pierdes.</strong> Aunque pasen las fechas del calendario, el dinero sigue reservado a tu nombre. Puedes cobrarlo hasta que se publique el cierre definitivo del programa, que suele ser meses después. Solo no lo dejes pasar mucho tiempo.
+</div>
+</div>
+</div>
+
+<!-- 👉 PUEDES SEGUIR AGREGANDO MÁS PREGUNTAS Y RESPUESTAS AQUÍ 👈 -->
+
+</div>
+</div>
 </div>
 </section>
 
 <script id="modulo9-js">
-// ACORDEÓN FUNCIONANDO
-document.querySelectorAll('.faqPregunta').forEach(boton => {
+// LÓGICA PARA ABRIR Y CERRAR PREGUNTAS
+document.querySelectorAll('.acordeonPregunta').forEach(boton => {
 boton.addEventListener('click', () => {
-const item = boton.parentElement;
-item.classList.toggle('activo');
+const respuesta = boton.nextElementSibling;
+const icono = boton.querySelector('.acordeonIcono');
+
+// Cerrar otras preguntas (opcional: quita este bloque si quieres que se queden abiertas todas)
+document.querySelectorAll('.acordeonRespuesta').forEach(otraRespuesta => {
+if(otraRespuesta !== respuesta){
+otraRespuesta.classList.remove('contenidoActivo');
+otraRespuesta.previousElementSibling.querySelector('.acordeonIcono').textContent = '+';
+}
+});
+
+// Abrir o cerrar la pregunta actual
+respuesta.classList.toggle('contenidoActivo');
+icono.textContent = respuesta.classList.contains('contenidoActivo') ? '−' : '+';
 });
 });
 </script>
