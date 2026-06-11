@@ -6,20 +6,20 @@
 <title>Trámites Perú | Guías y Servicios Oficiales</title>
 
 <!-- ===================================== -->
-<!-- ADSENSE - CÓDIGO BASE LISTO -->
+<!-- ADSENSE - TU CÓDIGO (UNA SOLA VEZ) -->
 <!-- ===================================== -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000"
-crossorigin="anonymous"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7482899024208713"
+     crossorigin="anonymous"></script>
 
 <!-- ===================================== -->
-<!-- FUENTES - CARGA DIRECTA -->
+<!-- FUENTES -->
 <!-- ===================================== -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- ===================================== -->
-<!-- CSS GLOBAL - REGLAS GENERALES -->
+<!-- CSS GLOBAL -->
 <!-- ===================================== -->
 <style id="global-css">
 html,
@@ -61,7 +61,7 @@ list-style:none;
 <body>
 
 <!-- ===================================== -->
-<!-- MÓDULO 1 - VARIABLES GLOBALES Y CONFIGURACIÓN -->
+<!-- MÓDULO 1 - VARIABLES GLOBALES -->
 <!-- ===================================== -->
 <style id="modulo1-css">
 :root{
@@ -71,12 +71,8 @@ list-style:none;
 --colorTexto:#111827;
 --colorGris:#6B7280;
 --colorBlanco:#FFFFFF;
---colorExito:#10B981;
---colorAlerta:#F59E0B;
 --radioPrincipal:16px;
---radioPequeño:8px;
 --sombraPrincipal:0 4px 12px rgba(0,0,0,.12);
---sombraLigera:0 2px 8px rgba(0,0,0,.08);
 --anchoMaximo:1200px;
 --espacioSeccion:80px;
 }
@@ -88,28 +84,25 @@ list-style:none;
 <script id="modulo1-js">
 const APP = {
     nombre: "Trámites Perú",
-    version: "2.1.0",
-    estado: "activo"
+    version: "2.1.0"
 };
 
 const CONFIG = {
     idioma: "es",
     pais: "PE",
-    moneda: "PEN",
-    zonaHoraria: "America/Lima",
-    fechaActual: "10 de junio de 2026"
+    zonaHoraria: "America/Lima"
 };
 
 const SEO = {
     titulo: "Trámites Perú - Guías completas y requisitos oficiales",
-    descripcion: "Encuentra todos los trámites en Perú: DNI, pasaporte, bonos, salud, educación, trabajo y más. Requisitos, pasos y lugares actualizados.",
-    palabrasClave: "trámites perú, DNI, renovación, bonos, consultas, requisitos, pasos"
+    descripcion: "Encuentra todos los trámites en Perú: DNI, pasaporte, bonos, salud, educación, trabajo y más. Requisitos, pasos y lugares actualizados."
 };
 
-console.log("✅ Módulo 1 cargado correctamente");
+console.log("✅ Módulo 1 cargado");
 </script>
+
 <!-- ===================================== -->
-<!-- MÓDULO 2 - CONFIGURACIÓN DEL SITIO Y DATOS GENERALES -->
+<!-- MÓDULO 2 - CONFIGURACIÓN DEL SITIO -->
 <!-- ===================================== -->
 <style id="modulo2-css">
 #modulo2{
@@ -123,47 +116,31 @@ display:none;
 <script id="modulo2-js">
 const SITIO = {
     nombre: "Trámites Perú",
-    eslogan: "Guías claras y actualizadas para todos tus procedimientos",
-    descripcion: "Portal informativo con todos los trámites, requisitos, pasos y entidades oficiales del Perú, diseñado para ayudarte a realizar tus gestiones de forma rápida y sencilla.",
-    añoCreacion: "2026",
-    idioma: "español",
-    pais: "Perú",
-    moneda: "Sol Peruano (PEN)",
-    zonaHoraria: "GMT-5",
-    contacto: "contacto@tramitesperu.pe",
-    derechos: "Todos los derechos reservados"
+    eslogan: "Guías claras y actualizadas",
+    descripcion: "Portal informativo con todos los trámites, requisitos y entidades oficiales del Perú."
 };
 
 const CATEGORIAS = [
-    { id: "dni", nombre: "DNI", icono: "🪪", descripcion: "Renovación, duplicado, actualización y trámites relacionados con tu documento de identidad" },
-    { id: "pasaporte", nombre: "Pasaporte", icono: "🛂", descripcion: "Solicitud, renovación, requisitos y lugares de atención para documento de viaje" },
-    { id: "bonos", nombre: "Bonos y Subsidios", icono: "💰", descripcion: "Consulta, requisitos y formas de cobro de ayudas económicas del Estado" },
-    { id: "salud", nombre: "Salud y SIS", icono: "🏥", descripcion: "Afiliación, cobertura, atenciones y trámites en el sistema de salud peruano" },
-    { id: "trabajo", nombre: "Trabajo y AFP", icono: "💼", descripcion: "Certificados, aportes, beneficios, seguro y trámites laborales" },
-    { id: "educacion", nombre: "Educación", icono: "🎓", descripcion: "Matrículas, certificados, becas, grados y trámites ante el Ministerio de Educación" },
-    { id: "vehicular", nombre: "Vehículos", icono: "🚗", descripcion: "Licencias, tarjetas de propiedad, multas y trámites ante la SUNARP" },
-    { id: "certificados", nombre: "Certificados y Constancias", icono: "📄", descripcion: "Partidas, nacimiento, matrimonio, defunción y documentos oficiales" }
+    { id: "dni", nombre: "DNI", icono: "🪪" },
+    { id: "pasaporte", nombre: "Pasaporte", icono: "🛂" },
+    { id: "bonos", nombre: "Bonos", icono: "💰" },
+    { id: "salud", nombre: "Salud", icono: "🏥" },
+    { id: "trabajo", nombre: "Trabajo", icono: "💼" },
+    { id: "educacion", nombre: "Educación", icono: "🎓" }
 ];
 
 const MENU_PRINCIPAL = [
     { id: "inicio", nombre: "Inicio", enlace: "#modulo3" },
     { id: "categorias", nombre: "Categorías", enlace: "#modulo5" },
-    { id: "guias", nombre: "Guías Paso a Paso", enlace: "#modulo6" },
-    { id: "consultas", nombre: "Consultas", enlace: "#modulo7" },
-    { id: "faq", nombre: "Preguntas Frecuentes", enlace: "#modulo8" }
+    { id: "guias", nombre: "Guías", enlace: "#modulo6" },
+    { id: "faq", nombre: "FAQ", enlace: "#modulo7" }
 ];
 
-const DATOS_ENTIDADES = [
-    { nombre: "RENIEC", sitio: "reniec.gob.pe", telefono: "0800 11 666" },
-    { nombre: "MIGRACIONES", sitio: "migraciones.gob.pe", telefono: "0800 12 040" },
-    { nombre: "MINSA", sitio: "minsa.gob.pe", telefono: "0800 10 828" },
-    { nombre: "SUNARP", sitio: "sunarp.gob.pe", telefono: "0800 22 221" }
-];
-
-console.log("✅ Módulo 2 cargado correctamente");
+console.log("✅ Módulo 2 cargado");
 </script>
+
 <!-- ===================================== -->
-<!-- MÓDULO 3 - HEADER Y CABECERA PRINCIPAL -->
+<!-- MÓDULO 3 - HEADER -->
 <!-- ===================================== -->
 <style id="modulo3-css">
 #headerPrincipal{
@@ -232,29 +209,407 @@ display:block;
 <header id="headerPrincipal">
 <div class="headerContenedor">
 <div class="logoSitio">
-<div class="logoIcono">
-🇵🇪
-</div>
+<div class="logoIcono">🇵🇪</div>
 <div class="logoTexto">
-<div class="logoNombre">
-Trámites Perú
-</div>
-<div class="logoDescripcion">
-Guías y Servicios Oficiales
+<div class="logoNombre">Trámites Perú</div>
+<div class="logoDescripcion">Guías y Servicios</div>
 </div>
 </div>
-</div>
-<button class="botonMenu" id="botonMenuMovil">
-☰
-</button>
+<button class="botonMenu" id="botonMenuMovil">☰</button>
 </div>
 </header>
 </section>
 
 <script id="modulo3-js">
 const HEADER = {
-menuAbierto: false,
-altura: document.getElementById('headerPrincipal').offsetHeight
+menuAbierto: false
 };
-console.log("✅ Módulo 3 cargado correctamente");
+console.log("✅ Módulo 3 cargado");
+</script>
+
+<!-- ===================================== -->
+<!-- MÓDULO 4 - MENÚ PRINCIPAL -->
+<!-- ===================================== -->
+<style id="modulo4-css">
+#menuPrincipal{
+width:100%;
+background:var(--colorSecundario);
+}
+.menuContenedor{
+max-width:var(--anchoMaximo);
+margin:0 auto;
+padding:0 20px;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:35px;
+}
+.menuLink{
+display:block;
+padding:14px 5px;
+color:var(--colorBlanco);
+font-size:15px;
+font-weight:500;
+transition:all 0.3s ease;
+border-bottom:3px solid transparent;
+}
+.menuLink:hover,
+.menuLink.activo{
+border-bottom:3px solid var(--colorPrincipal);
+opacity:0.9;
+}
+@media(max-width:768px){
+.menuContenedor{
+display:none;
+flex-direction:column;
+align-items:flex-start;
+padding:15px 20px;
+gap:10px;
+}
+.menuContenedor.activo{
+display:flex;
+}
+.menuLink{
+width:100%;
+padding:12px 0;
+border-bottom:none;
+border-left:3px solid transparent;
+}
+.menuLink:hover,
+.menuLink.activo{
+border-left:3px solid var(--colorPrincipal);
+border-bottom:none;
+padding-left:8px;
+background:rgba(255,255,255,0.05);
+}
+}
+</style>
+
+<section id="modulo4">
+<nav id="menuPrincipal">
+<div class="menuContenedor" id="menuContenedor">
+<a href="#modulo3" class="menuLink activo">Inicio</a>
+<a href="#modulo5" class="menuLink">Categorías</a>
+<a href="#modulo6" class="menuLink">Guías Paso a Paso</a>
+<a href="#modulo7" class="menuLink">Preguntas Frecuentes</a>
+</div>
+</nav>
+</section>
+
+<script id="modulo4-js">
+const botonMenuMovil = document.getElementById('botonMenuMovil');
+const menuContenedor = document.getElementById('menuContenedor');
+const enlacesMenu = document.querySelectorAll('.menuLink');
+
+botonMenuMovil.addEventListener('click', () => {
+menuContenedor.classList.toggle('activo');
+});
+
+enlacesMenu.forEach(enlace => {
+enlace.addEventListener('click', () => {
+if(menuContenedor.classList.contains('activo')) menuContenedor.classList.remove('activo');
+enlacesMenu.forEach(el => el.classList.remove('activo'));
+enlace.classList.add('activo');
+});
+});
+
+console.log("✅ Módulo 4 cargado");
+</script>
+<!-- ===================================== -->
+<!-- MÓDULO 5 - HERO PRINCIPAL / PORTADA -->
+<!-- ===================================== -->
+<style id="modulo5-css">
+#modulo5{
+width:100%;
+padding:var(--espacioSeccion) 20px;
+background:linear-gradient(135deg, var(--colorPrincipal) 0%, var(--colorSecundario) 100%);
+color:var(--colorBlanco);
+position:relative;
+overflow:hidden;
+}
+#modulo5::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+z-index:1;
+}
+.heroContenedor{
+max-width:var(--anchoMaximo);
+margin:0 auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+position:relative;
+z-index:2;
+}
+.heroContenido h1{
+font-size:48px;
+font-weight:700;
+line-height:1.2;
+margin:0 0 20px 0;
+}
+.heroContenido p{
+font-size:18px;
+line-height:1.7;
+margin:0 0 30px 0;
+opacity:0.95;
+}
+.heroBoton{
+display:inline-block;
+padding:16px 32px;
+background:var(--colorBlanco);
+color:var(--colorPrincipal);
+border-radius:var(--radioPrincipal);
+font-size:16px;
+font-weight:600;
+box-shadow:var(--sombraPrincipal);
+transition:all 0.3s ease;
+}
+.heroBoton:hover{
+transform:translateY(-3px);
+box-shadow:0 6px 16px rgba(0,0,0,0.15);
+}
+.heroImagen{
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:180px;
+filter:drop-shadow(0 4px 12px rgba(0,0,0,0.15));
+}
+/* Espacio de anuncio integrado */
+.heroAnuncio{
+margin-top:40px;
+padding:15px;
+background:rgba(255,255,255,0.1);
+border-radius:var(--radioPrincipal);
+text-align:center;
+}
+.anuncioTexto{
+font-size:13px;
+color:var(--colorBlanco);
+opacity:0.7;
+margin-bottom:10px;
+text-transform:uppercase;
+letter-spacing:1px;
+}
+@media(max-width:768px){
+.heroContenedor{
+grid-template-columns:1fr;
+text-align:center;
+gap:30px;
+}
+.heroContenido h1{
+font-size:32px;
+}
+.heroImagen{
+font-size:120px;
+}
+}
+</style>
+
+<section id="modulo5">
+<div class="heroContenedor">
+<div class="heroContenido">
+<h1>Todos tus Trámites en Perú, explicados paso a paso</h1>
+<p>Encuentra requisitos, costos, lugares y tiempos para renovar tu DNI, solicitar bonos, tramitar pasaporte y mucho más. Información oficial y actualizada al 2026.</p>
+<a href="#modulo6" class="heroBoton">Ver Trámites Disponibles</a>
+
+<!-- ESPACIO DE ANUNCIO 1 - TU CÓDIGO -->
+<div class="heroAnuncio">
+<p class="anuncioTexto">Espacio publicitario</p>
+<ins class="adsbygoogle"
+style="display:block;width:100%;max-width:728px;height:90px;margin:0 auto;"
+data-ad-client="ca-pub-7482899024208713"
+data-ad-slot="5555555555"
+data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+
+<div class="heroImagen">
+📋
+</div>
+</div>
+</section>
+
+<script id="modulo5-js">
+console.log("✅ Módulo 5 cargado correctamente");
+</script>
+<!-- ===================================== -->
+<!-- MÓDULO 6 - BUSCADOR DE TRÁMITES -->
+<!-- ===================================== -->
+<style id="modulo6-css">
+#modulo6{
+padding:var(--espacioSeccion) 20px;
+background:var(--colorBlanco);
+}
+.buscadorContenedor{
+max-width:900px;
+margin:0 auto;
+text-align:center;
+}
+.buscadorTitulo{
+font-size:36px;
+font-weight:700;
+color:var(--colorSecundario);
+margin-bottom:15px;
+}
+.buscadorDescripcion{
+font-size:16px;
+color:var(--colorTexto);
+margin-bottom:30px;
+line-height:1.8;
+}
+.buscadorFormulario{
+display:flex;
+gap:15px;
+justify-content:center;
+flex-wrap:wrap;
+}
+.buscadorInput{
+flex:1;
+min-width:280px;
+max-width:600px;
+padding:16px;
+border:2px solid #E5E7EB;
+border-radius:var(--radioPrincipal);
+font-size:16px;
+outline:none;
+transition:.3s;
+}
+.buscadorInput:focus{
+border-color:var(--colorPrincipal);
+box-shadow:0 0 0 3px rgba(214, 40, 40, 0.1);
+}
+.buscadorBoton{
+padding:16px 25px;
+border:none;
+background:var(--colorPrincipal);
+color:var(--colorBlanco);
+font-size:16px;
+font-weight:600;
+border-radius:var(--radioPrincipal);
+transition:.3s;
+}
+.buscadorBoton:hover{
+background:#b82222;
+transform:translateY(-2px);
+}
+.resultadosBusqueda{
+margin-top:30px;
+text-align:left;
+}
+.resultadoItem{
+padding:15px 20px;
+margin-bottom:10px;
+background:var(--colorFondo);
+border-radius:var(--radioPrincipal);
+display:none;
+transition:.3s;
+border-left:4px solid var(--colorPrincipal);
+}
+.resultadoItem:hover{
+transform:translateX(5px);
+}
+/* Espacio de anuncio */
+.anuncioEspacio{
+margin-top:40px;
+padding:15px;
+background:var(--colorFondo);
+border-radius:var(--radioPrincipal);
+text-align:center;
+}
+.anuncioTexto{
+font-size:13px;
+color:var(--colorGris);
+margin-bottom:10px;
+text-transform:uppercase;
+letter-spacing:1px;
+}
+@media(max-width:768px){
+.buscadorTitulo{font-size:28px;}
+}
+</style>
+
+<section id="modulo6">
+<div class="buscadorContenedor">
+<h2 class="buscadorTitulo">Buscar Trámite o Servicio</h2>
+<p class="buscadorDescripcion">Escribe el nombre del trámite, documento o beneficio que necesitas consultar. Ejemplo: DNI, Pasaporte, Bono Familiar, SIS, AFP.</p>
+
+<div class="buscadorFormulario">
+<input type="text" id="buscadorInput" class="buscadorInput" placeholder="¿Qué trámite buscas? Ej: Renovar DNI...">
+<button id="buscadorBoton" class="buscadorBoton">🔍 Buscar</button>
+</div>
+
+<div id="resultadosBusqueda" class="resultadosBusqueda">
+<div class="resultadoItem" data-key="dni">
+<strong>🪪 Renovación de DNI:</strong> Requisitos, costo, lugares y pasos para renovar tu documento nacional de identidad.
+</div>
+<div class="resultadoItem" data-key="pasaporte">
+<strong>🛂 Solicitud de Pasaporte:</strong> Cómo sacar o renovar el pasaporte peruano, requisitos y centros de atención.
+</div>
+<div class="resultadoItem" data-key="bono">
+<strong>💰 Consulta de Bonos y Subsidios:</strong> Verifica si eres beneficiario de los bonos del gobierno, montos y formas de cobro.
+</div>
+<div class="resultadoItem" data-key="sis">
+<strong>🏥 Afiliación al SIS:</strong> Cómo inscribirse al Seguro Integral de Salud y cobertura gratuita.
+</div>
+<div class="resultadoItem" data-key="afp">
+<strong>💼 Consulta de AFP:</strong> Cómo ver tus aportes, estado de cuenta y trámites relacionados a tu fondo de pensiones.
+</div>
+<div class="resultadoItem" data-key="certificado">
+<strong>📄 Certificados y Constancias:</strong> Partidas de nacimiento, matrimonio, antecedentes policiales y certificados de estudios.
+</div>
+</div>
+
+<!-- ESPACIO DE ANUNCIO 2 - TU CÓDIGO -->
+<div class="anuncioEspacio">
+<p class="anuncioTexto">Espacio publicitario</p>
+<ins class="adsbygoogle"
+     style="display:block;width:100%;max-width:728px;height:90px;margin:0 auto;"
+     data-ad-client="ca-pub-7482899024208713"
+     data-ad-slot="6666666666"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+</div>
+</section>
+
+<script id="modulo6-js">
+const buscadorInput = document.getElementById('buscadorInput');
+const buscadorBoton = document.getElementById('buscadorBoton');
+const resultados = document.querySelectorAll('.resultadoItem');
+
+// Función de búsqueda
+function filtrarResultados(){
+    const texto = buscadorInput.value.toLowerCase().trim();
+    
+    resultados.forEach(item => {
+        const clave = item.dataset.key;
+        if(texto === "" || clave.includes(texto)){
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+
+// Eventos
+buscadorBoton.addEventListener('click', filtrarResultados);
+buscadorInput.addEventListener('keyup', function(e){
+    if(e.key === 'Enter') filtrarResultados();
+    if(buscadorInput.value === "") filtrarResultados();
+});
+
+console.log("✅ Módulo 6 cargado correctamente");
 </script>
