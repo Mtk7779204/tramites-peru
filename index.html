@@ -2635,7 +2635,7 @@ letter-spacing:1px;
 console.log("✅ Módulo 10 actualizado: Solo enlaces oficiales, sin contacto");
 </script>
 <!-- ===================================== -->
-<!-- MÓDULO 11 - PIE DE PÁGINA ENLACES CORREGIDOS -->
+<!-- MÓDULO 11 - PIE DE PÁGINA ENLACES CORREGIDOS Y COMPLETOS -->
 <!-- ===================================== -->
 <style id="modulo11-css">
 #modulo11{
@@ -2727,21 +2727,27 @@ gap:25px;
 <h3>Enlaces Rápidos</h3>
 <div class="footerEnlaces">
 <a href="#modulo3">🏠 Inicio</a>
+<a href="#modulo6">🔍 Buscador de Trámites</a>
 <a href="#modulo7">📑 Categorías de Trámites</a>
 <a href="#modulo8">📚 Guías Paso a Paso</a>
 <a href="#modulo9">❓ Preguntas Frecuentes</a>
+<a href="#modulo11">🔗 Enlaces y Servicios</a>
 </div>
 </div>
 
-<!-- Columna 3: Trámites más consultados - ENLACES ARREGLADOS -->
+<!-- Columna 3: Trámites más consultados - COMPLETOS Y ENLAZADOS -->
 <div class="footerColumna">
 <h3>Más Consultados</h3>
 <div class="footerEnlaces">
 <a onclick="abrirGuia('dni')">🪪 Renovación de DNI</a>
 <a onclick="abrirGuia('pasaporte')">🛂 Pasaporte 2026</a>
 <a onclick="abrirGuia('bonos')">💰 Bonos y Subsidios</a>
-<a onclick="irSeccion('sis')">🏥 Afiliación al SIS</a>
-<a onclick="irSeccion('afp')">💼 Consulta de AFP</a>
+<a onclick="abrirGuia('sis')">🏥 Afiliación al SIS</a>
+<a onclick="abrirGuia('afp')">💼 Consulta y Retiro AFP</a>
+<a onclick="abrirGuia('educacion')">🎓 Trámites de Educación</a>
+<a onclick="abrirGuia('vehiculos')">🚗 Trámites Vehiculares</a>
+<a onclick="abrirGuia('certificados')">📜 Certificados y Partidas</a>
+<!-- 👉 PUEDES SEGUIR AGREGANDO MÁS ENLACES AQUÍ 👈 -->
 </div>
 </div>
 
@@ -2777,9 +2783,14 @@ gap:25px;
 </section>
 
 <script id="modulo11-js">
-// Función para abrir las guías (igual que en el módulo 8)
+// Función para abrir las guías (conecta con las ventanas de Módulo 6 y 8)
 function abrirGuia(tipo){
-  const ventana = document.getElementById('guia' + tipo.charAt(0).toUpperCase() + tipo.slice(1));
+  // Busca primero en las ventanas del Módulo 8
+  let ventana = document.getElementById('guia' + tipo.charAt(0).toUpperCase() + tipo.slice(1));
+  // Si no está ahí, busca en las ventanas del Módulo 6
+  if(!ventana){
+    ventana = document.getElementById('ventana' + tipo.charAt(0).toUpperCase() + tipo.slice(1));
+  }
   if(ventana){
     ventana.classList.add('activo');
     document.body.style.overflow = 'hidden';
@@ -2788,7 +2799,7 @@ function abrirGuia(tipo){
   }
 }
 
-// Función para ir a secciones que se agregarán
+// Función para ir a secciones
 function irSeccion(id){
   const seccion = document.getElementById(id);
   if(seccion){
@@ -2798,7 +2809,7 @@ function irSeccion(id){
   }
 }
 
-console.log("✅ Módulo 11 corregido: Enlaces funcionando correctamente");
+console.log("✅ Módulo 11 corregido y completo: Todos los enlaces funcionando correctamente");
 </script>
 
 <!-- ===================================== -->
