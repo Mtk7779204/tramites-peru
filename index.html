@@ -1,747 +1,110 @@
 <!DOCTYPE html>
-
 <html lang="es">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width,initial-scale=1.0">
-
-<title>
-
-Trámites Perú
-
-</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Trámites Perú | Guías y Servicios Oficiales</title>
 
 <!-- ===================================== -->
-<!-- ADSENSE -->
+<!-- ADSENSE - CÓDIGO BASE LISTO -->
 <!-- ===================================== -->
-
-<!-- PEGAR AQUÍ EL CÓDIGO ADSENSE -->
-
-<!-- ===================================== -->
-<!-- FUENTES -->
-<!-- ===================================== -->
-
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
-
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000"
+crossorigin="anonymous"></script>
 
 <!-- ===================================== -->
-<!-- CSS GLOBAL -->
+<!-- FUENTES - CARGA DIRECTA -->
 <!-- ===================================== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+<!-- ===================================== -->
+<!-- CSS GLOBAL - REGLAS GENERALES -->
+<!-- ===================================== -->
 <style id="global-css">
-
 html,
 body{
-
 margin:0;
 padding:0;
-
 width:100%;
 height:100%;
-
-font-family:
-'Poppins',
-sans-serif;
-
+font-family: 'Poppins', sans-serif;
 background:#F5F7FA;
-
 color:#111827;
-
+scroll-behavior:smooth;
 }
-
 *{
-
 box-sizing:border-box;
-
+margin:0;
+padding:0;
 }
-
 a{
-
 text-decoration:none;
-
+color:inherit;
 }
-
 button{
-
 cursor:pointer;
-
 font-family:inherit;
-
+border:none;
+background:transparent;
 }
-
 img{
-
 display:block;
-
 max-width:100%;
-
+height:auto;
 }
-
+ul,ol{
+list-style:none;
+}
 </style>
-
 </head>
-
 <body>
 
 <!-- ===================================== -->
-<!-- MÓDULO 1 - VARIABLES GLOBALES -->
+<!-- MÓDULO 1 - VARIABLES GLOBALES Y CONFIGURACIÓN -->
 <!-- ===================================== -->
-
 <style id="modulo1-css">
-
 :root{
-
 --colorPrincipal:#D62828;
-
 --colorSecundario:#003049;
-
 --colorFondo:#F5F7FA;
-
 --colorTexto:#111827;
-
+--colorGris:#6B7280;
 --colorBlanco:#FFFFFF;
-
+--colorExito:#10B981;
+--colorAlerta:#F59E0B;
 --radioPrincipal:16px;
-
---sombraPrincipal:
-0 4px 12px rgba(0,0,0,.12);
-
+--radioPequeño:8px;
+--sombraPrincipal:0 4px 12px rgba(0,0,0,.12);
+--sombraLigera:0 2px 8px rgba(0,0,0,.08);
 --anchoMaximo:1200px;
-
+--espacioSeccion:80px;
 }
-
 </style>
 
 <section id="modulo1">
-
 </section>
 
 <script id="modulo1-js">
-
-const APP={
-
-nombre:"Trámites Perú",
-
-version:"2.0.0"
-
+const APP = {
+    nombre: "Trámites Perú",
+    version: "2.1.0",
+    estado: "activo"
 };
 
-const CONFIG={
-
-idioma:"es",
-
-pais:"PE",
-
-debug:true
-
+const CONFIG = {
+    idioma: "es",
+    pais: "PE",
+    moneda: "PEN",
+    zonaHoraria: "America/Lima",
+    fechaActual: "10 de junio de 2026"
 };
 
-const SEO={
-
-titulo:"Trámites Perú",
-
-descripcion:
-"Guías y consultas de trámites en Perú"
-
+const SEO = {
+    titulo: "Trámites Perú - Guías completas y requisitos oficiales",
+    descripcion: "Encuentra todos los trámites en Perú: DNI, pasaporte, bonos, salud, educación, trabajo y más. Requisitos, pasos y lugares actualizados.",
+    palabrasClave: "trámites perú, DNI, renovación, bonos, consultas, requisitos, pasos"
 };
 
-console.log(
-
-"Modulo 1 cargado"
-
-);
-
+console.log("✅ Módulo 1 cargado correctamente");
 </script>
-<!-- ===================================== -->
-<!-- MÓDULO 2 - CONFIGURACIÓN DEL SITIO -->
-<!-- ===================================== -->
-
-<style id="modulo2-css">
-
-#modulo2{
-
-display:none;
-
-}
-
-</style>
-
-<section id="modulo2">
-
-</section>
-
-<script id="modulo2-js">
-
-const SITIO={
-
-nombre:"Trámites Perú",
-
-descripcion:
-"Portal informativo de trámites y consultas",
-
-idioma:"es",
-
-pais:"Perú",
-
-moneda:"PEN",
-
-zonaHoraria:
-"America/Lima"
-
-};
-
-const CATEGORIAS=[
-
-"DNI",
-
-"Certificados",
-
-"Trabajo",
-
-"Bonos",
-
-"Salud",
-
-"Educación"
-
-];
-
-const MENU_PRINCIPAL=[
-
-"Inicio",
-
-"Trámites",
-
-"Guías",
-
-"FAQ"
-
-];
-
-console.log(
-
-"Modulo 2 cargado"
-
-);
-
-</script>
-<!-- ===================================== -->
-<!-- MÓDULO 3 - HEADER -->
-<!-- ===================================== -->
-
-<style id="modulo3-css">
-
-#headerPrincipal{
-
-width:100%;
-
-background:var(--colorBlanco);
-
-box-shadow:var(--sombraPrincipal);
-
-position:sticky;
-
-top:0;
-
-left:0;
-
-z-index:1000;
-
-}
-
-.headerContenedor{
-
-max-width:var(--anchoMaximo);
-
-margin:auto;
-
-padding:15px 20px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:space-between;
-
-}
-
-.logoSitio{
-
-display:flex;
-
-align-items:center;
-
-gap:12px;
-
-}
-
-.logoIcono{
-
-width:50px;
-
-height:50px;
-
-border-radius:50%;
-
-background:var(--colorPrincipal);
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-color:white;
-
-font-size:20px;
-
-font-weight:700;
-
-}
-
-.logoTexto{
-
-display:flex;
-
-flex-direction:column;
-
-}
-
-.logoNombre{
-
-font-size:22px;
-
-font-weight:700;
-
-color:var(--colorPrincipal);
-
-line-height:1.2;
-
-}
-
-.logoDescripcion{
-
-font-size:12px;
-
-color:var(--colorTexto);
-
-}
-
-.botonMenu{
-
-background:none;
-
-border:none;
-
-font-size:28px;
-
-color:var(--colorSecundario);
-
-display:none;
-
-}
-
-@media(max-width:768px){
-
-.botonMenu{
-
-display:block;
-
-}
-
-}
-
-</style>
-
-<section id="modulo3">
-
-<header id="headerPrincipal">
-
-<div class="headerContenedor">
-
-<div class="logoSitio">
-
-<div class="logoIcono">
-
-TP
-
-</div>
-
-<div class="logoTexto">
-
-<div class="logoNombre">
-
-Trámites Perú
-
-</div>
-
-<div class="logoDescripcion">
-
-Portal Informativo
-
-</div>
-
-</div>
-
-</div>
-
-<button
-class="botonMenu"
-id="botonMenuMovil">
-
-☰
-
-</button>
-
-</div>
-
-</header>
-
-</section>
-
-<script id="modulo3-js">
-
-const HEADER={
-
-menuAbierto:false
-
-};
-
-console.log(
-
-"Modulo 3 cargado"
-
-);
-
-</script>
-<!-- ===================================== -->
-<!-- MÓDULO 4 - MENÚ PRINCIPAL -->
-<!-- ===================================== -->
-
-<style id="modulo4-css">
-
-#menuPrincipal{
-
-width:100%;
-
-background:var(--colorSecundario);
-
-}
-
-.menuContenedor{
-
-max-width:var(--anchoMaximo);
-
-margin:auto;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-gap:30px;
-
-padding:15px 20px;
-
-}
-
-.menuLink{
-
-color:white;
-
-font-size:15px;
-
-font-weight:600;
-
-transition:.3s;
-
-}
-
-.menuLink:hover{
-
-opacity:.8;
-
-}
-
-@media(max-width:768px){
-
-.menuContenedor{
-
-display:none;
-
-flex-direction:column;
-
-align-items:flex-start;
-
-padding:20px;
-
-gap:15px;
-
-}
-
-.menuContenedor.activo{
-
-display:flex;
-
-}
-
-}
-
-</style>
-
-<section id="modulo4">
-
-<nav id="menuPrincipal">
-
-<div
-class="menuContenedor"
-id="menuContenedor">
-
-<a
-href="#modulo5"
-class="menuLink">
-
-Inicio
-
-</a>
-
-<a
-href="#modulo7"
-class="menuLink">
-
-Trámites
-
-</a>
-
-<a
-href="#modulo9"
-class="menuLink">
-
-Guías
-
-</a>
-
-<a
-href="#modulo10"
-class="menuLink">
-
-FAQ
-
-</a>
-
-</div>
-
-</nav>
-
-</section>
-
-<script id="modulo4-js">
-
-const botonMenuMovil=
-
-document.getElementById(
-"botonMenuMovil"
-);
-
-const menuContenedor=
-
-document.getElementById(
-"menuContenedor"
-);
-
-botonMenuMovil
-.addEventListener(
-"click",
-()=>{
-
-menuContenedor
-.classList
-.toggle(
-"activo"
-);
-
-}
-);
-
-console.log(
-
-"Modulo 4 cargado"
-
-);
-
-</script>
-<!-- ===================================== -->
-<!-- MÓDULO 5 - HERO PRINCIPAL -->
-<!-- ===================================== -->
-
-<style id="modulo5-css">
-
-#modulo5{
-
-width:100%;
-
-background:linear-gradient(
-135deg,
-var(--colorPrincipal),
-var(--colorSecundario)
-);
-
-color:white;
-
-padding:80px 20px;
-
-}
-
-.heroContenedor{
-
-max-width:var(--anchoMaximo);
-
-margin:auto;
-
-display:grid;
-
-grid-template-columns:
-1fr 1fr;
-
-gap:40px;
-
-align-items:center;
-
-}
-
-.heroContenido h1{
-
-font-size:48px;
-
-font-weight:700;
-
-margin:0 0 20px;
-
-line-height:1.2;
-
-}
-
-.heroContenido p{
-
-font-size:18px;
-
-line-height:1.8;
-
-margin:0 0 30px;
-
-}
-
-.heroBoton{
-
-display:inline-block;
-
-padding:15px 25px;
-
-background:white;
-
-color:var(--colorPrincipal);
-
-border-radius:var(--radioPrincipal);
-
-font-weight:700;
-
-}
-
-.heroImagen{
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-font-size:180px;
-
-}
-
-@media(max-width:768px){
-
-.heroContenedor{
-
-grid-template-columns:1fr;
-
-text-align:center;
-
-}
-
-.heroContenido h1{
-
-font-size:34px;
-
-}
-
-.heroImagen{
-
-font-size:120px;
-
-}
-
-}
-
-</style>
-
-<section id="modulo5">
-
-<div class="heroContenedor">
-
-<div class="heroContenido">
-
-<h1>
-
-Guías y Trámites del Perú en un solo lugar
-
-</h1>
-
-<p>
-
-Encuentra información clara sobre DNI, certificados, trabajo, bonos, salud, educación y muchos otros trámites importantes.
-
-</p>
-
-<a
-href="#modulo6"
-class="heroBoton">
-
-Buscar Trámite
-
-</a>
-
-</div>
-
-<div class="heroImagen">
-
-📋
-
-</div>
-
-</div>
-
-</section>
-
-<script id="modulo5-js">
-
-console.log(
-
-"Modulo 5 cargado"
-
-);
-
-</script>
-
