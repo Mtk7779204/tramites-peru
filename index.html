@@ -613,3 +613,399 @@ buscadorInput.addEventListener('keyup', function(e){
 
 console.log("✅ Módulo 6 cargado correctamente");
 </script>
+<!-- ===================================== -->
+<!-- MÓDULO 7 - CATEGORÍAS PRINCIPALES -->
+<!-- ===================================== -->
+<style id="modulo7-css">
+#modulo7{
+padding:var(--espacioSeccion) 20px;
+background:var(--colorFondo);
+}
+.categoriasContenedor{
+max-width:var(--anchoMaximo);
+margin:0 auto;
+}
+.categoriasTitulo{
+font-size:36px;
+font-weight:700;
+text-align:center;
+color:var(--colorSecundario);
+margin-bottom:15px;
+}
+.categoriasDescripcion{
+text-align:center;
+font-size:16px;
+line-height:1.8;
+color:var(--colorTexto);
+margin-bottom:40px;
+}
+.categoriasGrid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+.categoriaCard{
+background:var(--colorBlanco);
+padding:25px;
+border-radius:var(--radioPrincipal);
+box-shadow:var(--sombraPrincipal);
+text-align:center;
+transition:all 0.3s ease;
+cursor:pointer;
+}
+.categoriaCard:hover{
+transform:translateY(-5px);
+box-shadow:0 6px 16px rgba(0,0,0,0.15);
+}
+.categoriaIcono{
+font-size:50px;
+margin-bottom:15px;
+}
+.categoriaNombre{
+font-size:20px;
+font-weight:700;
+color:var(--colorPrincipal);
+margin-bottom:10px;
+}
+.categoriaTexto{
+font-size:14px;
+line-height:1.7;
+color:var(--colorTexto);
+}
+/* Espacio de anuncio */
+.anuncioEspacio{
+margin-top:50px;
+padding:15px;
+background:var(--colorBlanco);
+border-radius:var(--radioPrincipal);
+text-align:center;
+box-shadow:var(--sombraLigera);
+}
+.anuncioTexto{
+font-size:13px;
+color:var(--colorGris);
+margin-bottom:10px;
+text-transform:uppercase;
+letter-spacing:1px;
+}
+@media(max-width:768px){
+.categoriasTitulo{font-size:28px;}
+}
+</style>
+
+<section id="modulo7">
+<div class="categoriasContenedor">
+<h2 class="categoriasTitulo">Categorías de Trámites</h2>
+<p class="categoriasDescripcion">Selecciona la categoría que corresponde al trámite o servicio que necesitas realizar.</p>
+
+<div class="categoriasGrid">
+<!-- Categoría 1 -->
+<div class="categoriaCard">
+<div class="categoriaIcono">🪪</div>
+<div class="categoriaNombre">DNI</div>
+<div class="categoriaTexto">Renovación, duplicado, actualización de datos y trámites ante RENIEC.</div>
+</div>
+
+<!-- Categoría 2 -->
+<div class="categoriaCard">
+<div class="categoriaIcono">🛂</div>
+<div class="categoriaNombre">Pasaporte</div>
+<div class="categoriaTexto">Solicitud, renovación, requisitos y lugares de atención en Migraciones.</div>
+</div>
+
+<!-- Categoría 3 -->
+<div class="categoriaCard">
+<div class="categoriaIcono">💰</div>
+<div class="categoriaNombre">Bonos y Subsidios</div>
+<div class="categoriaTexto">Consulta de bonos, ayudas económicas, requisitos y formas de cobro vigentes.</div>
+</div>
+
+<!-- Categoría 4 -->
+<div class="categoriaCard">
+<div class="categoriaIcono">🏥</div>
+<div class="categoriaNombre">Salud y SIS</div>
+<div class="categoriaTexto">Afiliación, cobertura, atenciones y trámites en el sistema de salud peruano.</div>
+</div>
+
+<!-- Categoría 5 -->
+<div class="categoriaCard">
+<div class="categoriaIcono">💼</div>
+<div class="categoriaNombre">Trabajo y AFP</div>
+<div class="categoriaTexto">Certificados laborales, aportes, beneficios y consultas de fondos de pensiones.</div>
+</div>
+
+<!-- Categoría 6 -->
+<div class="categoriaCard">
+<div class="categoriaIcono">🎓</div>
+<div class="categoriaNombre">Educación</div>
+<div class="categoriaTexto">Certificados, constancias, becas, matrículas y trámites ante el MINEDU.</div>
+</div>
+
+<!-- Categoría 7 -->
+<div class="categoriaCard">
+<div class="categoriaIcono">🚗</div>
+<div class="categoriaNombre">Vehículos</div>
+<div class="categoriaTexto">Licencias, tarjetas de propiedad, multas y trámites ante la SUNARP.</div>
+</div>
+
+<!-- Categoría 8 -->
+<div class="categoriaCard">
+<div class="categoriaIcono">📄</div>
+<div class="categoriaNombre">Certificados</div>
+<div class="categoriaTexto">Partidas, antecedentes, constancias y documentos oficiales diversos.</div>
+</div>
+</div>
+
+<!-- ESPACIO DE ANUNCIO 3 - TU CÓDIGO -->
+<div class="anuncioEspacio">
+<p class="anuncioTexto">Espacio publicitario</p>
+<ins class="adsbygoogle"
+     style="display:block;width:100%;max-width:728px;height:90px;margin:0 auto;"
+     data-ad-client="ca-pub-7482899024208713"
+     data-ad-slot="7777777777"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+</div>
+</section>
+
+<script id="modulo7-js">
+// Acceso directo a categorías
+const tarjetasCategoria = document.querySelectorAll('.categoriaCard');
+tarjetasCategoria.forEach(tarjeta => {
+tarjeta.addEventListener('click', () => {
+// Aquí se puede agregar redirección o filtro
+console.log('Categoría seleccionada');
+});
+});
+
+console.log("✅ Módulo 7 cargado correctamente");
+</script>
+
+<!-- ===================================== -->
+<!-- MÓDULO 8 - GUÍAS Y ARTÍCULOS DESTACADOS -->
+<!-- ===================================== -->
+<style id="modulo8-css">
+#modulo8{
+padding:var(--espacioSeccion) 20px;
+background:var(--colorBlanco);
+}
+.guiasContenedor{
+max-width:var(--anchoMaximo);
+margin:0 auto;
+}
+.guiasTitulo{
+font-size:36px;
+font-weight:700;
+text-align:center;
+color:var(--colorSecundario);
+margin-bottom:15px;
+}
+.guiasDescripcion{
+text-align:center;
+font-size:16px;
+line-height:1.8;
+color:var(--colorTexto);
+margin-bottom:40px;
+}
+.guiasGrid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+}
+.guiaCard{
+background:var(--colorFondo);
+border-radius:var(--radioPrincipal);
+overflow:hidden;
+box-shadow:var(--sombraLigera);
+transition:all 0.3s ease;
+}
+.guiaCard:hover{
+transform:translateY(-5px);
+box-shadow:var(--sombraPrincipal);
+}
+.guiaCabecera{
+height:180px;
+background:linear-gradient(135deg, var(--colorPrincipal), var(--colorSecundario));
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:60px;
+color:var(--colorBlanco);
+position:relative;
+}
+.guiaEtiqueta{
+position:absolute;
+top:15px;
+left:15px;
+background:var(--colorBlanco);
+color:var(--colorPrincipal);
+font-size:12px;
+font-weight:600;
+padding:4px 12px;
+border-radius:20px;
+text-transform:uppercase;
+}
+.guiaCuerpo{
+padding:25px;
+}
+.guiaTitulo{
+font-size:18px;
+font-weight:700;
+color:var(--colorSecundario);
+margin-bottom:10px;
+line-height:1.4;
+}
+.guiaTexto{
+font-size:14px;
+line-height:1.7;
+color:var(--colorTexto);
+margin-bottom:15px;
+}
+.guiaEnlace{
+font-size:14px;
+font-weight:600;
+color:var(--colorPrincipal);
+display:flex;
+align-items:center;
+gap:5px;
+transition:gap 0.3s;
+}
+.guiaEnlace:hover{
+gap:8px;
+}
+/* Espacio de anuncio */
+.anuncioEspacio{
+margin-top:50px;
+padding:15px;
+background:var(--colorFondo);
+border-radius:var(--radioPrincipal);
+text-align:center;
+}
+.anuncioTexto{
+font-size:13px;
+color:var(--colorGris);
+margin-bottom:10px;
+text-transform:uppercase;
+letter-spacing:1px;
+}
+@media(max-width:768px){
+.guiasTitulo{font-size:28px;}
+}
+</style>
+
+<section id="modulo8">
+<div class="guiasContenedor">
+<h2 class="guiasTitulo">Guías Paso a Paso</h2>
+<p class="guiasDescripcion">Información detallada, requisitos exactos y pasos ordenados para realizar tus trámites sin errores ni demoras.</p>
+
+<div class="guiasGrid">
+<!-- Guía 1 -->
+<div class="guiaCard">
+<div class="guiaCabecera">
+<span class="guiaEtiqueta">DNI</span>
+🪪
+</div>
+<div class="guiaCuerpo">
+<h3 class="guiaTitulo">¿Cómo renovar el DNI vencido o por vencer?</h3>
+<p class="guiaTexto">Requisitos indispensables, costo actual, lugares de atención, tiempo de entrega y pasos para sacar cita previa en RENIEC.</p>
+<a href="#" class="guiaEnlace">Leer guía completa →</a>
+</div>
+</div>
+
+<!-- Guía 2 -->
+<div class="guiaCard">
+<div class="guiaCabecera">
+<span class="guiaEtiqueta">Bonos</span>
+💰
+</div>
+<div class="guiaCuerpo">
+<h3 class="guiaTitulo">Consulta de Bonos y Subsidios 2026</h3>
+<p class="guiaTexto">Verifica con tu DNI si eres beneficiario, montos asignados, modalidades de pago y calendario oficial de cobros vigentes.</p>
+<a href="#" class="guiaEnlace">Leer guía completa →</a>
+</div>
+</div>
+
+<!-- Guía 3 -->
+<div class="guiaCard">
+<div class="guiaCabecera">
+<span class="guiaEtiqueta">Pasaporte</span>
+🛂
+</div>
+<div class="guiaCuerpo">
+<h3 class="guiaTitulo">Sacar o renovar Pasaporte Peruano</h3>
+<p class="guiaTexto">Documentos necesarios, costo, centros de atención, trámite exprés y todo lo que debes saber para viajar al extranjero.</p>
+<a href="#" class="guiaEnlace">Leer guía completa →</a>
+</div>
+</div>
+
+<!-- Guía 4 -->
+<div class="guiaCard">
+<div class="guiaCabecera">
+<span class="guiaEtiqueta">Salud</span>
+🏥
+</div>
+<div class="guiaCuerpo">
+<h3 class="guiaTitulo">Afiliación y beneficios del SIS</h3>
+<p class="guiaTexto">Cómo inscribirse gratuitamente, cobertura médica, centros de salud asignados y cómo verificar tu estado de afiliación.</p>
+<a href="#" class="guiaEnlace">Leer guía completa →</a>
+</div>
+</div>
+
+<!-- Guía 5 -->
+<div class="guiaCard">
+<div class="guiaCabecera">
+<span class="guiaEtiqueta">Trabajo</span>
+💼
+</div>
+<div class="guiaCuerpo">
+<h3 class="guiaTitulo">Consulta de aportes y AFP</h3>
+<p class="guiaTexto">Revisa tus aportes, elige tu fondo, retiros, préstamos y todos los trámites relacionados con tu fondo de pensiones.</p>
+<a href="#" class="guiaEnlace">Leer guía completa →</a>
+</div>
+</div>
+
+<!-- Guía 6 -->
+<div class="guiaCard">
+<div class="guiaCabecera">
+<span class="guiaEtiqueta">Certificados</span>
+📄
+</div>
+<div class="guiaCuerpo">
+<h3 class="guiaTitulo">Obtener certificados y constancias</h3>
+<p class="guiaTexto">Partidas de nacimiento, matrimonio, antecedentes policiales, certificados de estudios y antecedentes penales.</p>
+<a href="#" class="guiaEnlace">Leer guía completa →</a>
+</div>
+</div>
+</div>
+
+<!-- ESPACIO DE ANUNCIO 4 - TU CÓDIGO -->
+<div class="anuncioEspacio">
+<p class="anuncioTexto">Espacio publicitario</p>
+<ins class="adsbygoogle"
+     style="display:block;width:100%;max-width:728px;height:90px;margin:0 auto;"
+     data-ad-client="ca-pub-7482899024208713"
+     data-ad-slot="9999999999"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+</div>
+</section>
+
+<script id="modulo8-js">
+const tarjetasGuia = document.querySelectorAll('.guiaCard');
+tarjetasGuia.forEach(tarjeta => {
+tarjeta.addEventListener('click', () => {
+console.log('Guía seleccionada');
+});
+});
+
+console.log("✅ Módulo 8 cargado correctamente");
+</script>
+     
