@@ -2201,6 +2201,173 @@ margin:20px 0 10px 0;
 <div class="acordeonContenedor">
 
 <!-- ===================================== -->
+<!-- CATEGORÍA: EDUCACIÓN Y CERTIFICADOS -->
+<!-- ===================================== -->
+<div class="categoriaPreguntas">Educación y Documentos</div>
+
+<div class="acordeonItem">
+<button class="acordeonPregunta">
+¿Los certificados de estudios digitales valen lo mismo que los físicos?
+<span class="acordeonIcono">+</span>
+</button>
+<div class="acordeonRespuesta">
+<div class="respuestaTexto">
+✅ <strong>SÍ, tienen la misma validez oficial.</strong> El certificado digital que descargas de <strong>certificados.minedu.gob.pe</strong> tiene código QR y firma electrónica, es válido para matrículas, trabajos, postulaciones y no necesitas sellos ni firmas manuales. Se aceptan en todo el Perú.
+</div>
+</div>
+</div>
+
+<div class="acordeonItem">
+<button class="acordeonPregunta">
+¿Cómo obtengo mi partida de nacimiento si nací hace muchos años?
+<span class="acordeonIcono">+</span>
+</button>
+<div class="acordeonRespuesta">
+<div class="respuestaTexto">
+Ahora es muy fácil y rápido:
+1. Ingresa a <strong>reniec.gob.pe</strong> → Servicios en línea.
+2. Paga S/ 11.00.
+3. Descárgala al momento o pide envío a tu casa.
+También puedes ir a cualquier agencia RENIEC o Centro MAC, te la entregan al instante sin importar cuándo naciste.
+</div>
+</div>
+</div>
+
+<div class="acordeonItem">
+<button class="acordeonPregunta">
+¿Cómo saber si me toca alguna Beca del Estado o Beca 18?
+<span class="acordeonIcono">+</span>
+</button>
+<div class="acordeonRespuesta">
+<div class="respuestaTexto">
+Las convocatorias salen todos los años en la web <strong>pronabec.gob.pe</strong>.
+✅ Requisitos principales: Buenas notas (tercio superior), pertenecer a hogares en pobreza o pobreza extrema, estudiar carreras prioritarias.
+✅ La Beca 18 cubre matrícula, pensión, alimentación, alojamiento, materiales y pasajes totalmente gratis.
+</div>
+</div>
+</div>
+
+<!-- ===================================== -->
+<!-- CATEGORÍA: BONOS Y AYUDAS SOCIALES -->
+<!-- ===================================== -->
+<div class="categoriaPreguntas">Bonos y Subsidios</div>
+
+<div class="acordeonItem">
+<button class="acordeonPregunta">
+¿Por qué me sale "No eres beneficiario" si creo que debería tener el bono?
+<span class="acordeonIcono">+</span>
+</button>
+<div class="acordeonRespuesta">
+<div class="respuestaTexto">
+Las razones más comunes son:
+❌ Tus datos en RENIEC no están actualizados o hay errores en el nombre o fecha.
+❌ Ya recibiste el pago en otra cuenta o familiar.
+❌ Tu hogar está clasificado en nivel socioeconómico que no califica.
+❌ Ya cobraste otro bono similar y no se permite duplicidad.
+Consulta en la plataforma oficial y verifica que tu DNI esté correcto.
+</div>
+</div>
+</div>
+
+<div class="acordeonItem">
+<button class="acordeonPregunta">
+¿Si no cobro el bono en la fecha indicada, pierdo el dinero?
+<span class="acordeonIcono">+</span>
+</button>
+<div class="acordeonRespuesta">
+✅ <strong>No lo pierdes.</strong> Aunque pasen las fechas del calendario, el dinero sigue reservado a tu nombre. Puedes cobrarlo hasta que se publique el cierre definitivo del programa, que suele ser meses después. Solo no lo dejes pasar mucho tiempo.
+</div>
+</div>
+</div>
+
+<!-- 👉 PUEDES SEGUIR AGREGANDO MÁS PREGUNTAS Y RESPUESTAS AQUÍ 👈 -->
+
+</div>
+</div>
+</div>
+</section>
+
+<script id="modulo9-js">
+// LÓGICA PARA ABRIR Y CERRAR PREGUNTAS
+document.querySelectorAll('.acordeonPregunta').forEach(boton => {
+boton.addEventListener('click', () => {
+const respuesta = boton.nextElementSibling;
+const icono = boton.querySelector('.acordeonIcono');
+
+// Cerrar otras preguntas (opcional: quita este bloque si quieres que se queden abiertas todas)
+document.querySelectorAll('.acordeonRespuesta').forEach(otraRespuesta => {
+if(otraRespuesta !== respuesta){
+otraRespuesta.classList.remove('contenidoActivo');
+otraRespuesta.previousElementSibling.querySelector('.acordeonIcono').textContent = '+';
+}
+});
+
+// Abrir o cerrar la pregunta actual
+respuesta.classList.toggle('contenidoActivo');
+icono.textContent = respuesta.classList.contains('contenidoActivo') ? '−' : '+';
+});
+});
+</script>
+
+<!-- ===================================== -->
+<!-- CATEGORÍA: VEHÍCULOS Y TRANSPORTE -->
+<!-- ===================================== -->
+<div class="categoriaPreguntas">Vehículos y Transporte</div>
+
+<div class="acordeonItem">
+<button class="acordeonPregunta">
+¿Cuánto cuesta renovar la licencia de conducir y qué necesito?
+<span class="acordeonIcono">+</span>
+</button>
+<div class="acordeonRespuesta">
+<div class="respuestaTexto">
+✅ Costo total aprox: <strong>S/ 75.00</strong> (incluye trámite y examen médico).
+✅ Requisitos: DNI vigente, licencia vencida o por vencer, certificado médico aprobado, pago de derechos.
+✅ Si no tienes multas graves o muy graves, <strong>NO rindes examen teórico ni práctico</strong>, solo trámite administrativo.
+</div>
+</div>
+</div>
+
+<div class="acordeonItem">
+<button class="acordeonPregunta">
+¿Es obligatorio tener SOAT y Revisión Técnica todo el año?
+<span class="acordeonIcono">+</span>
+</button>
+<div class="acordeonRespuesta">
+<div class="respuestaTexto">
+✅ <strong>SOAT:</strong> Sí, es obligatorio las 24 horas del año. Sin él no puedes circular, la multa es grave y te inmovilizan el vehículo. Cubre daños personales en accidentes.
+✅ <strong>Revisión Técnica:</strong> Obligatoria para vehículos mayores de 1 año. Validez de 1 año. Verifica que tu auto esté seguro y no contamine. También es obligatoria para circular.
+</div>
+</div>
+</div>
+
+<div class="acordeonItem">
+<button class="acordeonPregunta">
+¿Qué pasa si vendo mi auto y no hago la transferencia en SUNARP?
+<span class="acordeonIcono">+</span>
+</button>
+<div class="acordeonRespuesta">
+<div class="respuestaTexto">
+⚠️ <strong>Es muy peligroso:</strong> Aunque lo hayas vendido, ante la ley tú sigues siendo el dueño. Si el nuevo dueño comete delitos, accidentes, deja multas o deudas, te llegarán a TI.
+✅ La transferencia es gratuita si se hace dentro de los 30 días de la venta. Cuesta S/ 19.00 después de ese plazo. Hazla siempre en SUNARP.
+</div>
+</div>
+</div>
+
+<div class="acordeonItem">
+<button class="acordeonPregunta">
+¿Cuánto de descuento tengo si pago mis multas rápido?
+<span class="acordeonIcono">+</span>
+</button>
+<div class="acordeonRespuesta">
+<div class="respuestaTexto">
+✅ <strong>50% de descuento</strong> si pagas dentro de los primeros <strong>15 días hábiles</strong> después de que te notifican la infracción.
+✅ Si pagas entre el día 16 y 30, pagas el 100% pero evitas intereses.
+✅ Pasado el mes, se suman intereses y costas judiciales, y te afecta para renovar licencia o hacer trámites vehiculares.
+</div>
+</div>
+</div>
+<!-- ===================================== -->
 <!-- CATEGORÍA: DOCUMENTOS (DNI, PASAPORTE) -->
 <!-- ===================================== -->
 <div class="categoriaPreguntas">Documentos de Identidad</div>
@@ -2379,174 +2546,6 @@ Todos los trabajadores tienen derecho a:
 </div>
 </div>
 </div>
-
-<!-- ===================================== -->
-<!-- CATEGORÍA: VEHÍCULOS Y TRANSPORTE -->
-<!-- ===================================== -->
-<div class="categoriaPreguntas">Vehículos y Transporte</div>
-
-<div class="acordeonItem">
-<button class="acordeonPregunta">
-¿Cuánto cuesta renovar la licencia de conducir y qué necesito?
-<span class="acordeonIcono">+</span>
-</button>
-<div class="acordeonRespuesta">
-<div class="respuestaTexto">
-✅ Costo total aprox: <strong>S/ 75.00</strong> (incluye trámite y examen médico).
-✅ Requisitos: DNI vigente, licencia vencida o por vencer, certificado médico aprobado, pago de derechos.
-✅ Si no tienes multas graves o muy graves, <strong>NO rindes examen teórico ni práctico</strong>, solo trámite administrativo.
-</div>
-</div>
-</div>
-
-<div class="acordeonItem">
-<button class="acordeonPregunta">
-¿Es obligatorio tener SOAT y Revisión Técnica todo el año?
-<span class="acordeonIcono">+</span>
-</button>
-<div class="acordeonRespuesta">
-<div class="respuestaTexto">
-✅ <strong>SOAT:</strong> Sí, es obligatorio las 24 horas del año. Sin él no puedes circular, la multa es grave y te inmovilizan el vehículo. Cubre daños personales en accidentes.
-✅ <strong>Revisión Técnica:</strong> Obligatoria para vehículos mayores de 1 año. Validez de 1 año. Verifica que tu auto esté seguro y no contamine. También es obligatoria para circular.
-</div>
-</div>
-</div>
-
-<div class="acordeonItem">
-<button class="acordeonPregunta">
-¿Qué pasa si vendo mi auto y no hago la transferencia en SUNARP?
-<span class="acordeonIcono">+</span>
-</button>
-<div class="acordeonRespuesta">
-<div class="respuestaTexto">
-⚠️ <strong>Es muy peligroso:</strong> Aunque lo hayas vendido, ante la ley tú sigues siendo el dueño. Si el nuevo dueño comete delitos, accidentes, deja multas o deudas, te llegarán a TI.
-✅ La transferencia es gratuita si se hace dentro de los 30 días de la venta. Cuesta S/ 19.00 después de ese plazo. Hazla siempre en SUNARP.
-</div>
-</div>
-</div>
-
-<div class="acordeonItem">
-<button class="acordeonPregunta">
-¿Cuánto de descuento tengo si pago mis multas rápido?
-<span class="acordeonIcono">+</span>
-</button>
-<div class="acordeonRespuesta">
-<div class="respuestaTexto">
-✅ <strong>50% de descuento</strong> si pagas dentro de los primeros <strong>15 días hábiles</strong> después de que te notifican la infracción.
-✅ Si pagas entre el día 16 y 30, pagas el 100% pero evitas intereses.
-✅ Pasado el mes, se suman intereses y costas judiciales, y te afecta para renovar licencia o hacer trámites vehiculares.
-</div>
-</div>
-</div>
-
-<!-- ===================================== -->
-<!-- CATEGORÍA: EDUCACIÓN Y CERTIFICADOS -->
-<!-- ===================================== -->
-<div class="categoriaPreguntas">Educación y Documentos</div>
-
-<div class="acordeonItem">
-<button class="acordeonPregunta">
-¿Los certificados de estudios digitales valen lo mismo que los físicos?
-<span class="acordeonIcono">+</span>
-</button>
-<div class="acordeonRespuesta">
-<div class="respuestaTexto">
-✅ <strong>SÍ, tienen la misma validez oficial.</strong> El certificado digital que descargas de <strong>certificados.minedu.gob.pe</strong> tiene código QR y firma electrónica, es válido para matrículas, trabajos, postulaciones y no necesitas sellos ni firmas manuales. Se aceptan en todo el Perú.
-</div>
-</div>
-</div>
-
-<div class="acordeonItem">
-<button class="acordeonPregunta">
-¿Cómo obtengo mi partida de nacimiento si nací hace muchos años?
-<span class="acordeonIcono">+</span>
-</button>
-<div class="acordeonRespuesta">
-<div class="respuestaTexto">
-Ahora es muy fácil y rápido:
-1. Ingresa a <strong>reniec.gob.pe</strong> → Servicios en línea.
-2. Paga S/ 11.00.
-3. Descárgala al momento o pide envío a tu casa.
-También puedes ir a cualquier agencia RENIEC o Centro MAC, te la entregan al instante sin importar cuándo naciste.
-</div>
-</div>
-</div>
-
-<div class="acordeonItem">
-<button class="acordeonPregunta">
-¿Cómo saber si me toca alguna Beca del Estado o Beca 18?
-<span class="acordeonIcono">+</span>
-</button>
-<div class="acordeonRespuesta">
-<div class="respuestaTexto">
-Las convocatorias salen todos los años en la web <strong>pronabec.gob.pe</strong>.
-✅ Requisitos principales: Buenas notas (tercio superior), pertenecer a hogares en pobreza o pobreza extrema, estudiar carreras prioritarias.
-✅ La Beca 18 cubre matrícula, pensión, alimentación, alojamiento, materiales y pasajes totalmente gratis.
-</div>
-</div>
-</div>
-
-<!-- ===================================== -->
-<!-- CATEGORÍA: BONOS Y AYUDAS SOCIALES -->
-<!-- ===================================== -->
-<div class="categoriaPreguntas">Bonos y Subsidios</div>
-
-<div class="acordeonItem">
-<button class="acordeonPregunta">
-¿Por qué me sale "No eres beneficiario" si creo que debería tener el bono?
-<span class="acordeonIcono">+</span>
-</button>
-<div class="acordeonRespuesta">
-<div class="respuestaTexto">
-Las razones más comunes son:
-❌ Tus datos en RENIEC no están actualizados o hay errores en el nombre o fecha.
-❌ Ya recibiste el pago en otra cuenta o familiar.
-❌ Tu hogar está clasificado en nivel socioeconómico que no califica.
-❌ Ya cobraste otro bono similar y no se permite duplicidad.
-Consulta en la plataforma oficial y verifica que tu DNI esté correcto.
-</div>
-</div>
-</div>
-
-<div class="acordeonItem">
-<button class="acordeonPregunta">
-¿Si no cobro el bono en la fecha indicada, pierdo el dinero?
-<span class="acordeonIcono">+</span>
-</button>
-<div class="acordeonRespuesta">
-✅ <strong>No lo pierdes.</strong> Aunque pasen las fechas del calendario, el dinero sigue reservado a tu nombre. Puedes cobrarlo hasta que se publique el cierre definitivo del programa, que suele ser meses después. Solo no lo dejes pasar mucho tiempo.
-</div>
-</div>
-</div>
-
-<!-- 👉 PUEDES SEGUIR AGREGANDO MÁS PREGUNTAS Y RESPUESTAS AQUÍ 👈 -->
-
-</div>
-</div>
-</div>
-</section>
-
-<script id="modulo9-js">
-// LÓGICA PARA ABRIR Y CERRAR PREGUNTAS
-document.querySelectorAll('.acordeonPregunta').forEach(boton => {
-boton.addEventListener('click', () => {
-const respuesta = boton.nextElementSibling;
-const icono = boton.querySelector('.acordeonIcono');
-
-// Cerrar otras preguntas (opcional: quita este bloque si quieres que se queden abiertas todas)
-document.querySelectorAll('.acordeonRespuesta').forEach(otraRespuesta => {
-if(otraRespuesta !== respuesta){
-otraRespuesta.classList.remove('contenidoActivo');
-otraRespuesta.previousElementSibling.querySelector('.acordeonIcono').textContent = '+';
-}
-});
-
-// Abrir o cerrar la pregunta actual
-respuesta.classList.toggle('contenidoActivo');
-icono.textContent = respuesta.classList.contains('contenidoActivo') ? '−' : '+';
-});
-});
-</script>
 <!-- ===================================== -->
 <!-- MÓDULO 10 - SOLO ENLACES OFICIALES (SIN CONTACTO) -->
 <!-- ===================================== -->
