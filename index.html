@@ -2278,37 +2278,7 @@ Consulta en la plataforma oficial y verifica que tu DNI esté correcto.
 ✅ <strong>No lo pierdes.</strong> Aunque pasen las fechas del calendario, el dinero sigue reservado a tu nombre. Puedes cobrarlo hasta que se publique el cierre definitivo del programa, que suele ser meses después. Solo no lo dejes pasar mucho tiempo.
 </div>
 </div>
-</div>
-
-<!-- 👉 PUEDES SEGUIR AGREGANDO MÁS PREGUNTAS Y RESPUESTAS AQUÍ 👈 -->
-
-</div>
-</div>
-</div>
-</section>
-
-<script id="modulo9-js">
-// LÓGICA PARA ABRIR Y CERRAR PREGUNTAS
-document.querySelectorAll('.acordeonPregunta').forEach(boton => {
-boton.addEventListener('click', () => {
-const respuesta = boton.nextElementSibling;
-const icono = boton.querySelector('.acordeonIcono');
-
-// Cerrar otras preguntas (opcional: quita este bloque si quieres que se queden abiertas todas)
-document.querySelectorAll('.acordeonRespuesta').forEach(otraRespuesta => {
-if(otraRespuesta !== respuesta){
-otraRespuesta.classList.remove('contenidoActivo');
-otraRespuesta.previousElementSibling.querySelector('.acordeonIcono').textContent = '+';
-}
-});
-
-// Abrir o cerrar la pregunta actual
-respuesta.classList.toggle('contenidoActivo');
-icono.textContent = respuesta.classList.contains('contenidoActivo') ? '−' : '+';     
-</div>
-</div>
-</div>
-     
+</div>     
 <!-- ===================================== -->
 <!-- CATEGORÍA: VEHÍCULOS Y TRANSPORTE -->
 <!-- ===================================== -->
@@ -2545,7 +2515,36 @@ Todos los trabajadores tienen derecho a:
 ✅ Recibo por honorarios o boleta de pago.
 </div>
 </div>
-</div>  
+</div>
+
+<!-- 👉 PUEDES SEGUIR AGREGANDO MÁS PREGUNTAS Y RESPUESTAS AQUÍ 👈 -->
+
+</div>
+</div>
+</div>
+</section>
+
+<script id="modulo9-js">
+// LÓGICA PARA ABRIR Y CERRAR PREGUNTAS
+document.querySelectorAll('.acordeonPregunta').forEach(boton => {
+boton.addEventListener('click', () => {
+const respuesta = boton.nextElementSibling;
+const icono = boton.querySelector('.acordeonIcono');
+
+// Cerrar otras preguntas (opcional: quita este bloque si quieres que se queden abiertas todas)
+document.querySelectorAll('.acordeonRespuesta').forEach(otraRespuesta => {
+if(otraRespuesta !== respuesta){
+otraRespuesta.classList.remove('contenidoActivo');
+otraRespuesta.previousElementSibling.querySelector('.acordeonIcono').textContent = '+';
+}
+});
+
+// Abrir o cerrar la pregunta actual
+respuesta.classList.toggle('contenidoActivo');
+icono.textContent = respuesta.classList.contains('contenidoActivo') ? '−' : '+';     
+</div>
+</div>
+</div>
 });
 });
 </script>
