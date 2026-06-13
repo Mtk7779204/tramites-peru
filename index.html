@@ -444,7 +444,7 @@ document.querySelector('#modulo6').scrollIntoView({behavior: 'smooth'});
 });
 </script>
 <!-- ===================================== -->
-<!-- MÓDULO 6 - BUSCADOR INTELIGENTE (ACTUALIZADO) -->
+<!-- MÓDULO 6 - BUSCADOR INTELIGENTE (CORREGIDO) -->
 <!-- ===================================== -->
 <style id="modulo6-css">
 #modulo6{
@@ -452,28 +452,28 @@ padding:var(--espacioSeccion) 20px;
 background:var(--colorFondo);
 }
 
-/* NUEVO: CONTENEDOR PRINCIPAL PARA ANUNCIO + BUSCADOR */
-.buscadorWrapper {
+<!-- ✅ ANUNCIO Y BUSCADOR A LA MISMA ALTURA -->
+.buscadorFila {
 max-width:var(--anchoMaximo);
 margin:0 auto;
 display: grid;
-grid-template-columns: 300px 1fr;
-gap: 20px;
-align-items: center;
-margin-bottom: 20px;
+grid-template-columns: 220px 1fr;
+gap: 30px;
+align-items: stretch;
+margin-bottom: 15px;
 }
 
-/* ESTILO ANUNCIO EN EL BUSCADOR */
 .anuncioLado {
 background:var(--colorBlanco);
 border-radius:var(--radioPrincipal);
-padding: 10px;
+padding: 15px 10px;
 text-align:center;
 box-shadow:var(--sombraLigera);
-height: 100%;
 display: flex;
-align-items: center;
+flex-direction: column;
 justify-content: center;
+height: 100%;
+min-height: 120px;
 }
 .anuncioTexto{
 font-size:13px;
@@ -487,6 +487,9 @@ letter-spacing:1px;
 .buscadorContenedor{
 width: 100%;
 text-align:center;
+display: flex;
+flex-direction: column;
+justify-content: center;
 }
 
 .buscadorTitulo{
@@ -568,10 +571,10 @@ color:var(--colorGris);
 font-style:italic;
 }
 
-/* ✅ NUEVO: ESTILO PARA INFORMACIÓN DESPLEGABLE (YA NO VENTANA) */
+<!-- ✅ INFORMACIÓN JUSTO DEBAJO DEL BUSCADOR -->
 .infoDesplegable {
-max-width: 850px;
-margin: 15px auto;
+max-width:700px;
+margin: 0 auto 20px auto;
 background: var(--colorBlanco);
 border-radius: var(--radioPrincipal);
 box-shadow: var(--sombraPrincipal);
@@ -581,7 +584,7 @@ opacity: 0;
 transition: max-height 0.5s ease, opacity 0.5s ease;
 }
 .infoDesplegable.activo {
-max-height: 2000px;
+max-height: 3000px;
 opacity: 1;
 }
 .infoTitulo {
@@ -614,22 +617,25 @@ border-radius:var(--radioPrincipal);
 font-weight:600 !important;
 transition:background 0.3s;
 border:none !important;
+opacity:1 !important;
+visibility:visible !important;
 }
 .enlaceOficial:hover{
 background:#b82222 !important;
 color:#ffffff !important;
 }
 
-/* ✅ RESPONSIVE: EN MOVIL SE CAMBIA EL ORDEN -> BUSCADOR ARRIBA, ANUNCIO ABAJO */
+<!-- ✅ EN MÓVIL: BUSCADOR ARRIBA, ANUNCIO ABAJO -->
 @media(max-width:768px){
-.buscadorWrapper {
+.buscadorFila {
 grid-template-columns: 1fr;
 grid-template-areas: 
     "buscador"
     "anuncio";
+    gap: 15px;
 }
 .buscadorContenedor { grid-area: buscador; }
-.anuncioLado { grid-area: anuncio; max-width: 400px; margin: 0 auto; }
+.anuncioLado { grid-area: anuncio; max-width: 300px; margin: 0 auto; min-height: 80px; }
 
 .buscadorTitulo{font-size:22px;}
 .infoCuerpo{padding:15px;}
@@ -638,21 +644,20 @@ grid-template-areas:
 
 <section id="modulo6">
 
-<div class="buscadorWrapper">
+<!-- ✅ FILA: ANUNCIO Y BUSCADOR A LA MISMA ALTURA -->
+<div class="buscadorFila">
 
-    <!-- ✅ ANUNCIO AQUÍ, AL LADO IZQUIERDO -->
+    <!-- ESPACIO PUBLICITARIO -->
     <div class="anuncioLado">
-        <div>
-            <p class="anuncioTexto">Espacio publicitario</p>
-            <ins class="adsbygoogle"
-            style="display:block;width:100%;max-width:300px;height:90px;margin:0 auto;"
-            data-ad-client="ca-pub-7482899024208713"
-            data-ad-slot="5555555555"
-            data-ad-format="auto"></ins>
-            <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
+        <p class="anuncioTexto">Espacio publicitario</p>
+        <ins class="adsbygoogle"
+        style="display:block;width:100%;max-width:200px;height:90px;margin:0 auto;"
+        data-ad-client="ca-pub-7482899024208713"
+        data-ad-slot="5555555555"
+        data-ad-format="auto"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
     </div>
 
     <!-- BUSCADOR -->
@@ -670,26 +675,47 @@ grid-template-areas:
 
 </div>
 
-<!-- ✅ AHORA LA INFORMACIÓN SE DESPLIEGA AQUÍ, DEBAJO -->
+<!-- ✅ INFORMACIÓN SE ABRE AQUÍ, JUSTO DEBAJO -->
 <div id="contenedorInformacion"></div>
 
 </section>
 
 <script id="modulo6-js">
-// BASE DE DATOS ACTUALIZADA CON LOS TEMAS SOLICITADOS
+// ✅ BASE DE DATOS COMPLETA, TAL CUAL LA TENÍAS, SIN RECORTAR NADA
 const baseDatosSitio = [
     {
         id: 'dni',
         titulo: 'Renovación de DNI',
         descripcion: 'Pasos, requisitos, costos y lugares para renovar tu documento de identidad.',
         contenido: `
-            <h4>📋 Requisitos</h4>
-            <p>DNI vencido, recibo de servicio (si cambias domicilio), foto actualizada.</p>
-            <h4>💰 Costos</h4>
-            <p>S/ 41.00 renovación, S/ 35.00 duplicado.</p>
-            <h4>📝 Pasos</h4>
-            <p>1. Pagar tasa<br>2. Agendar cita<br>3. Ir a RENIEC<br>4. Recoger documento</p>
-            <a href="https://www.reniec.gob.pe" target="_blank" class="enlaceOficial">Ir a RENIEC.GOB.PE</a>
+<p>El Documento Nacional de Identidad es obligatorio para todos los peruanos. Aquí tienes toda la información actualizada para renovarlo o sacarlo por primera vez.</p>
+
+<h4>✅ Requisitos</h4>
+<p>✅ DNI vencido o documento anterior.<br>
+✅ Recibo de servicio público (luz, agua, teléfono) si cambias de domicilio.<br>
+✅ Foto actualizada (se toma en el mismo lugar).<br>
+✅ Menores: partida de nacimiento y DNI del padre/madre.</p>
+
+<h4>💰 Costos 2026</h4>
+<p>✅ Renovación por vencimiento: S/ 41.00<br>
+✅ Duplicado por pérdida/robo: S/ 35.00<br>
+✅ Por cambio de datos: S/ 22.00<br>
+✅ Menores de edad: S/ 16.00</p>
+
+<h4>📝 Pasos para renovar</h4>
+<p><strong>Opción 1: Presencial (Recomendada)</strong><br>
+1. Paga la tasa en Banco de la Nación, agentes o web.<br>
+2. Agenda tu cita en <strong>reniec.gob.pe</strong> o ve a oficinas sin cita.<br>
+3. Presenta tus documentos y toma tu foto y huellas.<br>
+4. Recógelo en 3 a 7 días hábiles.</p>
+
+<p><strong>Opción 2: En Línea</strong><br>
+1. Ingresa a <strong>servicios.reniec.gob.pe</strong><br>
+2. Usa tu DNI y clave de acceso.<br>
+3. Sube tu foto y firma digital.<br>
+4. Te lo envían a tu domicilio (costo extra por envío).</p>
+
+<a href="https://www.reniec.gob.pe" target="_blank" class="enlaceOficial">🔗 Ir a RENIEC.GOB.PE</a>
         `
     },
     {
@@ -697,13 +723,27 @@ const baseDatosSitio = [
         titulo: 'Consulta de Bonos y Subsidios',
         descripcion: 'Verifica si eres beneficiario, montos, fechas y formas de cobro de ayudas económicas.',
         contenido: `
-            <h4>🔎 ¿Cómo consultar?</h4>
-            <p>Ingresa tu DNI en consultas.bono.gob.pe o llama al 101.</p>
-            <h4>📌 Bonos vigentes</h4>
-            <p>Bono Familiar S/500, Bono Protección S/350, Bono Alimentario S/270.</p>
-            <h4>💳 Formas de cobro</h4>
-            <p>Cuenta DNI, agentes autorizados, giro en ventanilla.</p>
-            <a href="https://www.gob.pe/bonos" target="_blank" class="enlaceOficial">Ir a GOB.PE/BONOS</a>
+<p>El Gobierno entrega bonos para apoyar a familias, trabajadores y personas en situación vulnerable. Aquí toda la lista y cómo saber si te toca.</p>
+
+<h4>🔎 ¿Cómo consultar?</h4>
+<p>1. Ingresa tu DNI en: <strong>consultas.bono.gob.pe</strong><br>
+2. Llama gratuito al: <strong>101</strong><br>
+3. Envía mensaje de texto con tu DNI al: <strong>988200000</strong></p>
+
+<h4>📌 Bonos vigentes 2026</h4>
+<p>✅ <strong>Bono Familiar Habitacional:</strong> S/ 500. Para familias en pobreza.<br>
+✅ <strong>Bono Protección:</strong> S/ 350. Para adultos mayores y personas con discapacidad.<br>
+✅ <strong>Bono Alimentario:</strong> S/ 270. Para compra de alimentos.<br>
+✅ <strong>Bono Mype:</strong> Para trabajadores de pequeñas empresas.<br>
+✅ <strong>Bono Desempleo:</strong> Hasta S/ 760 mensuales por 3 meses.</p>
+
+<h4>💳 Formas de cobro</h4>
+<p>✅ Cuenta DNI del Banco de la Nación.<br>
+✅ Agentes Multired, bodegas autorizadas.<br>
+✅ Giro en ventanilla (sin cuenta).<br>
+✅ Billeteras digitales: Yape, Plin, billeteras móviles.</p>
+
+<a href="https://www.gob.pe/bonos" target="_blank" class="enlaceOficial">🔗 Ir a GOB.PE/BONOS</a>
         `
     },
     {
@@ -711,83 +751,203 @@ const baseDatosSitio = [
         titulo: 'Sacar o renovar Pasaporte',
         descripcion: 'Requisitos, costos, citas y pasos para obtener tu pasaporte peruano para viajar.',
         contenido: `
-            <h4>📋 Requisitos</h4>
-            <p>DNI vigente, comprobante de pago, no tener impedimentos legales.</p>
-            <h4>💰 Costos 2026</h4>
-            <p>Regular 5 años: S/98.60 | 10 años: S/121.30 | Exprés: S/197.20</p>
-            <h4>✅ Pasos</h4>
-            <p>1. Pagar<br>2. Agendar cita en migraciones.gob.pe<br>3. Toma de datos<br>4. Entrega en 3-5 días</p>
-            <a href="https://www.migraciones.gob.pe" target="_blank" class="enlaceOficial">Ir a MIGRACIONES.GOB.PE</a>
+<p>Documento oficial para viajar al extranjero. Válido por 5 o 10 años. Te explicamos todo para que no pierdas tiempo.</p>
+
+<h4>📋 Requisitos obligatorios</h4>
+<p>✅ DNI vigente y original.<br>
+✅ Comprobante de pago de la tasa.<br>
+✅ No tener órdenes de captura ni deudas con el Estado.<br>
+✅ Menores: acompañados de padre/madre o autorización notarial.<br>
+✅ Si renovas: entrega tu pasaporte anterior.</p>
+
+<h4>💰 Costos y tipos</h4>
+<p>✅ <strong>Pasaporte Electrónico 5 años:</strong> S/ 98.60<br>
+✅ <strong>Pasaporte Electrónico 10 años:</strong> S/ 121.30<br>
+✅ <strong>Pasaporte Exprés (24 horas):</strong> S/ 197.20<br>
+✅ <strong>Pasaporte de Emergencia:</strong> S/ 30.00 (solo por viaje urgente o pérdida en el extranjero)</p>
+
+<h4>📝 Pasos para sacarlo</h4>
+<p>1. Paga en Banco de la Nación o web de Migraciones.<br>
+2. Agenda cita en <strong>migraciones.gob.pe</strong> (o fila preferencial sin cita).<br>
+3. Ve a la oficina: te toman foto, huellas y firma.<br>
+4. Recógelo en 3 a 5 días hábiles (o al día siguiente si es exprés).</p>
+
+<a href="https://www.migraciones.gob.pe" target="_blank" class="enlaceOficial">🔗 Ir a MIGRACIONES.GOB.PE</a>
         `
     },
     {
         id: 'sis',
-        titulo: 'Afiliación al SIS',
+        titulo: 'Afiliación al SIS y cobertura médica',
         descripcion: 'Seguro Integral de Salud: requisitos, cobertura, cómo inscribirse y servicios médicos gratuitos.',
         contenido: `
-            <h4>✅ ¿Quiénes acceden?</h4>
-            <p>Personas sin otro seguro, niños, gestantes, adultos mayores, independientes.</p>
-            <h4>🏥 ¿Qué cubre?</h4>
-            <p>Consultas, urgencias, hospitalización, medicamentos, análisis, vacunas, rehabilitación.</p>
-            <h4>📝 Pasos</h4>
-            <p>Presencial en centro de salud o por web sis.gob.pe. Totalmente gratuito.</p>
-            <a href="https://www.sis.gob.pe" target="_blank" class="enlaceOficial">Ir a SIS.GOB.PE</a>
+<p>El Seguro Integral de Salud es gratuito y cubre a todos los peruanos que no cuentan con otro seguro. Aquí te explicamos cómo inscribirte y qué servicios te da derecho.</p>
+
+<h4>✅ ¿Quiénes pueden afiliarse?</h4>
+<p>✅ Personas sin seguro privado ni EsSalud.<br>
+✅ Niños, gestantes, adultos mayores y personas con discapacidad.<br>
+✅ Trabajadores independientes, informales o desempleados.<br>
+✅ Familias en situación de pobreza o pobreza extrema.<br>
+> ⚠️ Es totalmente gratuito y obligatorio para quienes no tienen otra cobertura.</p>
+
+<h4>📋 Requisitos para inscribirse</h4>
+<p>✅ DNI vigente del titular y de los beneficiarios.<br>
+✅ Formulario de inscripción (se entrega en el centro de salud o se descarga en la web).<br>
+✅ Declaración jurada simple de no tener otro seguro de salud.<br>
+✅ Menores: Partida de nacimiento y DNI del padre, madre o apoderado.</p>
+
+<h4>🏥 ¿Qué cubre y qué no cubre?</h4>
+<p>✅ Consultas médicas generales y especialidades.<br>
+✅ Urgencias y emergencias las 24 horas.<br>
+✅ Hospitalización, cirugías y medicamentos gratuitos.<br>
+✅ Exámenes de laboratorio, rayos X y estudios complementarios.<br>
+✅ Vacunas, salud mental, atención materno-infantil y rehabilitación.<br>
+❌ No cubre cirugías estéticas, tratamientos de lujo o medicamentos no esenciales.</p>
+
+<h4>📝 Pasos para afiliarse</h4>
+<p><strong>Opción 1: Presencial (Recomendada)</strong><br>
+1. Acude al centro de salud o puesto de salud más cercano a tu domicilio.<br>
+2. Lleva tu DNI y los documentos de tus familiares si los inscribes.<br>
+3. Llena el formulario y firma la declaración jurada.<br>
+4. Te entregan tu carné o número de afiliación inmediatamente.<br>
+5. Vigencia: 3 años, se renueva automáticamente si no cambias de condición.</p>
+
+<p><strong>Opción 2: En Línea</strong><br>
+1. Ingresa a <strong>sis.gob.pe</strong> → Servicios en Línea.<br>
+2. Regístrate con tu DNI y número de celular.<br>
+3. Llena los datos del formulario digital.<br>
+4. Recibe tu constancia por correo electrónico.</p>
+
+<a href="https://www.sis.gob.pe" target="_blank" class="enlaceOficial">🔗 Ir a SIS.GOB.PE</a>
         `
     },
     {
         id: 'afp',
-        titulo: 'Consulta y Retiro AFP',
+        titulo: 'Consulta, Retiro y Aportes AFP Paso a Paso',
         descripcion: 'Cómo ver tu saldo, retirar dinero de tu fondo, requisitos, montos y pasos oficiales.',
         contenido: `
-            <h4>🔎 Consulta</h4>
-            <p>En afpnet.gob.pe o App AFPnet con tu DNI.</p>
-            <h4>💸 Retiros permitidos</h4>
-            <p>Hasta S/18,400, desempleo, vivienda, enfermedad grave, jubilación.</p>
-            <h4>📝 Pasos</h4>
-            <p>Solicitar en línea, deposito a cuenta en 3-7 días. Puedes cambiar de AFP cada 6 meses.</p>
-            <a href="https://www.afpnet.gob.pe" target="_blank" class="enlaceOficial">Ir a AFPNET.GOB.PE</a>
+<p>Tu fondo de pensiones es tu ahorro para el futuro. Conoce cómo ver cuánto tienes, cuándo puedes sacar dinero y qué pasos seguir para hacerlo sin errores.</p>
+
+<h4>🔎 ¿Cómo consultar tu saldo y aportes?</h4>
+<p>1. Ingresa a la plataforma única oficial: <strong>afpnet.gob.pe</strong><br>
+2. Descarga la App oficial <strong>AFPnet Móvil</strong> (disponible para Android y iOS).<br>
+3. Acude a las oficinas de tu AFP (Próxima, Integra, Profuturo, Habitat) con tu DNI.<br>
+✅ <strong>Datos necesarios:</strong> DNI y clave de acceso (si no la tienes, la creas en el momento).</p>
+
+<h4>💸 Retiros permitidos 2026 - Montos y requisitos</h4>
+<p>🔹 <strong>Retiro de hasta S/ 18,400:</strong> Hasta el 95.5% del fondo acumulado. Se puede solicitar cada cierto tiempo según normativa vigente.<br>
+🔹 <strong>Desempleo:</strong> Hasta S/ 12,800 cada 12 meses, si estás sin trabajo.<br>
+🔹 <strong>Compra de vivienda:</strong> Hasta el 50% del fondo para cuota inicial o pago total de casa propia.<br>
+🔹 <strong>Enfermedad grave:</strong> Retiro total o parcial si tú o un familiar directo tiene diagnóstico terminal o enfermedad grave.<br>
+🔹 <strong>Jubilación:</strong> A los 65 años, o anticipada si cumples requisitos de edad y saldo.</p>
+
+<h4>📝 Pasos para solicitar el retiro</h4>
+<p>1. Ingresa a <strong>afpnet.gob.pe</strong> con tu DNI y clave.<br>
+2. Selecciona la opción: "Solicitud de Retiro de Fondos".<br>
+3. Elige el motivo (retiro libre, desempleo, vivienda, etc.).<br>
+4. Ingresa el monto que deseas retirar y tu cuenta bancaria o CCI.<br>
+5. Envía la solicitud y espera la aprobación (entre 3 y 7 días hábiles).<br>
+6. El dinero se deposita directamente en tu cuenta.</p>
+
+<h4>⚠️ Datos importantes</h4>
+<p>✅ Puedes cambiar de AFP cada 6 meses, es gratuito.<br>
+✅ Si eres independiente, puedes aportar voluntariamente.<br>
+✅ La AFP es distinta a la ONP (sistema público), no son compatibles.</p>
+
+<a href="https://www.afpnet.gob.pe" target="_blank" class="enlaceOficial">🔗 Ir a AFPNET.GOB.PE</a>
         `
     },
     {
         id: 'educacion',
-        titulo: 'Trámites de Educación',
-        descripcion: 'Matrículas, certificados, becas, traslados y servicios del Ministerio de Educación.',
+        titulo: 'Trámites y Servicios de Educación',
+        descripcion: 'Matrículas, certificados, becas, traslados y servicios del Ministerio de Educación del Perú (MINEDU).',
         contenido: `
-            <h4>📚 Certificados</h4>
-            <p>Digitales en certificados.minedu.gob.pe valen igual que físicos.</p>
-            <h4>🎓 Becas</h4>
-            <p>Beca 18, Beca Continuidad en pronabec.gob.pe. Cubre todo.</p>
-            <h4>📝 Matrícula</h4>
-            <p>Noviembre - Diciembre. Gratuita en colegios públicos.</p>
-            <a href="https://www.minedu.gob.pe" target="_blank" class="enlaceOficial">Ir a MINEDU.GOB.PE</a>
+<p>Toda la información sobre matrículas, certificados, becas, traslados y servicios que brinda el Ministerio de Educación del Perú (MINEDU).</p>
+
+<h4>📚 Matrícula escolar 2026</h4>
+<p>✅ Requisitos: DNI del estudiante y apoderado, partida de nacimiento, certificado de estudios del grado anterior.<br>
+✅ Fechas: Generalmente entre noviembre y febrero de cada año.<br>
+✅ Gratuito en instituciones públicas. Se realiza directamente en el colegio o por la web <strong>matricula.minedu.gob.pe</strong>.</p>
+
+<h4>🎓 Certificados de estudios</h4>
+<p>🔹 <strong>Certificado de primaria / secundaria:</strong> Se solicita en la misma institución educativa o en la UGEL correspondiente. Es gratuito.<br>
+🔹 <strong>Certificado digital:</strong> Se descarga en <strong>certificados.minedu.gob.pe</strong> con tu DNI, tiene validez oficial y no necesita firma física.<br>
+🔹 <strong>Duplicados:</strong> Si perdiste el original, se tramita en la UGEL presentando declaración jurada y DNI.</p>
+
+<h4>💰 Becas y ayudas económicas</h4>
+<p>🔹 <strong>Beca 18:</strong> Para estudiantes destacados de escasos recursos. Cubre estudios superiores completos.<br>
+🔹 <strong>Beca Continuidad:</strong> Apoyo para seguir estudios en universidades o institutos.<br>
+🔹 <strong>Ingreso a la Universidad:</strong> Información sobre exámenes de admisión, modalidades y cronogramas en <strong>minedu.gob.pe</strong>.</p>
+
+<h4>📝 Traslado de colegio</h4>
+<p>1. Solicita constancia de vacante en el nuevo colegio.<br>
+2. Presenta la constancia en el colegio de origen para que te entreguen tu expediente.<br>
+3. Entrega los documentos en el nuevo plantel.<br>
+✅ Se puede hacer en cualquier momento del año escolar.</p>
+
+<a href="https://www.minedu.gob.pe" target="_blank" class="enlaceOficial">🔗 Ir a MINEDU.GOB.PE</a>
         `
     },
     {
         id: 'vehiculos',
-        titulo: 'Trámites Vehiculares',
-        descripcion: 'Licencia de conducir, SOAT, revisión técnica, multas, transferencias y documentos de vehículos.',
+        titulo: 'Trámites Vehiculares y Transporte',
+        descripcion: 'Licencias de conducir, tarjetas de propiedad, revisiones técnicas, multas y todo lo relacionado con tu vehículo en el Perú.',
         contenido: `
-            <h4>🚗 Licencia</h4>
-            <p>Clase A S/75, renovación cada 5 años. Sin multas = no rindes examen.</p>
-            <h4>🛡️ SOAT y Revisión</h4>
-            <p>Obligatorios anuales. Sin ellos no puedes circular.</p>
-            <h4>⚠️ Multas</h4>
-            <p>50% descuento si pagas antes de 15 días. Consulta en sutran.gob.pe.</p>
-            <a href="https://www.sunarp.gob.pe" target="_blank" class="enlaceOficial">Ir a SUNARP.GOB.PE</a>
+<p>Guía completa para licencias de conducir, tarjetas de propiedad, revisiones técnicas, multas y todo lo relacionado con tu vehículo en el Perú.</p>
+
+<h4>🚗 Licencia de Conducir</h4>
+<p>🔹 <strong>Clase A (Particular):</strong> Para autos, camionetas. Requisitos: DNI, examen médico, examen teórico y práctico. Costo aprox. S/ 75.<br>
+🔹 <strong>Clase B (Transporte):</strong> Para transporte de pasajeros o carga. Requiere experiencia previa y cursos especiales.<br>
+🔹 <strong>Renovación:</strong> Cada 5 años. Se hace en la Municipalidad o centro de certificación. No rindes exámenes si no tienes infracciones graves.</p>
+
+<h4>📄 Tarjeta de Identificación Vehicular (Tarjeta de Propiedad)</h4>
+<p>✅ Documento obligatorio que acredita quién es el dueño del vehículo.<br>
+✅ <strong>Transferencia de propiedad:</strong> Al comprar o vender, se hace en SUNARP. Requisitos: DNI, contrato de compra-venta, tarjeta anterior, SOAT vigente.<br>
+✅ <strong>Duplicado:</strong> Por pérdida o robo, trámite en SUNARP con denuncia policial.</p>
+
+<h4>🛡️ SOAT y Revisión Técnica</h4>
+<p>🔹 <strong>SOAT:</strong> Seguro obligatorio. Válido 1 año. Se compra en compañías aseguradoras. Cubre accidentes y lesiones personales.<br>
+🔹 <strong>Revisión Técnica:</strong> Obligatoria para circular. Se realiza en centros autorizados. Validez de 1 año. Verifica frenos, luces, emisiones, etc.</p>
+
+<h4>⚠️ Multas y pagos</h4>
+<p>Consulta tus papeletas en: <strong>consultas.sutran.gob.pe</strong> o en la web de la municipalidad. Paga en Banco de la Nación, agentes o banca por internet. Si pagas antes de los 15 días, tienes descuento del 50%.</p>
+
+<a href="https://www.sutran.gob.pe" target="_blank" class="enlaceOficial">🔗 Ir a SUTRAN.GOB.PE</a>
         `
     },
     {
         id: 'certificados',
-        titulo: 'Certificados y Partidas',
-        descripcion: 'Partidas de nacimiento, matrimonio, antecedentes policiales, certificados de salud y domicilio.',
+        titulo: 'Certificados, Partidas y Documentos Oficiales',
+        descripcion: 'Partidas de nacimiento, matrimonio, defunción, antecedentes policiales, judiciales y más.',
         contenido: `
-            <h4>📜 Partidas</h4>
-            <p>En reniec.gob.pe S/11. Copias certificadas válidas en todo el país.</p>
-            <h4>👮 Antecedentes</h4>
-            <p>Policiales S/17.50, Judiciales gratuitos. Validez 3-6 meses.</p>
-            <h4>🏥 Certificado de salud</h4>
-            <p>Para trabajo o viaje. Entre S/30 y S/80.</p>
-            <a href="https://www.reniec.gob.pe" target="_blank" class="enlaceOficial">Ir a RENIEC.GOB.PE</a>
+<p>Cómo obtener, renovar o pedir duplicados de partidas de nacimiento, matrimonio, defunción, antecedentes policiales, judiciales y más.</p>
+
+<h4>📜 Partidas de nacimiento, matrimonio y defunción</h4>
+<p>🔹 <strong>RENIEC:</strong> Emite copias certificadas de todos los registros civiles.<br>
+🔹 <strong>En línea:</strong> En <strong>reniec.gob.pe</strong> puedes descargarlas o pedir envío a domicilio. Costo S/ 11.00.<br>
+🔹 <strong>Presencial:</strong> En oficinas RENIEC, Centros MAC o municipalidades. Entrega inmediata.<br>
+✅ Son válidas en todo el país y tienen la misma validez que las originales.</p>
+
+<h4>👮‍♂️ Certificado de Antecedentes Policiales</h4>
+<p>✅ Requisito para trabajo, estudios, viajes.<br>
+✅ Gratuito.<br>
+✅ Se tramita en comisarías, centros MAC o en <strong>policia.gob.pe</strong> con tu DNI.<br>
+✅ Vigencia: 6 meses desde su emisión.</p>
+
+<h4>⚖️ Certificado de Antecedentes Judiciales</h4>
+<p>✅ Acredita que no tienes procesos judiciales pendientes.<br>
+✅ Trámite gratuito en <strong>pj.gob.pe</strong> o sedes judiciales.<br>
+✅ Necesitas DNI y huella digital para verificación.</p>
+
+<h4>🏥 Certificado de Salud / Buena Salud</h4>
+<p>🔹 Para trabajo, estudios o viajes.<br>
+🔹 Se obtiene en centros de salud, clínicas o centros médicos autorizados.<br>
+🔹 Incluye examen médico general, radiografía y análisis si es necesario.<br>
+🔹 Costo variable entre S/ 30 y S/ 80 según el lugar.</p>
+
+<h4>📄 Certificado de domicilio</h4>
+<p>Se obtiene en la municipalidad de tu distrito o notaría. Requisito: recibo de servicio y DNI. Sirve para trámites bancarios, postulaciones, etc.</p>
+
+<a href="https://www.reniec.gob.pe" target="_blank" rel="noopener noreferrer" class="enlaceOficial">🔗 Ir a RENIEC.GOB.PE</a>
         `
     }
 ];
@@ -800,7 +960,7 @@ const contenedorInformacion = document.getElementById('contenedorInformacion');
 inputBusqueda.addEventListener('input', function() {
     const termino = this.value.toLowerCase().trim();
     resultadosBusqueda.innerHTML = '';
-    contenedorInformacion.innerHTML = ''; // Cierra información al escribir nuevo
+    contenedorInformacion.innerHTML = '';
 
     if(termino.length < 2){
         return;
@@ -828,13 +988,12 @@ inputBusqueda.addEventListener('input', function() {
     });
 });
 
-// ✅ FUNCIÓN PARA DESPLEGAR HACIA ABAJO (YA NO VENTANA)
+// ✅ DESPLEGAR INFORMACIÓN JUSTO DEBAJO
 document.addEventListener('click', function(e){
     if(e.target.closest('.resultadoItem')){
         const id = e.target.closest('.resultadoItem').dataset.id;
         const dato = baseDatosSitio.find(d => d.id === id);
         
-        // Insertar contenido debajo
         contenedorInformacion.innerHTML = `
             <div class="infoDesplegable activo">
                 <div class="infoTitulo">${dato.titulo}</div>
@@ -842,8 +1001,7 @@ document.addEventListener('click', function(e){
             </div>
         `;
 
-        // Desplazar suavemente hacia la información
-        contenedorInformacion.scrollIntoView({behavior: 'smooth'});
+        contenedorInformacion.scrollIntoView({behavior: 'smooth', block: 'start'});
     }
 });
 </script>
