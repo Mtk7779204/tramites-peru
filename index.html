@@ -2165,12 +2165,13 @@ font-size:15px;
 line-height:1.5;
 color:var(--colorTexto);
 }
-.respuestaTexto ul{
-  margin:10px 0 0 20px;
-  padding:0;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* 3 columnas iguales */
-  gap: 8px 15px; /* espacio entre filas y columnas */
+.acordeonContenedor{
+max-width:1200px;
+margin:0 auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px 20px;
+align-items:start;
 }
 .respuestaTexto li{
 margin-bottom:5px;
