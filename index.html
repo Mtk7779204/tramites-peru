@@ -1066,7 +1066,9 @@ transform:translateY(-5px);
 box-shadow:0 6px 16px rgba(0,0,0,0.15);
 }
 .categoriaIcono{
-font-size:40px;
+display:flex;
+justify-content:center;
+align-items:center;
 margin-bottom:8px;
 }
 .categoriaNombre{
@@ -1195,7 +1197,19 @@ letter-spacing:1px;
 
 <div class="categoriasGrid">
 <div class="categoriaCard" data-cat="dni">
-<div class="categoriaIcono"><🆔</div>
+<div class="categoriaIcono">
+<svg width="64" height="48" viewBox="0 0 64 48" fill="none">
+<rect x="2" y="2" width="60" height="44" rx="6" fill="#FFFFFF" stroke="#003049" stroke-width="2"/>
+<rect x="2" y="2" width="60" height="10" fill="#003049"/>
+<text x="8" y="9" font-size="5" fill="white" font-weight="bold">DNI</text>
+<circle cx="15" cy="25" r="6" fill="#D62828"/>
+<rect x="26" y="18" width="24" height="3" rx="1" fill="#003049"/>
+<rect x="26" y="24" width="20" height="3" rx="1" fill="#6B7280"/>
+<rect x="26" y="30" width="16" height="3" rx="1" fill="#6B7280"/>
+<circle cx="53" cy="28" r="5" fill="none" stroke="#003049" stroke-width="1.5"/>
+<path d="M50 28C51 24 55 24 56 28C55 32 51 32 50 28Z" fill="none" stroke="#003049" stroke-width="1"/>
+</svg>
+</div>
 <div class="categoriaNombre">DNI</div>
 <div class="categoriaTexto">Renovación, duplicado, actualización de datos y trámites ante RENIEC.</div>
 </div>
