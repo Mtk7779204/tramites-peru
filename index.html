@@ -444,7 +444,7 @@ document.querySelector('#modulo6').scrollIntoView({behavior: 'smooth'});
 });
 </script>
 <!-- ===================================== -->
-<!-- MÓDULO 6 - AJUSTE DE ANCHOS EQUILIBRADO -->
+<!-- MÓDULO 6 - VERSIÓN FINAL: 50/50 + CENTRADO -->
 <!-- ===================================== -->
 <style id="modulo6-css">
 #modulo6{
@@ -452,15 +452,15 @@ padding:var(--espacioSeccion) 20px;
 background:var(--colorFondo);
 }
 
-/* ✅ ANCHOS CORREGIDOS: 220px izquierda / resto derecha, MÁS EQUILIBRADO */
-.buscadorWrapper {
-max-width:1000px;
+/* ✅ DIVISIÓN EXACTA 50% / 50% + CENTRADO */
+.buscadorWrapper{
+max-width:1100px;
 margin:0 auto;
-display: grid;
-grid-template-columns: 220px 1fr; /* <<< CAMBIO AQUÍ */
-gap: 25px;
-align-items: start;
-min-height: 420px;
+display:grid;
+grid-template-columns:1fr 1fr; /* 👈 50% cada columna */
+gap:20px;
+align-items:start;
+min-height:420px;
 }
 
 /* ✅ COLUMNA IZQUIERDA: PUBLICIDAD */
@@ -483,33 +483,41 @@ margin:0;
 }
 .anuncioLado ins { display:none; }
 
-/* ✅ COLUMNA DERECHA: BUSCADOR */
+/* ✅ COLUMNA DERECHA: TODO CENTRADO */
 .buscadorContenedor{
-width: 100%;
-display: flex;
-flex-direction: column;
+width:100%;
+display:flex;
+flex-direction:column;
+align-items:center; /* 👈 Centra todo el contenido */
+text-align:center;   /* 👈 Centra el texto */
 justify-content: flex-start;
 }
 
+/* ✅ TÍTULO CENTRADO */
 .buscadorTitulo{
 font-size:22px;
 font-weight:700;
 color:var(--colorSecundario);
 margin:0 0 8px 0;
-text-align: left;
+text-align:center;
+width:100%;
 }
+
+/* ✅ DESCRIPCIÓN CENTRADA Y ANCHO CONTROLADO */
 .buscadorDescripcion{
 font-size:14px;
 color:var(--colorTexto);
 margin:0 0 15px 0;
-text-align: left;
+text-align:center;
+max-width:500px;
 }
 
-/* ✅ ANCHO REDUCIDO DEL BUSCADOR: 500px en vez de 600px */
+/* ✅ CAJA DE BÚSQUEDA CENTRADA Y COMPACTA */
 .cajaBuscador{
 position:relative;
-max-width:500px; /* <<< CAMBIO AQUÍ */
-margin:0 0 20px 0;
+width:100%;
+max-width:500px; /* 👈 Tamaño compacto */
+margin:0 auto 20px auto;
 }
 .inputBuscador{
 width:100%;
@@ -535,11 +543,12 @@ font-size:18px;
 color:var(--colorGris);
 }
 
-/* ✅ ANCHO REDUCIDO RESULTADOS: 600px en vez de 700px */
+/* ✅ RESULTADOS CENTRADOS Y ANCHO MÁXIMO 600px */
 .resultadosBusqueda{
-max-width:600px; /* <<< CAMBIO AQUÍ */
-margin:0 0 10px 0;
-text-align:left;
+width:100%;
+max-width:600px; /* 👈 Tamaño compacto */
+margin:0 auto 10px auto;
+text-align:left; /* El texto interno de resultados se lee mejor a izquierda */
 }
 .resultadoItem{
 background:var(--colorBlanco);
@@ -573,9 +582,10 @@ color:var(--colorGris);
 font-style:italic;
 }
 
-/* ✅ ANCHO REDUCIDO TARJETA INFO: 600px en vez de 700px */
+/* ✅ TARJETA DE INFORMACIÓN CENTRADA Y ANCHO MÁXIMO 600px */
 .infoDesplegable {
-max-width:600px; /* <<< CAMBIO AQUÍ */
+width:100%;
+max-width:600px; /* 👈 Tamaño compacto */
 background: var(--colorBlanco);
 border-radius: var(--radioPrincipal);
 box-shadow: var(--sombraPrincipal);
@@ -583,7 +593,8 @@ overflow: hidden;
 max-height: 0;
 opacity: 0;
 transition: max-height 0.5s ease, opacity 0.5s ease;
-text-align:left;
+text-align:left; /* El texto largo se lee mejor a izquierda */
+margin:0 auto;
 }
 .infoDesplegable.activo {
 max-height: 3000px;
@@ -596,6 +607,7 @@ padding: 12px 20px;
 font-size: 16px;
 font-weight: 700;
 margin:0;
+text-align:center; /* 👈 Título de la tarjeta centrado */
 }
 .infoCuerpo {
 padding: 20px;
@@ -629,7 +641,7 @@ background:#b82222 !important;
 color:#ffffff !important;
 }
 
-/* ✅ EN MÓVIL */
+/* ✅ EN MÓVIL: SE APILA UNA DEBAJO DE OTRA Y TODO AL CENTRO */
 @media(max-width:768px){
 .buscadorWrapper {
 grid-template-columns: 1fr;
@@ -653,7 +665,7 @@ max-width: 100%;
 
 <div class="buscadorWrapper">
 
-    <!-- ✅ ESPACIO PUBLICITARIO IZQUIERDA -->
+    <!-- ✅ COLUMNA IZQUIERDA 50%: PUBLICIDAD -->
     <div class="anuncioLado">
         <p class="anuncioTexto">espacio publicitario</p>
         <ins class="adsbygoogle"
@@ -666,7 +678,7 @@ max-width: 100%;
         </script>
     </div>
 
-    <!-- ✅ BUSCADOR COMPLETO A LA DERECHA -->
+    <!-- ✅ COLUMNA DERECHA 50%: TODO CENTRADO -->
     <div class="buscadorContenedor">
         <h2 class="buscadorTitulo">¿Qué trámite buscas hoy?</h2>
         <p class="buscadorDescripcion">Escribe lo que necesitas consultar o realizar y te mostraremos la guía paso a paso con toda la información oficial.</p>
@@ -687,7 +699,7 @@ max-width: 100%;
 </section>
 
 <script id="modulo6-js">
-// ✅ BASE DE DATOS COMPLETA (SIN CAMBIOS)
+// ✅ BASE DE DATOS COMPLETA (SIN CAMBIOS, TODA LA FUNCIONALIDAD)
 const baseDatosSitio = [
     {
         id: 'dni',
@@ -958,7 +970,7 @@ const baseDatosSitio = [
     }
 ];
 
-// ✅ LÓGICA DEL BUSCADOR (SIN CAMBIOS)
+// ✅ LÓGICA DEL BUSCADOR (SIN NINGÚN CAMBIO)
 const inputBusqueda = document.getElementById('inputBusqueda');
 const resultadosBusqueda = document.getElementById('resultadosBusqueda');
 const contenedorInformacion = document.getElementById('contenedorInformacion');
