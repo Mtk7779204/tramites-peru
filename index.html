@@ -444,7 +444,7 @@ document.querySelector('#modulo6').scrollIntoView({behavior: 'smooth'});
 });
 </script>
 <!-- ===================================== -->
-<!-- MÓDULO 6 - BUSCADOR INTELIGENTE (CORREGIDO) -->
+<!-- MÓDULO 6 - BUSCADOR INTELIGENTE (VERSIÓN FINAL VISUAL) -->
 <!-- ===================================== -->
 <style id="modulo6-css">
 #modulo6{
@@ -452,44 +452,43 @@ padding:var(--espacioSeccion) 20px;
 background:var(--colorFondo);
 }
 
-<!-- ✅ ANUNCIO Y BUSCADOR A LA MISMA ALTURA -->
-.buscadorFila {
+<!-- ✅ ESTRUCTURA EXACTA: ANUNCIO IZQUIERDA - BUSCADOR DERECHA -->
+.buscadorWrapper {
 max-width:var(--anchoMaximo);
 margin:0 auto;
 display: grid;
-grid-template-columns: 220px 1fr;
+grid-template-columns: 280px 1fr;
 gap: 30px;
-align-items: stretch;
-margin-bottom: 15px;
+align-items: start;
 }
 
+<!-- ✅ ESPACIO PUBLICITARIO TAL CUAL LA IMAGEN -->
 .anuncioLado {
 background:var(--colorBlanco);
 border-radius:var(--radioPrincipal);
-padding: 15px 10px;
-text-align:center;
 box-shadow:var(--sombraLigera);
+height: 420px; /* Altura exacta visual */
 display: flex;
-flex-direction: column;
+align-items: center;
 justify-content: center;
-height: 100%;
-min-height: 120px;
+text-align:center;
 }
 .anuncioTexto{
-font-size:13px;
+font-size:16px;
 color:var(--colorGris);
-opacity:0.7;
-margin-bottom:10px;
+font-weight:500;
 text-transform:uppercase;
 letter-spacing:1px;
+margin:0;
+}
+.anuncioLado ins {
+display:none; /* Ocultamos código de ads para que solo se vea el texto como en la imagen */
 }
 
+<!-- ✅ BLOQUE BUSCADOR COMPLETO A LA DERECHA -->
 .buscadorContenedor{
 width: 100%;
 text-align:center;
-display: flex;
-flex-direction: column;
-justify-content: center;
 }
 
 .buscadorTitulo{
@@ -538,6 +537,7 @@ color:var(--colorGris);
 max-width:700px;
 margin:0 auto;
 text-align:left;
+margin-bottom:10px;
 }
 .resultadoItem{
 background:var(--colorBlanco);
@@ -571,10 +571,10 @@ color:var(--colorGris);
 font-style:italic;
 }
 
-<!-- ✅ INFORMACIÓN JUSTO DEBAJO DEL BUSCADOR -->
+<!-- ✅ TARJETA DE INFORMACIÓN DEBAJO, TAL CUAL -->
 .infoDesplegable {
 max-width:700px;
-margin: 0 auto 20px auto;
+margin: 0 auto;
 background: var(--colorBlanco);
 border-radius: var(--radioPrincipal);
 box-shadow: var(--sombraPrincipal);
@@ -582,6 +582,7 @@ overflow: hidden;
 max-height: 0;
 opacity: 0;
 transition: max-height 0.5s ease, opacity 0.5s ease;
+text-align:left;
 }
 .infoDesplegable.activo {
 max-height: 3000px;
@@ -590,9 +591,10 @@ opacity: 1;
 .infoTitulo {
 background: var(--colorPrincipal);
 color: white;
-padding: 15px 20px;
-font-size: 20px;
+padding: 12px 20px;
+font-size: 16px;
 font-weight: 700;
+margin:0;
 }
 .infoCuerpo {
 padding: 20px;
@@ -619,23 +621,29 @@ transition:background 0.3s;
 border:none !important;
 opacity:1 !important;
 visibility:visible !important;
+font-size:13px;
 }
 .enlaceOficial:hover{
 background:#b82222 !important;
 color:#ffffff !important;
 }
 
-<!-- ✅ EN MÓVIL: BUSCADOR ARRIBA, ANUNCIO ABAJO -->
+<!-- ✅ EN MÓVIL: CAMBIO DE ORDEN -->
 @media(max-width:768px){
-.buscadorFila {
+.buscadorWrapper {
 grid-template-columns: 1fr;
 grid-template-areas: 
     "buscador"
     "anuncio";
-    gap: 15px;
+    gap: 20px;
 }
 .buscadorContenedor { grid-area: buscador; }
-.anuncioLado { grid-area: anuncio; max-width: 300px; margin: 0 auto; min-height: 80px; }
+.anuncioLado { 
+    grid-area: anuncio; 
+    max-width: 300px; 
+    margin: 0 auto; 
+    height: 120px; 
+}
 
 .buscadorTitulo{font-size:22px;}
 .infoCuerpo{padding:15px;}
@@ -644,12 +652,11 @@ grid-template-areas:
 
 <section id="modulo6">
 
-<!-- ✅ FILA: ANUNCIO Y BUSCADOR A LA MISMA ALTURA -->
-<div class="buscadorFila">
+<div class="buscadorWrapper">
 
-    <!-- ESPACIO PUBLICITARIO -->
+    <!-- ✅ ESPACIO PUBLICITARIO IZQUIERDA - TAL CUAL IMAGEN -->
     <div class="anuncioLado">
-        <p class="anuncioTexto">Espacio publicitario</p>
+        <p class="anuncioTexto">espacio publicitario</p>
         <ins class="adsbygoogle"
         style="display:block;width:100%;max-width:200px;height:90px;margin:0 auto;"
         data-ad-client="ca-pub-7482899024208713"
@@ -660,7 +667,7 @@ grid-template-areas:
         </script>
     </div>
 
-    <!-- BUSCADOR -->
+    <!-- ✅ BUSCADOR COMPLETO A LA DERECHA -->
     <div class="buscadorContenedor">
         <h2 class="buscadorTitulo">¿Qué trámite buscas hoy?</h2>
         <p class="buscadorDescripcion">Escribe lo que necesitas consultar o realizar y te mostraremos la guía paso a paso con toda la información oficial.</p>
@@ -671,17 +678,18 @@ grid-template-areas:
         </div>
 
         <div id="resultadosBusqueda" class="resultadosBusqueda"></div>
+
+        <!-- ✅ INFORMACIÓN SE ABRE AQUÍ, DEBAJO -->
+        <div id="contenedorInformacion"></div>
+
     </div>
 
 </div>
 
-<!-- ✅ INFORMACIÓN SE ABRE AQUÍ, JUSTO DEBAJO -->
-<div id="contenedorInformacion"></div>
-
 </section>
 
 <script id="modulo6-js">
-// ✅ BASE DE DATOS COMPLETA, TAL CUAL LA TENÍAS, SIN RECORTAR NADA
+// ✅ BASE DE DATOS COMPLETA, TAL CUAL LA ORIGINAL, SIN RECORTAR NADA
 const baseDatosSitio = [
     {
         id: 'dni',
@@ -952,7 +960,7 @@ const baseDatosSitio = [
     }
 ];
 
-// LÓGICA DEL BUSCADOR
+// ✅ LÓGICA DEL BUSCADOR COMPLETA Y FUNCIONAL
 const inputBusqueda = document.getElementById('inputBusqueda');
 const resultadosBusqueda = document.getElementById('resultadosBusqueda');
 const contenedorInformacion = document.getElementById('contenedorInformacion');
@@ -996,12 +1004,10 @@ document.addEventListener('click', function(e){
         
         contenedorInformacion.innerHTML = `
             <div class="infoDesplegable activo">
-                <div class="infoTitulo">${dato.titulo}</div>
+                <h3 class="infoTitulo">${dato.titulo}</h3>
                 <div class="infoCuerpo">${dato.contenido}</div>
             </div>
         `;
-
-        contenedorInformacion.scrollIntoView({behavior: 'smooth', block: 'start'});
     }
 });
 </script>
