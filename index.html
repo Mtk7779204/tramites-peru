@@ -444,7 +444,7 @@ document.querySelector('#modulo6').scrollIntoView({behavior: 'smooth'});
 });
 </script>
 <!-- ===================================== -->
-<!-- MÓDULO 6 - CORREGIDO: COMPLETO + FUNCIONAL + DISEÑO EXACTO -->
+<!-- MÓDULO 6 - AJUSTE DE ANCHOS EQUILIBRADO -->
 <!-- ===================================== -->
 <style id="modulo6-css">
 #modulo6{
@@ -452,18 +452,18 @@ padding:var(--espacioSeccion) 20px;
 background:var(--colorFondo);
 }
 
-/* ✅ DOS COLUMNAS EXACTAS, ALINEADAS, MISMA ALTURA */
+/* ✅ ANCHOS CORREGIDOS: 220px izquierda / resto derecha, MÁS EQUILIBRADO */
 .buscadorWrapper {
-max-width:var(--anchoMaximo);
+max-width:1000px;
 margin:0 auto;
 display: grid;
-grid-template-columns: 280px 1fr;
-gap: 30px;
-align-items: stretch; /* OBLIGA A QUE AMBAS COLUMNAS TENGAN LA MISMA ALTURA */
+grid-template-columns: 220px 1fr; /* <<< CAMBIO AQUÍ */
+gap: 25px;
+align-items: start;
 min-height: 420px;
 }
 
-/* ✅ COLUMNA IZQUIERDA: PUBLICIDAD, TAL CUAL IMAGEN */
+/* ✅ COLUMNA IZQUIERDA: PUBLICIDAD */
 .anuncioLado {
 background:var(--colorBlanco);
 border-radius:var(--radioPrincipal);
@@ -471,7 +471,7 @@ box-shadow:var(--sombraLigera);
 display: flex;
 align-items: center;
 justify-content: center;
-height: 100%; /* OCUPA TODA LA ALTURA */
+height: 100%;
 }
 .anuncioTexto{
 font-size:16px;
@@ -483,7 +483,7 @@ margin:0;
 }
 .anuncioLado ins { display:none; }
 
-/* ✅ COLUMNA DERECHA: BUSCADOR, TODO EL CONTENIDO AQUÍ */
+/* ✅ COLUMNA DERECHA: BUSCADOR */
 .buscadorContenedor{
 width: 100%;
 display: flex;
@@ -504,9 +504,11 @@ color:var(--colorTexto);
 margin:0 0 15px 0;
 text-align: left;
 }
+
+/* ✅ ANCHO REDUCIDO DEL BUSCADOR: 500px en vez de 600px */
 .cajaBuscador{
 position:relative;
-max-width:600px;
+max-width:500px; /* <<< CAMBIO AQUÍ */
 margin:0 0 20px 0;
 }
 .inputBuscador{
@@ -532,8 +534,10 @@ transform:translateY(-50%);
 font-size:18px;
 color:var(--colorGris);
 }
+
+/* ✅ ANCHO REDUCIDO RESULTADOS: 600px en vez de 700px */
 .resultadosBusqueda{
-max-width:700px;
+max-width:600px; /* <<< CAMBIO AQUÍ */
 margin:0 0 10px 0;
 text-align:left;
 }
@@ -569,9 +573,9 @@ color:var(--colorGris);
 font-style:italic;
 }
 
-/* ✅ TARJETA DE INFORMACIÓN, IGUAL QUE TU IMAGEN */
+/* ✅ ANCHO REDUCIDO TARJETA INFO: 600px en vez de 700px */
 .infoDesplegable {
-max-width:700px;
+max-width:600px; /* <<< CAMBIO AQUÍ */
 background: var(--colorBlanco);
 border-radius: var(--radioPrincipal);
 box-shadow: var(--sombraPrincipal);
@@ -625,16 +629,22 @@ background:#b82222 !important;
 color:#ffffff !important;
 }
 
-/* ✅ EN MÓVIL: SE APILA UNA DEBAJO DE OTRA */
+/* ✅ EN MÓVIL */
 @media(max-width:768px){
 .buscadorWrapper {
 grid-template-columns: 1fr;
 gap: 20px;
+max-width: 100%;
 }
 .anuncioLado { 
     max-width: 300px; 
     margin: 0 auto; 
     min-height: 120px; 
+}
+.cajaBuscador,
+.resultadosBusqueda,
+.infoDesplegable {
+    max-width: 100%;
 }
 }
 </style>
@@ -643,7 +653,7 @@ gap: 20px;
 
 <div class="buscadorWrapper">
 
-    <!-- ✅ ESPACIO PUBLICITARIO IZQUIERDA - TAL CUAL IMAGEN -->
+    <!-- ✅ ESPACIO PUBLICITARIO IZQUIERDA -->
     <div class="anuncioLado">
         <p class="anuncioTexto">espacio publicitario</p>
         <ins class="adsbygoogle"
@@ -656,7 +666,7 @@ gap: 20px;
         </script>
     </div>
 
-    <!-- ✅ BUSCADOR COMPLETO A LA DERECHA, TODA LA FUNCIONALIDAD -->
+    <!-- ✅ BUSCADOR COMPLETO A LA DERECHA -->
     <div class="buscadorContenedor">
         <h2 class="buscadorTitulo">¿Qué trámite buscas hoy?</h2>
         <p class="buscadorDescripcion">Escribe lo que necesitas consultar o realizar y te mostraremos la guía paso a paso con toda la información oficial.</p>
@@ -668,7 +678,6 @@ gap: 20px;
 
         <div id="resultadosBusqueda" class="resultadosBusqueda"></div>
 
-        <!-- ✅ INFORMACIÓN SE ABRE AQUÍ -->
         <div id="contenedorInformacion"></div>
 
     </div>
@@ -678,7 +687,7 @@ gap: 20px;
 </section>
 
 <script id="modulo6-js">
-// ✅ BASE DE DATOS COMPLETA, TAL CUAL LA ORIGINAL, NO FALTA NADA
+// ✅ BASE DE DATOS COMPLETA (SIN CAMBIOS)
 const baseDatosSitio = [
     {
         id: 'dni',
@@ -949,7 +958,7 @@ const baseDatosSitio = [
     }
 ];
 
-// ✅ LÓGICA DEL BUSCADOR COMPLETA, TAL CUAL FUNCIONABA ANTES
+// ✅ LÓGICA DEL BUSCADOR (SIN CAMBIOS)
 const inputBusqueda = document.getElementById('inputBusqueda');
 const resultadosBusqueda = document.getElementById('resultadosBusqueda');
 const contenedorInformacion = document.getElementById('contenedorInformacion');
@@ -985,7 +994,6 @@ inputBusqueda.addEventListener('input', function() {
     });
 });
 
-// ✅ DESPLEGAR INFORMACIÓN
 document.addEventListener('click', function(e){
     if(e.target.closest('.resultadoItem')){
         const id = e.target.closest('.resultadoItem').dataset.id;
