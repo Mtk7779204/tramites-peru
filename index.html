@@ -2820,39 +2820,38 @@ margin:0 auto;
 .enlaceOficial{
 display:flex;
 align-items:center;
-justify-content:flex-start;
-gap:12px;
+justify-content:center;
+gap:10px;
 
-padding:18px 20px;
+padding:14px 18px;
 
-background:linear-gradient(
-135deg,
-#d62828 0%,
-#6f2846 45%,
-#003049 100%
-);
+background:#FFFFFF;
 
-color:#ffffff !important;
-border-radius:14px;
+color:#1f2937 !important;
+
+border:1px solid #e5e7eb;
+border-radius:12px;
 
 font-size:15px;
 font-weight:600 !important;
 
-transition:all 0.3s ease;
 text-decoration:none;
 
-box-shadow:0 6px 16px rgba(0,0,0,.15);
+transition:all 0.3s ease;
+
+box-shadow:0 2px 8px rgba(0,0,0,.06);
+}
+
+.enlaceOficial:hover{
+transform:translateY(-2px);
+border-color:#d62828;
+box-shadow:0 6px 16px rgba(0,0,0,.10);
 }
 
 .enlaceOficial svg{
-width:40px;
-height:40px;
+width:32px;
+height:32px;
 flex-shrink:0;
-}
-.enlaceOficial:hover{
-transform:translateY(-3px);
-box-shadow:0 8px 18px rgba(0,0,0,.2);
-filter:brightness(1.05);
 }
 .anuncioEspacio{
 margin-top:25px; /* Antes 50px */
@@ -2869,11 +2868,24 @@ text-transform:uppercase;
 letter-spacing:1px;
 }
 @media(max-width:768px){
-.enlacesTitulo{font-size:22px;} /* Antes 28px */
-.enlaceOficial{font-size:14px; padding:10px 12px;} /* Antes 15px / 12px 15px */
-.enlacesLista{grid-template-columns:1fr;}
+.enlacesTitulo{
+font-size:22px;
 }
-</style>
+
+.enlaceOficial{
+font-size:14px;
+padding:12px;
+}
+
+.enlaceOficial svg{
+width:28px;
+height:28px;
+}
+
+.enlacesLista{
+grid-template-columns:1fr;
+}
+}</style>
 
 <section id="modulo10">
 <div class="enlacesContenedor">
