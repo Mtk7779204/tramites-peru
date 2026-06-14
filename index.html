@@ -2817,50 +2817,60 @@ gap:15px;
 max-width:900px;
 margin:0 auto;
 }
-/* ✅ NUEVO ESTILO IGUAL A TU IMAGEN */
+
+/* ✅ ESTILO FINAL: SIN FONDO ROJO, ICONO ARRIBA, TEXTO CENTRADO */
 .enlaceOficial{
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-gap:10px;
+display:flex !important;
+flex-direction:column !important;
+align-items:center !important;
+justify-content:center !important;
+text-align:center !important;
+gap:8px !important;
 
-padding:25px 15px;
+padding:25px 15px !important;
 
-background:#ffffff;
-border:1px solid #e5e7eb;
-border-radius:12px;
+/* Fondo blanco limpio, sin colores */
+background: #ffffff !important;
+border: 1px solid #e5e7eb !important;
+border-radius:12px !important;
 
-text-decoration:none;
-transition:all 0.2s ease;
+text-decoration:none !important;
+transition:all 0.2s ease !important;
+box-shadow: none !important;
+color: inherit !important;
 }
 
-/* Icono */
+/* Icono arriba */
 .enlaceOficial svg{
-width:40px;
-height:40px;
-color:#333333;
+width:40px !important;
+height:40px !important;
+color:#333333 !important;
+margin:0 0 5px 0 !important;
 }
 
-/* Título en ROJO */
+/* Título: ROJO, centrado, abajo del icono */
 .enlaceOficial h4{
-margin:0;
-font-size:16px;
-font-weight:700;
-color:#d62828; /* ROJO IGUAL A LA IMAGEN */
+margin:0 !important;
+font-size:16px !important;
+font-weight:700 !important;
+color:#d62828 !important; /* Solo texto rojo */
+text-align:center !important;
 }
 
-/* Texto descriptivo */
+/* Descripción: gris, centrada, debajo del título */
 .enlaceOficial p{
-margin:0;
-font-size:13px;
-color:#6b7280;
-line-height:1.4;
+margin:0 !important;
+font-size:13px !important;
+color:#6b7280 !important;
+line-height:1.4 !important;
+text-align:center !important;
 }
 
+/* Efecto al pasar el mouse suave */
 .enlaceOficial:hover{
-transform:translateY(-2px);
-box-shadow:0 4px 12px rgba(0,0,0,0.08);
+transform:translateY(-2px) !important;
+box-shadow:0 4px 12px rgba(0,0,0,0.08) !important;
+filter:none !important;
 }
 
 .anuncioEspacio{
@@ -2879,7 +2889,7 @@ letter-spacing:1px;
 }
 @media(max-width:768px){
 .enlacesTitulo{font-size:22px;}
-.enlaceOficial{padding:20px 12px;}
+.enlaceOficial{padding:20px 12px !important;}
 .enlacesLista{grid-template-columns:1fr;}
 }
 </style>
