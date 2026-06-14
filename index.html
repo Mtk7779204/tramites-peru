@@ -1174,25 +1174,52 @@ line-height:1.45;
 .ventanaCuerpo h4{
 margin:8px 0 3px 0;
 }
-/* ENLACES CORREGIDOS: AHORA SE VEN CLAROS Y VISIBLES */
+/* ENLACES OFICIALES ESTILO TARJETA ROJO-AZUL */
 .enlaceOficial{
-display:inline-block !important;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+
 margin-top:12px !important;
-padding:8px 16px !important;
-background:var(--colorPrincipal) !important;
+padding:12px 16px !important;
+
+background:linear-gradient(
+135deg,
+#d62828 0%,
+#6f2846 45%,
+#003049 100%
+);
+
 color:#ffffff !important;
 text-decoration:none !important;
 border-radius:var(--radioPrincipal);
+
+font-size:15px;
 font-weight:600 !important;
-transition:background 0.3s;
+
+transition:all 0.3s ease;
+
 border:none !important;
 opacity:1 !important;
 visibility:visible !important;
+
+box-shadow:0 4px 12px rgba(0,0,0,.15);
 }
+
 .enlaceOficial:hover{
-background:#b82222 !important;
+transform:translateY(-3px);
+filter:brightness(1.05);
+box-shadow:0 8px 18px rgba(0,0,0,.20);
 color:#ffffff !important;
 }
+
+.enlaceOficial svg{
+width:40px;
+height:40px;
+flex-shrink:0;
+}
+
 .anuncioEspacio{
 margin-top:25px;
 padding:10px;
@@ -1201,6 +1228,7 @@ border-radius:var(--radioPrincipal);
 text-align:center;
 box-shadow:var(--sombraLigera);
 }
+
 .anuncioTexto{
 font-size:13px;
 color:var(--colorGris);
@@ -1208,10 +1236,29 @@ margin-bottom:10px;
 text-transform:uppercase;
 letter-spacing:1px;
 }
+
 @media(max-width:768px){
-.categoriasTitulo{font-size:22px;}
-.ventanaContenido{padding:15px;}
+
+.categoriasTitulo{
+font-size:22px;
 }
+
+.ventanaContenido{
+padding:15px;
+}
+
+.enlaceOficial{
+padding:10px 12px !important;
+font-size:14px;
+}
+
+.enlaceOficial svg{
+width:32px;
+height:32px;
+}
+
+}
+
 </style>
 
 <section id="modulo7">
