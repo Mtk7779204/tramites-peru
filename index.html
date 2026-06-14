@@ -2774,21 +2774,26 @@ margin:0 auto;
 display:flex;
 align-items:center;
 justify-content:center;
-gap:8px; /* Antes 10px */
-padding:10px 15px; /* Antes 15px 20px */
-background:var(--colorPrincipal);
+gap:10px;
+padding:12px 16px;
+background:linear-gradient(135deg,#d62828 0%,#003049 100%);
 color:#ffffff !important;
 border-radius:var(--radioPrincipal);
-font-size:15px; /* Antes 16px */
+font-size:15px;
 font-weight:600 !important;
 transition:all 0.3s ease;
 text-decoration:none;
+box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+.enlaceOficial svg{
+width:26px;
+height:26px;
+flex-shrink:0;
 }
 .enlaceOficial:hover{
-background:#b82222 !important;
 transform:translateY(-3px);
-box-shadow:var(--sombraPrincipal);
-color:#ffffff !important;
+box-shadow:0 8px 18px rgba(0,0,0,.2);
+filter:brightness(1.05);
 }
 .anuncioEspacio{
 margin-top:25px; /* Antes 50px */
